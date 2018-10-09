@@ -1,0 +1,78 @@
+!==================================================================================================!
+!
+! Purpose:
+!   This keyword file is designed for use by the HighImpact Code.
+!   It is used to postprocess detailed data files from HUMAN to identify the highest impacts
+!!    at selected locations, times, and other criteria.
+!
+! History:
+!   Paul W. Eslinger : 16 Jul 2012 : Initial file prepared
+!
+!==================================================================================================!
+
+!--------------------------------------| Simulation Control |--------------------------------------!
+!
+! Simulation Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Report file name
+REPORT "Small_HIGHIMPACT.rpt"
+!
+!- Title for labeling purposes
+TITLE  "Demonstrate TIIA codes with a small data set - HIGHIMPACT Keywords"
+!
+!- User name for labeling purposes
+USER "Paul W. Eslinger"
+!
+!- More run progress informaiton written to the screen
+VERBOSE
+!
+!- File from HUMAN to process
+FILE HUMAN ".\Human_RF\Small_Human_RF_dtl.csv"
+!
+!- Output results file (ASCII text file)
+FILE RESULTS ".\Human_RF\Small_HIGHIMPACT.csv"
+
+!--------------------------------------| Single Definition |--------------------------------------!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     : The following keywords only have a single choice
+!
+!
+!- Realization or statistics
+REALIZAT HUMAN=1 SINGLE=1
+
+!- Solution type: S_TYPE See Table 12.5 in User's guide
+S_TYPE "ANARISK"
+!
+!- Specific analyte
+ANA_ID "As"
+!
+!- Limit to carcinogenic analytes
+R_TYPE "CAR"
+
+!--------------------------------------| Multiple Definitions |--------------------------------------!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     : The following keywords support multiple choices
+!
+! Locations can be multiply defined using an explicit list
+LOC_ID "RRD1-1" "RRD2-1"
+!
+! Times can be multiply defined
+TIME 2012
+
+!-------------------------------------|  End of Keyword File  |--------------------------------------!
+!
+END

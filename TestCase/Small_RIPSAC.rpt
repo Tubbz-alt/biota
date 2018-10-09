@@ -1,0 +1,127 @@
+
+
+
+             RRRRR    IIIIIII  PPPPP      SSS     AAAAA     CCC  
+             R    RR     I     P    PP  S    SS  A     A   C   CC
+             R    RR     I     P    PP   S    S  A     A  C      
+             RRRRR       I     PPPPP      SS     AAAAAAA  C      
+             R    R      I     P        S   S    A     A  C      
+             R     R     I     P        SS   S   A     A   C   CC
+             R     R  IIIIIII  P          SSS    A     A    CCC  
+
+
+                                  RipSac   4.00.001
+                          Last Modified on  9 Jul 2012 
+
+          Current Run ID = 20120823135827   User Name = Paul W. Eslinger
+                 System Date = 08-23-2012   System Time = 13:58:27
+                 ------------------------------------------------
+                 Toolkit for Integrated Impact Assessments (TIIA)
+                 Copyright (c) Battelle Memorial Institute, 2012.
+                               All Rights Reserved.              
+                 ------------------------------------------------
+
+                The software used to generate this output has been
+               developed under Battelle software control procedures.
+
+Eslinger, P.W. and T.B. Miley.   PNWD-4357, Rev. 1.  July 2012.
+User Instructions for the Computer Codes of the Toolkit for Integrated Impact
+Assessments (TIIA), Version 1. Battelle Memorial Institute, Columbus, Ohio 43201
+
+
+                             Review Signatures
+
+Input Prepared By: ______________________________       Date: _______________
+
+Input Reviewed By: ______________________________       Date: _______________
+
+
+======================== Echo of the Problem Definition ========================
+
+Title: Demonstrate TIIA codes with a small data set - RIPSAC Keywords                                                                                                                                          
+User:  Paul W. Eslinger
+1 Realizations identified in the ESD keyword file
+1 Realizations utilized in this run
+
+A map of realization activations (true/false) is:
+   1-  1  T
+
+File Name for RIPSAC Input Keyword Data
+File: Small_RIPSAC.kwd
+
+File Name for ESD Input Keyword Data
+File: Small_ESD.kwd
+
+File Name for Dilution Data
+File: .\ecda\Small_Dilute.txt
+
+File Name for KDSOIL Data
+File: .\ecda\Small_KdSoil.dat
+
+File Name for Concentration Index Map File
+File: .\ecda\Small_I_ECDA.txt
+
+File Name for Media Concentrations: Analyte ID="ACNAPE"
+File: .\ecda\Small_ACNAPE.bin
+
+File Name for Media Concentrations: Analyte ID="As"
+File: .\ecda\Small_As.bin
+
+File Name for Media Concentrations: Analyte ID="Hg"
+File: .\ecda\Small_Hg.bin
+
+File Name for Media Concentrations: Analyte ID="Zn"
+File: .\ecda\Small_Zn.bin
+
+Analye Information for 4 analytes.
+    1 : ACNAPE : Acenaphthene (CASID 83-32-9)                                            
+    2 : As     : Arsenic (CASID 7440-38-2)                                               
+    3 : Hg     : Mercury (CASID 7439-97-6)                                               
+    4 : Zn     : Zinc (CASID 7440-66-6)                                                  
+A total of  4 analytes have been requested.
+  
+Number of times is 1
+Index    Year
+     1 2012
+  
+Number of locations is 5
+Index   Location ID
+     1 QRD1-1
+     2 QRD2-1
+     3 RRD1-1
+     4 RRD2-1
+     5 UP1   
+
+Soil-Water KD and Dilution Factor Mapping
+  Location      Analyte      KDSOIL ID String          DILUTE ID String
+  ------------  -----------  --------------------      --------------------
+     3: RRD1-1    1: ACNAPE  KdACNA                    DF5mD                   
+     3: RRD1-1    2: As      KdAs                      DF5mD                   
+     3: RRD1-1    3: Hg      KdHg                      DF5mD                   
+     3: RRD1-1    4: Zn      KdZn                      DF5mD                   
+     4: RRD2-1    1: ACNAPE  KdACNA                    DF20mD                  
+     4: RRD2-1    2: As      KdAs                      DF20mD                  
+     4: RRD2-1    3: Hg      KdHg                      DF20mD                  
+     4: RRD2-1    4: Zn      KdZn                      DF20mD                  
+
+======================== End of the Problem Definition =========================
+
+Message originating in routine PROCESS_IMPACTS
+Message: Processing data for analyte "ACNAPE"
+         On 08/23/2012 at 13:58:27.450
+
+Message originating in routine PROCESS_IMPACTS
+Message: Processing data for analyte "As"
+         On 08/23/2012 at 13:58:27.450
+
+Message originating in routine PROCESS_IMPACTS
+Message: Processing data for analyte "Hg"
+         On 08/23/2012 at 13:58:27.465
+
+Message originating in routine PROCESS_IMPACTS
+Message: Processing data for analyte "Zn"
+         On 08/23/2012 at 13:58:27.465
+
+Message originating in routine RipSac
+Message: Normal Termination
+         Run Completed on 08/23/2012 at 13:58:27.465

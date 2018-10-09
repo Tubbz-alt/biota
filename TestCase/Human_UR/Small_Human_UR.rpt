@@ -1,0 +1,686 @@
+
+
+                  H     H  U     U  M     M   AAAAA   N     N
+                  H     H  U     U  MM   MM  A     A  NN    N
+                  H     H  U     U  M M M M  A     A  N N   N
+                  HHHHHHH  U     U  M  M  M  AAAAAAA  N  N  N
+                  H     H  U     U  M     M  A     A  N   N N
+                  H     H  U     U  M     M  A     A  N    NN
+                  H     H   UUUUU   M     M  A     A  N     N
+
+
+                                  Human    4.00.001
+                          Last Modified on 15 Jul 2012 
+
+          Current Run ID = 20120823135829   User Name = Paul W. Eslinger
+                 System Date = 08-23-2012   System Time = 13:58:29
+                 ------------------------------------------------
+                 Toolkit for Integrated Impact Assessments (TIIA)
+                 Copyright (c) Battelle Memorial Institute, 2012.
+                               All Rights Reserved.              
+                 ------------------------------------------------
+
+                The software used to generate this output has been
+               developed under Battelle software control procedures.
+
+Eslinger, P.W. and T.B. Miley.   PNWD-4357, Rev. 1.  July 2012.
+User Instructions for the Computer Codes of the Toolkit for Integrated Impact
+Assessments (TIIA), Version 1. Battelle Memorial Institute, Columbus, Ohio 43201
+
+
+                             Review Signatures
+
+Input Prepared By: ______________________________       Date: _______________
+
+Input Reviewed By: ______________________________       Date: _______________
+
+
+======================== Echo of the Problem Definition ========================
+
+Title: Demonstrate TIIA codes with a small data set - HUMAN Urban Keywords     
+User:  Paul W. Eslinger
+   1 Realizations requested in this run
+   1 Realizations available in the concentration files
+
+File Name for Input Keyword Data
+File: Small_HUMAN_UR.kwd
+
+File Name (header) for postprocessors
+File: .\Human_UR\Small_Human_UR_hdr.txt
+
+File Name for Detailed Risk Data
+File: .\Human_UR\Small_Human_UR_dtl.csv
+
+File Name for Generated Stochastic Values
+File: .\Human_UR\Small_Human_UR_val.csv
+
+File Name for Media Concentrations for analyte with ID="ACNAPE"
+File: .\ecda\Small_ACNAPE.bin
+
+File Name for Media Concentrations for analyte with ID="As"
+File: .\ecda\Small_As.bin
+
+File Name for Media Concentrations for analyte with ID="Hg"
+File: .\ecda\Small_Hg.bin
+
+File Name for Media Concentrations for analyte with ID="Zn"
+File: .\ecda\Small_Zn.bin
+
+Debug Flag Information
+   No  : Concentration Data
+   No  : Radiological Risk
+   Yes : Carcinogenic Risk
+   Yes : Hazard Quotient
+   Yes : Stochastic Calculations
+   Yes : Food concentrations
+
+Output Data Options Information
+   Yes : Dose details summed over analytes of similar type
+   Yes : Risk (or hazard quotient) details summed over analytes of similar type
+   No  : Dose statistics summed over analytes of similar type
+   No  : Risk (or hazard quotient) statistics summed over analytes of similar type
+   No  : Combined Population Dose Details
+   No  : Combined Population Dose Statistics
+   No  : Combined Population Risk Details
+   No  : Combined Population Risk Statistics
+   Yes : Analyte Detailed Dose Data
+   Yes : Analyte Detailed Risk Data
+   No  : Analyte Dose Statistics
+   No  : Analyte Risk Statistics
+   Yes : Exposure Pathway Level Dose Details
+   Yes : Exposure Pathway Level Risk (or Hazard quotient) Details
+   No  : Exposure Pathway Level Dose Statistics
+   No  : Exposure Pathway Level Risk (or Hazard quotient) Statistics
+   Yes : Media Level Concentrations
+
+Averaging time for hazardous analytes
+   Value =  25567.50   Units are days
+
+Averaging time for carcinogenic analytes
+   Value =  25567.50   Units are days
+
+Sweat lodge option is not used
+
+Shower water selection is used : Water source is Ground water
+
+Analye Information based on 4 possible analytes.
+     1 : ACNAPE : OS : Carcinogen T : Hazardous T : Radioactive F : Acenaphthene (CASID 83-32-9)                                             : 
+     2 : As     : NS : Carcinogen T : Hazardous T : Radioactive F : Arsenic (CASID 7440-38-2)                                                : 
+     3 : Hg     : NS : Carcinogen F : Hazardous T : Radioactive F : Mercury (CASID 7439-97-6)                                                : 
+     4 : Zn     : NS : Carcinogen F : Hazardous T : Radioactive F : Zinc (CASID 7440-66-6)                                                   : 
+A total of 4 analytes have been requested.
+
+Soil type selection for for upland food
+ SOGW   : Groundwater irrigation
+
+FOOD Information
+   MILK    : Not consumed
+   BIRD    : Species "UBIRD"  "Bird/poultry"
+   GRAIN   : Not consumed
+   FRUIT   : Not consumed
+   EGGS    : Species "UEGG"  "Egg"
+   FISH    : Species "BSHRMP"  "brown shrimp"
+   FISH_2  : Species "OCTOPI"  "octopus"
+   FISH_3  : Not consumed
+   MEAT    : Not consumed
+   LEAFVEG : Species "UFUNGI"  "fungi"
+   ROOTVEG : Not consumed
+
+Time Slices Requested: (Index, Calendar Year) based on 1 possible times.
+      1 :  2012 : Included in this scenario
+A total of 1 times have been requested.
+
+A total of 1 locations have been requested.
+
+======================== End of the Problem Definition =========================
+
+Starting Problem Execution
+    Date: 08/23/2012
+    Time: 13:58:30.273
+
+Locations Requested and associated source locations for media and foods.
+  Index PRIMARY  SECOND   THIRD      GWAT     SODR     SOGW     SOSW     SEEP     SORP     SWAT     SEDI     AIRC     BIRD     MEAT     FISH    FISH_2   FISH_3
+  ----- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- --------
+      5 "UP1   " "QRD1-1" "-None-" "UP1   " "UP1   " "UP1   " "UP1   " "-None-" "-None-" "QRD1-1" "QRD1-1" "UP1   " "UP1   " "-None-" "QRD1-1" "QRD2-1" "-None-"
+Entering subroutine OPEN_FOODS
+
+Opening all food files
+
+Information on food files used in this run
+Food Path: .\Foods\
+Food Map File: .\Foods\Small_Foods_map.txt
+Food map data file read successfully
+Food: FISH      Unit:  14  Analyte: "ACNAPE"  Species: "BSHRMP"  File: ".\Foods\Food_ACNAPE_BSHRMP.fod"
+Food: FISH_2    Unit:  15  Analyte: "ACNAPE"  Species: "OCTOPI"  File: ".\Foods\Food_ACNAPE_OCTOPI.fod"
+Food: LEAFVEG   Unit:  16  Analyte: "ACNAPE"  Species: "UFUNGI"  File: ".\Foods\Food_ACNAPE_UFUNGI.fod"
+Food: BIRD      Unit:  17  Analyte: "ACNAPE"  Species: "UBIRD "  File: ".\Foods\Food_ACNAPE_UBIRD.fod"
+Food: EGGS      Unit:  18  Analyte: "ACNAPE"  Species: "UEGG  "  File: ".\Foods\Food_ACNAPE_UEGG.fod"
+Food: FISH      Unit:  19  Analyte: "As    "  Species: "BSHRMP"  File: ".\Foods\Food_As_BSHRMP.fod"
+Food: FISH_2    Unit:  20  Analyte: "As    "  Species: "OCTOPI"  File: ".\Foods\Food_As_OCTOPI.fod"
+Food: LEAFVEG   Unit:  21  Analyte: "As    "  Species: "UFUNGI"  File: ".\Foods\Food_As_UFUNGI.fod"
+Food: BIRD      Unit:  22  Analyte: "As    "  Species: "UBIRD "  File: ".\Foods\Food_As_UBIRD.fod"
+Food: EGGS      Unit:  23  Analyte: "As    "  Species: "UEGG  "  File: ".\Foods\Food_As_UEGG.fod"
+Food: FISH      Unit:  24  Analyte: "Hg    "  Species: "BSHRMP"  File: ".\Foods\Food_Hg_BSHRMP.fod"
+Food: FISH_2    Unit:  25  Analyte: "Hg    "  Species: "OCTOPI"  File: ".\Foods\Food_Hg_OCTOPI.fod"
+Food: LEAFVEG   Unit:  26  Analyte: "Hg    "  Species: "UFUNGI"  File: ".\Foods\Food_Hg_UFUNGI.fod"
+Food: BIRD      Unit:  27  Analyte: "Hg    "  Species: "UBIRD "  File: ".\Foods\Food_Hg_UBIRD.fod"
+Food: EGGS      Unit:  28  Analyte: "Hg    "  Species: "UEGG  "  File: ".\Foods\Food_Hg_UEGG.fod"
+Food: FISH      Unit:  29  Analyte: "Zn    "  Species: "BSHRMP"  File: ".\Foods\Food_Zn_BSHRMP.fod"
+Food: FISH_2    Unit:  30  Analyte: "Zn    "  Species: "OCTOPI"  File: ".\Foods\Food_Zn_OCTOPI.fod"
+Food: LEAFVEG   Unit:  31  Analyte: "Zn    "  Species: "UFUNGI"  File: ".\Foods\Food_Zn_UFUNGI.fod"
+Food: BIRD      Unit:  32  Analyte: "Zn    "  Species: "UBIRD "  File: ".\Foods\Food_Zn_UBIRD.fod"
+Food: EGGS      Unit:  33  Analyte: "Zn    "  Species: "UEGG  "  File: ".\Foods\Food_Zn_UEGG.fod"
+
+Concentration data units conversion factors
+  
+    1 : ACNAPE : OS : Ground water  :  1.00000E+06 : From kg/m^3       to ug/L        
+    1 : ACNAPE : OS : Surface water :  1.00000E+06 : From kg/m^3       to ug/L        
+    1 : ACNAPE : OS : Seep water    :  1.00000E+06 : From kg/m^3       to ug/L        
+    1 : ACNAPE : OS : Sediment      :  1.00000E+09 : From kg/kg        to ug/kg       
+    1 : ACNAPE : OS : Pore water    :  1.00000E+06 : From kg/m^3       to ug/L        
+    1 : ACNAPE : OS : Soil-Riparian :  1.00000E+09 : From kg/kg        to ug/kg       
+    1 : ACNAPE : OS : Soil-Dry Land :  1.00000E+09 : From kg/kg        to ug/kg       
+    1 : ACNAPE : OS : Soil-GW Irrig :  1.00000E+09 : From kg/kg        to ug/kg       
+    1 : ACNAPE : OS : Soil-SW Irrig :  1.00000E+09 : From kg/kg        to ug/kg       
+    1 : ACNAPE : OS : Air Concen.   :  1.00000E+09 : From kg/m^3       to ug/m^3      
+  
+    2 : As     : NS : Ground water  :  1.00000E+06 : From kg/m^3       to ug/L        
+    2 : As     : NS : Surface water :  1.00000E+06 : From kg/m^3       to ug/L        
+    2 : As     : NS : Seep water    :  1.00000E+06 : From kg/m^3       to ug/L        
+    2 : As     : NS : Sediment      :  1.00000E+09 : From kg/kg        to ug/kg       
+    2 : As     : NS : Pore water    :  1.00000E+06 : From kg/m^3       to ug/L        
+    2 : As     : NS : Soil-Riparian :  1.00000E+09 : From kg/kg        to ug/kg       
+    2 : As     : NS : Soil-Dry Land :  1.00000E+09 : From kg/kg        to ug/kg       
+    2 : As     : NS : Soil-GW Irrig :  1.00000E+09 : From kg/kg        to ug/kg       
+    2 : As     : NS : Soil-SW Irrig :  1.00000E+09 : From kg/kg        to ug/kg       
+    2 : As     : NS : Air Concen.   :  1.00000E+09 : From kg/m^3       to ug/m^3      
+  
+    3 : Hg     : NS : Ground water  :  1.00000E+06 : From kg/m^3       to ug/L        
+    3 : Hg     : NS : Surface water :  1.00000E+06 : From kg/m^3       to ug/L        
+    3 : Hg     : NS : Seep water    :  1.00000E+06 : From kg/m^3       to ug/L        
+    3 : Hg     : NS : Sediment      :  1.00000E+09 : From kg/kg        to ug/kg       
+    3 : Hg     : NS : Pore water    :  1.00000E+06 : From kg/m^3       to ug/L        
+    3 : Hg     : NS : Soil-Riparian :  1.00000E+09 : From kg/kg        to ug/kg       
+    3 : Hg     : NS : Soil-Dry Land :  1.00000E+09 : From kg/kg        to ug/kg       
+    3 : Hg     : NS : Soil-GW Irrig :  1.00000E+09 : From kg/kg        to ug/kg       
+    3 : Hg     : NS : Soil-SW Irrig :  1.00000E+09 : From kg/kg        to ug/kg       
+    3 : Hg     : NS : Air Concen.   :  1.00000E+09 : From kg/m^3       to ug/m^3      
+  
+    4 : Zn     : NS : Ground water  :  1.00000E+06 : From kg/m^3       to ug/L        
+    4 : Zn     : NS : Surface water :  1.00000E+06 : From kg/m^3       to ug/L        
+    4 : Zn     : NS : Seep water    :  1.00000E+06 : From kg/m^3       to ug/L        
+    4 : Zn     : NS : Sediment      :  1.00000E+09 : From kg/kg        to ug/kg       
+    4 : Zn     : NS : Pore water    :  1.00000E+06 : From kg/m^3       to ug/L        
+    4 : Zn     : NS : Soil-Riparian :  1.00000E+09 : From kg/kg        to ug/kg       
+    4 : Zn     : NS : Soil-Dry Land :  1.00000E+09 : From kg/kg        to ug/kg       
+    4 : Zn     : NS : Soil-GW Irrig :  1.00000E+09 : From kg/kg        to ug/kg       
+    4 : Zn     : NS : Soil-SW Irrig :  1.00000E+09 : From kg/kg        to ug/kg       
+    4 : Zn     : NS : Air Concen.   :  1.00000E+09 : From kg/m^3       to ug/m^3      
+
+Entering FOOD_READ
+Location index 5 : UP1
+Time index 1 : Calendar year 2012
+NREAL (Number of realizations) : 1
+   BIRD    ug/kg  ACNAPE UBIRD  UP1     1.77813E-03
+   FISH    ug/kg  ACNAPE BSHRMP QRD1-1  7.74346E-02
+   FISH_2  ug/kg  ACNAPE OCTOPI QRD2-1  3.17281E-01
+   FISH_3  ACNAPE Not used
+   EGGS    ug/kg  ACNAPE UEGG   UP1     5.33440E-01
+   GRAIN   ACNAPE Not used
+   FRUIT   ACNAPE Not used
+   MEAT    ACNAPE Not used
+   MILK    ACNAPE Not used
+   LEAFVEG ug/kg  ACNAPE UFUNGI UP1     5.14507E-02
+   ROOTVEG ACNAPE Not used
+   BIRD    ug/kg  As     UBIRD  UP1     9.14960E+00
+   FISH    ug/kg  As     BSHRMP QRD1-1  8.60923E+01
+   FISH_2  ug/kg  As     OCTOPI QRD2-1  7.02394E+00
+   FISH_3  As     Not used
+   EGGS    ug/kg  As     UEGG   UP1     1.82992E+01
+   GRAIN   As     Not used
+   FRUIT   As     Not used
+   MEAT    As     Not used
+   MILK    As     Not used
+   LEAFVEG ug/kg  As     UFUNGI UP1     1.77242E+01
+   ROOTVEG As     Not used
+   BIRD    ug/kg  Hg     UBIRD  UP1     2.06433E+01
+   FISH    ug/kg  Hg     BSHRMP QRD1-1  3.29760E+02
+   FISH_2  ug/kg  Hg     OCTOPI QRD2-1  6.45119E+01
+   FISH_3  Hg     Not used
+   EGGS    ug/kg  Hg     UEGG   UP1     2.06433E+02
+   GRAIN   Hg     Not used
+   FRUIT   Hg     Not used
+   MEAT    Hg     Not used
+   MILK    Hg     Not used
+   LEAFVEG ug/kg  Hg     UFUNGI UP1     5.95422E-01
+   ROOTVEG Hg     Not used
+   BIRD    ug/kg  Zn     UBIRD  UP1     2.76499E+01
+   FISH    ug/kg  Zn     BSHRMP QRD1-1  1.32983E+02
+   FISH_2  ug/kg  Zn     OCTOPI QRD2-1  2.13131E+02
+   FISH_3  Zn     Not used
+   EGGS    ug/kg  Zn     UEGG   UP1     1.10600E+03
+   GRAIN   Zn     Not used
+   FRUIT   Zn     Not used
+   MEAT    Zn     Not used
+   MILK    Zn     Not used
+   LEAFVEG ug/kg  Zn     UFUNGI UP1     1.24071E+00
+   ROOTVEG Zn     Not used
+
+Entering CAR_DOSE
+Location index 5 : UP1
+Time index1 : Calendar year 2012
+   1 : Numer of realizations to be processed
+    2.55675E+04 : AVGTIME_CAR
+    1.00000E-03 : CF3
+    2.40000E+01 : CF4
+    1.00000E-03 : CF7
+
+Processing Location    : UP1    : "Upland New Location"
+Processing Analyte     : ACNAPE : "Acenaphthene (CASID 83-32-9)"
+Processing realization : 1
+ 
+Risk increments for the ingestion pathway for (carcinogenic) ACNAPE
+   Pathway           Dose                  Risk              Ingestion            Concentration        Exposure Freq.       Food Definition
+   ----------------- --------------------- ----------------- -------------------- -------------------- -------------------  -------------------------------------------
+   Surface water     0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 L/day    1.10000E-04 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Ground water      5.58745E-12 mg/kg-day  0.00000E+00 Risk  2.00000E+00 L/day    5.00000E-04 ug/L     1.00000E+01 day/yr  ID: GWAT    Name: Groundwater concentrations                                    
+   Seep water        0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Soil (child)      0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   1.11160E-05 ug/kg    2.00000E+02 day/yr  Not consumed                                                                    
+   Soil (adult)      2.48441E-14 mg/kg-day  0.00000E+00 Risk  2.00000E-02 kg/day   1.11160E-05 ug/kg    2.00000E+02 day/yr  ID: SOGW    Name: Groundwater irrigated upland soil concentrations              
+   Sediment (child)  0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Sediment (adult)  0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Leafy Vegetables  5.74956E-10 mg/kg-day  0.00000E+00 Risk  1.00000E-01 kg/day   5.14507E-02 ug/kg    2.00000E+02 day/yr  ID: UFUNGI  Name: fungi                                                         
+   Root Vegetables   0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Meat              0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Milk              0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Bird              2.38446E-11 mg/kg-day  0.00000E+00 Risk  1.20000E-01 kg/day   1.77813E-03 ug/kg    2.00000E+02 day/yr  ID: UBIRD   Name: Bird/poultry                                                  
+   Fruit             0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Grain             0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Eggs              5.96114E-09 mg/kg-day  0.00000E+00 Risk  1.00000E-01 kg/day   5.33440E-01 ug/kg    2.00000E+02 day/yr  ID: UEGG    Name: Egg                                                           
+   Fish              2.59597E-09 mg/kg-day  0.00000E+00 Risk  3.00000E-01 kg/day   7.74346E-02 ug/kg    2.00000E+02 day/yr  ID: BSHRMP  Name: brown shrimp                                                  
+   Fish_2            1.06367E-08 mg/kg-day  0.00000E+00 Risk  3.00000E-01 kg/day   3.17281E-01 ug/kg    2.00000E+02 day/yr  ID: OCTOPI  Name: octopus                                                       
+   Fish_3            0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+ 
+Risk increments for the inhalation pathway for (carcinogenic) ACNAPE   [Inhalation rate (m^3/day) is  2.30000E+01]
+   Pathway                    Dose                   Risk              Concentration        Exposure Time       Exposure Frequency   Loading or Volatile
+   -------------------------- ---------------------- ----------------- -------------------  ------------------- -------------------- ------------------- 
+   Inhalation - Soil           0.00000E+00 mg/kg-day  0.00000E+00 Risk  5.55802E-13 ug/m^3   2.00000E+02 day/yr  0.00000E+00 hr/day  5.00000E-08 kg/m^3
+   Inhalation - Seep water     0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  1.00000E-01 L/m^3
+   Inhalation - Surface water  0.00000E+00 mg/kg-day  0.00000E+00 Risk  1.10000E-05 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  1.00000E-01 L/m^3
+   Inhalation - Shower water   1.33866E-13 mg/kg-day  1.47253E-19 Risk  5.00000E-06 ug/m^3   2.00000E+02 day/yr  2.50000E-01 hr/day  1.00000E-02 L/m^3
+   Inhalation - Sweat lodge    0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Air concent.   8.56743E-10 mg/kg-day  9.42417E-16 Risk  4.00000E-03 ug/m^3   2.00000E+02 day/yr  2.00000E+00 hr/day
+ 
+Risk increments for the (soil) dermal pathway for (carcinogenic) ACNAPE
+   Pathway               Dose                   Risk             Adherence Factor         Absorption         Concentration      Surface area      Exposure Freq.
+   -------------------   ---------------------  ---------------- ------------------------ ------------------ ------------------ ----------------- -----------------
+   Dermal - Soil         8.88862E-17 mg/kg-day  0.00000E+00 Risk  2.75000E-01 mg/cm^2-day  1.30100E-01 none   1.11160E-05 ug/kg  2.00000E+03 cm^2  2.00000E+02 day/yr
+   Dermal - Sediment     0.00000E+00 mg/kg-day  0.00000E+00 Risk  2.75000E-01 mg/cm^2-day  1.30100E-01 none   0.00000E+00 ug/kg  5.00000E+03 cm^2  0.00000E+00 day/yr
+ 
+Risk increments for the (water) dermal pathway for (carcinogenic) ACNAPE
+   Pathway               Dose                   Risk             Permeability       Concentration      Surface area      Exposure Duration   Exposure Frequency
+   -------------------   ---------------------  ---------------- ------------------ ------------------ ----------------- ------------------- -------------------
+   Dermal - seep water   0.00000E+00 mg/kg-day  0.00000E+00 Risk  1.00000E-03 cm/hr  0.00000E+00 ug/L   2.00000E+04 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+   Dermal - swimming     1.22924E-15 mg/kg-day  0.00000E+00 Risk  1.00000E-03 cm/hr  1.10000E-04 ug/L   5.00000E+03 cm^2  2.00000E+00 hr/day  2.00000E+00 day/yr
+   Dermal - sweat lodge  0.00000E+00 mg/kg-day  0.00000E+00 Risk  1.00000E-03 cm/hr  0.00000E+00 ug/L   0.00000E+00 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+ 
+Summary of dose and risk increments for (carcinogenic) ACNAPE
+   Dose (mg/kg-day) Risk (risk)  Percent (dose) Percent (risk) Pathway
+   ---------------- ------------ -------------- -------------- ----------------------
+    1.97927E-08      0.00000E+00  9.58230E+01    0.00000E+00   Food ingestion
+    2.48441E-14      0.00000E+00  1.20279E-04    0.00000E+00   Soil/sediment ingestion
+    5.58745E-12      0.00000E+00  2.70508E-02    0.00000E+00   Water ingestion
+    1.97983E-08      0.00000E+00  9.58502E+01    0.00000E+00   All ingestion
+    8.56876E-10      9.42564E-16  4.14843E+00    1.00000E+02   Inhalation
+    2.80691E-13      0.00000E+00  1.35892E-03    0.00000E+00   Dermal
+    2.06554E-08               9.42564E-16              Total
+ 
+Exposure durations
+    1.00000E+00 : Duration (years)
+    0.00000E+00 : Duration - child (years)
+    1.00000E+00 : Duration - adult (years)
+ 
+Slope factors for (carcinogenic) ACNAPE
+No risk for ingestion is requested
+    1.10000E-06 : Inhalation (risk per mg(intake)/(kg(bodyweight)/day))
+
+Processing Location    : UP1    : "Upland New Location"
+Processing Analyte     : As     : "Arsenic (CASID 7440-38-2)"
+Processing realization : 1
+ 
+Risk increments for the ingestion pathway for (carcinogenic) As
+   Pathway           Dose                  Risk              Ingestion            Concentration        Exposure Freq.       Food Definition
+   ----------------- --------------------- ----------------- -------------------- -------------------- -------------------  -------------------------------------------
+   Surface water     0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 L/day    3.00000E-01 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Ground water      1.00574E-07 mg/kg-day  1.50861E-07 Risk  2.00000E+00 L/day    9.00000E+00 ug/L     1.00000E+01 day/yr  ID: GWAT    Name: Groundwater concentrations                                    
+   Seep water        0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Soil (child)      0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   1.99976E-01 ug/kg    2.00000E+02 day/yr  Not consumed                                                                    
+   Soil (adult)      4.46942E-10 mg/kg-day  6.70413E-10 Risk  2.00000E-02 kg/day   1.99976E-01 ug/kg    2.00000E+02 day/yr  ID: SOGW    Name: Groundwater irrigated upland soil concentrations              
+   Sediment (child)  0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Sediment (adult)  0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Leafy Vegetables  1.98067E-07 mg/kg-day  2.97100E-07 Risk  1.00000E-01 kg/day   1.77242E+01 ug/kg    2.00000E+02 day/yr  ID: UFUNGI  Name: fungi                                                         
+   Root Vegetables   0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Meat              0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Milk              0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Bird              1.22695E-07 mg/kg-day  1.84043E-07 Risk  1.20000E-01 kg/day   9.14960E+00 ug/kg    2.00000E+02 day/yr  ID: UBIRD   Name: Bird/poultry                                                  
+   Fruit             0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Grain             0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Eggs              2.04492E-07 mg/kg-day  3.06737E-07 Risk  1.00000E-01 kg/day   1.82992E+01 ug/kg    2.00000E+02 day/yr  ID: UEGG    Name: Egg                                                           
+   Fish              2.88622E-06 mg/kg-day  4.32933E-06 Risk  3.00000E-01 kg/day   8.60923E+01 ug/kg    2.00000E+02 day/yr  ID: BSHRMP  Name: brown shrimp                                                  
+   Fish_2            2.35476E-07 mg/kg-day  3.53213E-07 Risk  3.00000E-01 kg/day   7.02394E+00 ug/kg    2.00000E+02 day/yr  ID: OCTOPI  Name: octopus                                                       
+   Fish_3            0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+ 
+Risk increments for the inhalation pathway for (carcinogenic) As   [Inhalation rate (m^3/day) is  2.30000E+01]
+   Pathway                    Dose                   Risk              Concentration        Exposure Time       Exposure Frequency   Loading or Volatile
+   -------------------------- ---------------------- ----------------- -------------------  ------------------- -------------------- ------------------- 
+   Inhalation - Soil           0.00000E+00 mg/kg-day  0.00000E+00 Risk  9.99878E-09 ug/m^3   2.00000E+02 day/yr  0.00000E+00 hr/day  5.00000E-08 kg/m^3
+   Inhalation - Seep water     0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Surface water  0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Shower water   2.40959E-09 mg/kg-day  1.03612E-11 Risk  9.00000E-02 ug/m^3   2.00000E+02 day/yr  2.50000E-01 hr/day  1.00000E-02 L/m^3
+   Inhalation - Sweat lodge    0.00000E+00 mg/kg-day  0.00000E+00 Risk  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Air concent.   2.14186E-10 mg/kg-day  9.20998E-13 Risk  1.00000E-03 ug/m^3   2.00000E+02 day/yr  2.00000E+00 hr/day
+ 
+Risk increments for the (soil) dermal pathway for (carcinogenic) As
+   Pathway               Dose                   Risk             Adherence Factor         Absorption         Concentration      Surface area      Exposure Freq.
+   -------------------   ---------------------  ---------------- ------------------------ ------------------ ------------------ ----------------- -----------------
+   Dermal - Soil         1.47491E-14 mg/kg-day  0.00000E+00 Risk  2.75000E-01 mg/cm^2-day  1.20000E-03 none   1.99976E-01 ug/kg  2.00000E+03 cm^2  2.00000E+02 day/yr
+   Dermal - Sediment     0.00000E+00 mg/kg-day  0.00000E+00 Risk  2.75000E-01 mg/cm^2-day  1.20000E-03 none   0.00000E+00 ug/kg  5.00000E+03 cm^2  0.00000E+00 day/yr
+ 
+Risk increments for the (water) dermal pathway for (carcinogenic) As
+   Pathway               Dose                   Risk             Permeability       Concentration      Surface area      Exposure Duration   Exposure Frequency
+   -------------------   ---------------------  ---------------- ------------------ ------------------ ----------------- ------------------- -------------------
+   Dermal - seep water   0.00000E+00 mg/kg-day  0.00000E+00 Risk  1.00000E-03 cm/hr  0.00000E+00 ug/L   2.00000E+04 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+   Dermal - swimming     3.35247E-12 mg/kg-day  0.00000E+00 Risk  1.00000E-03 cm/hr  3.00000E-01 ug/L   5.00000E+03 cm^2  2.00000E+00 hr/day  2.00000E+00 day/yr
+   Dermal - sweat lodge  0.00000E+00 mg/kg-day  0.00000E+00 Risk  1.00000E-03 cm/hr  0.00000E+00 ug/L   0.00000E+00 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+ 
+Summary of dose and risk increments for (carcinogenic) As
+   Dose (mg/kg-day) Risk (risk)  Percent (dose) Percent (risk) Pathway
+   ---------------- ------------ -------------- -------------- ----------------------
+    3.64695E-06      5.47042E-06  9.71063E+01    9.71740E+01   Food ingestion
+    4.46942E-10      6.70413E-10  1.19006E-02    1.19089E-02   Soil/sediment ingestion
+    1.00574E-07      1.50861E-07  2.67796E+00    2.67983E+00   Water ingestion
+    3.74797E-06      5.62195E-06  9.97962E+01    9.98657E+01   All ingestion
+    2.62377E-09      1.12822E-11  6.98625E-02    2.00412E-04   Inhalation
+    5.03207E-09      7.54811E-09  1.33988E-01    1.34081E-01   Dermal
+    3.75563E-06               5.62951E-06              Total
+ 
+Exposure durations
+    1.00000E+00 : Duration (years)
+    0.00000E+00 : Duration - child (years)
+    1.00000E+00 : Duration - adult (years)
+ 
+Slope factors for (carcinogenic) As
+    1.50000E+00 : Ingestion  (risk per mg(intake)/(kg(bodyweight)/day))
+    4.30000E-03 : Inhalation (risk per mg(intake)/(kg(bodyweight)/day))
+
+Entering HAZ_DOSE
+Location index 5 : UP1
+Time index1 : Calendar year 2012
+   1 : Numer of realizations to be processed
+    2.55675E+04 : AVGTIME_HAZ
+    1.00000E-03 : CF3
+    2.40000E+01 : CF4
+    1.00000E-03 : CF7
+
+Processing Location    : UP1    : "Upland New Location"
+Processing Analyte     : ACNAPE : "Acenaphthene (CASID 83-32-9)"
+Processing realization : 1
+ 
+Dose and hazard quotient increments - ingestion pathway for (hazardous) ACNAPE
+   Pathway           Dose                  Hazard Quotient   Ingestion            Concentration        Exposure Freq.       Food Definition
+   ----------------- --------------------- ----------------- -------------------- -------------------- -------------------  -------------------------------------------
+   Surface water     0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    1.10000E-04 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Ground water      5.58745E-12 mg/kg-day  2.66069E-11 none  2.00000E+00 L/day    5.00000E-04 ug/L     1.00000E+01 day/yr  ID: GWAT    Name: Groundwater concentrations                                    
+   Seep water        0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Soil (child)      0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   1.11160E-05 ug/kg    2.00000E+02 day/yr  Not consumed                                                                    
+   Soil (adult)      2.48441E-14 mg/kg-day  1.18305E-13 none  2.00000E-02 kg/day   1.11160E-05 ug/kg    2.00000E+02 day/yr  ID: SOGW    Name: Groundwater irrigated upland soil concentrations              
+   Sediment (child)  0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Sediment (adult)  0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Leafy Vegetables  5.74956E-10 mg/kg-day  2.73789E-09 none  1.00000E-01 kg/day   5.14507E-02 ug/kg    2.00000E+02 day/yr  ID: UFUNGI  Name: fungi                                                         
+   Root Vegetables   0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Meat              0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Milk              0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Bird              2.38446E-11 mg/kg-day  1.13546E-10 none  1.20000E-01 kg/day   1.77813E-03 ug/kg    2.00000E+02 day/yr  ID: UBIRD   Name: Bird/poultry                                                  
+   Fruit             0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Grain             0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Eggs              5.96114E-09 mg/kg-day  2.83864E-08 none  1.00000E-01 kg/day   5.33440E-01 ug/kg    2.00000E+02 day/yr  ID: UEGG    Name: Egg                                                           
+   Fish              2.59597E-09 mg/kg-day  1.23618E-08 none  3.00000E-01 kg/day   7.74346E-02 ug/kg    2.00000E+02 day/yr  ID: BSHRMP  Name: brown shrimp                                                  
+   Fish_2            1.06367E-08 mg/kg-day  5.06511E-08 none  3.00000E-01 kg/day   3.17281E-01 ug/kg    2.00000E+02 day/yr  ID: OCTOPI  Name: octopus                                                       
+   Fish_3            0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+ 
+Dose and hazard quotient increments - inhalation pathway for (hazardous) ACNAPE   [Inhalation rate (m^3/day) is  2.30000E+01]
+   Pathway                    Dose                   Hazard Quotient   Concentration        Exposure Time       Exposure Frequency   Loading or Volatile
+   -------------------------- ---------------------- ----------------- -------------------  ------------------- -------------------- ------------------- 
+   Inhalation - Soil           0.00000E+00 mg/kg-day  0.00000E+00 none  5.55802E-13 ug/m^3   2.00000E+02 day/yr  0.00000E+00 hr/day  5.00000E-08 kg/m^3
+   Inhalation - Seep water     0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  1.00000E-01 L/m^3
+   Inhalation - Surface water  0.00000E+00 mg/kg-day  0.00000E+00 none  1.10000E-05 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  1.00000E-01 L/m^3
+   Inhalation - Shower water   1.33866E-13 mg/kg-day  2.23110E-12 none  5.00000E-06 ug/m^3   2.00000E+02 day/yr  2.50000E-01 hr/day  1.00000E-02 L/m^3
+   Inhalation - Sweat lodge    0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Air concent.   8.56743E-10 mg/kg-day  1.42790E-08 none  4.00000E-03 ug/m^3   2.00000E+02 day/yr  2.00000E+00 hr/day
+ 
+Dose and hazard quotient increments - (soil) dermal pathway for (hazardous) ACNAPE
+   Pathway               Dose                   Hazard Quotient  Adherence Factor         Absorption         Concentration      Surface area      Exposure Freq.
+   -------------------   ---------------------  ---------------- ------------------------ ------------------ ------------------ ----------------- -----------------
+   Dermal - Soil         8.88862E-17 mg/kg-day  0.00000E+00 none  2.75000E-01 mg/cm^2-day  1.30100E-01 none   1.11160E-05 ug/kg  2.00000E+03 cm^2  2.00000E+02 day/yr
+   Dermal - Sediment     0.00000E+00 mg/kg-day  0.00000E+00 none  2.75000E-01 mg/cm^2-day  1.30100E-01 none   0.00000E+00 ug/kg  5.00000E+03 cm^2  0.00000E+00 day/yr
+ 
+Dose and hazard quotient increments - (water) dermal pathway for (hazardous) ACNAPE
+   Pathway               Dose                   Hazard Quotient  Permeability       Concentration      Surface area      Exposure Duration   Exposure Frequency
+   -------------------   ---------------------  ---------------- ------------------ ------------------ ----------------- ------------------- -------------------
+   Dermal - seep water   0.00000E+00 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  0.00000E+00 ug/L   2.00000E+04 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+   Dermal - swimming     1.22924E-15 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  1.10000E-04 ug/L   5.00000E+03 cm^2  2.00000E+00 hr/day  2.00000E+00 day/yr
+   Dermal - sweat lodge  0.00000E+00 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  0.00000E+00 ug/L   0.00000E+00 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+ 
+Summary of dose and hazard quotient increments for (hazardous) ACNAPE
+   Dose (mg/kg-day) Haz Quotient Percent (dose) Percent (HQ)   Pathway
+   ---------------- ------------ -------------- -------------- ----------------------
+    1.97927E-08      9.42507E-08  9.58230E+01    8.68190E+01   Food ingestion
+    2.48441E-14      1.18305E-13  1.20279E-04    1.08977E-04   Soil/sediment ingestion
+    5.58745E-12      2.66069E-11  2.70508E-02    2.45089E-02   Water ingestion
+    1.97983E-08      9.42775E-08  9.58502E+01    8.68436E+01   All ingestion
+    8.56876E-10      1.42813E-08  4.14843E+00    1.31552E+01   Inhalation
+    2.80691E-13      1.33662E-12  1.35892E-03    1.23123E-03   Dermal
+    2.06554E-08      1.08560E-07                               Total
+ 
+Reference dose factors for (hazardous) ACNAPE
+    2.10000E-01 : Ingestion  (mg(intake)/(kg(bodyweight) day))
+    6.00000E-02 : Inhalation (mg(intake)/(kg(bodyweight) day))
+
+Processing Location    : UP1    : "Upland New Location"
+Processing Analyte     : As     : "Arsenic (CASID 7440-38-2)"
+Processing realization : 1
+ 
+Dose and hazard quotient increments - ingestion pathway for (hazardous) As
+   Pathway           Dose                  Hazard Quotient   Ingestion            Concentration        Exposure Freq.       Food Definition
+   ----------------- --------------------- ----------------- -------------------- -------------------- -------------------  -------------------------------------------
+   Surface water     0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    3.00000E-01 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Ground water      1.00574E-07 mg/kg-day  3.35247E-04 none  2.00000E+00 L/day    9.00000E+00 ug/L     1.00000E+01 day/yr  ID: GWAT    Name: Groundwater concentrations                                    
+   Seep water        0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Soil (child)      0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   1.99976E-01 ug/kg    2.00000E+02 day/yr  Not consumed                                                                    
+   Soil (adult)      4.46942E-10 mg/kg-day  1.48981E-06 none  2.00000E-02 kg/day   1.99976E-01 ug/kg    2.00000E+02 day/yr  ID: SOGW    Name: Groundwater irrigated upland soil concentrations              
+   Sediment (child)  0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Sediment (adult)  0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Leafy Vegetables  1.98067E-07 mg/kg-day  6.60222E-04 none  1.00000E-01 kg/day   1.77242E+01 ug/kg    2.00000E+02 day/yr  ID: UFUNGI  Name: fungi                                                         
+   Root Vegetables   0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Meat              0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Milk              0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Bird              1.22695E-07 mg/kg-day  4.08983E-04 none  1.20000E-01 kg/day   9.14960E+00 ug/kg    2.00000E+02 day/yr  ID: UBIRD   Name: Bird/poultry                                                  
+   Fruit             0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Grain             0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Eggs              2.04492E-07 mg/kg-day  6.81639E-04 none  1.00000E-01 kg/day   1.82992E+01 ug/kg    2.00000E+02 day/yr  ID: UEGG    Name: Egg                                                           
+   Fish              2.88622E-06 mg/kg-day  9.62073E-03 none  3.00000E-01 kg/day   8.60923E+01 ug/kg    2.00000E+02 day/yr  ID: BSHRMP  Name: brown shrimp                                                  
+   Fish_2            2.35476E-07 mg/kg-day  7.84918E-04 none  3.00000E-01 kg/day   7.02394E+00 ug/kg    2.00000E+02 day/yr  ID: OCTOPI  Name: octopus                                                       
+   Fish_3            0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+ 
+Dose and hazard quotient increments - inhalation pathway for (hazardous) As   [Inhalation rate (m^3/day) is  2.30000E+01]
+   Pathway                    Dose                   Hazard Quotient   Concentration        Exposure Time       Exposure Frequency   Loading or Volatile
+   -------------------------- ---------------------- ----------------- -------------------  ------------------- -------------------- ------------------- 
+   Inhalation - Soil           0.00000E+00 mg/kg-day  0.00000E+00 none  9.99878E-09 ug/m^3   2.00000E+02 day/yr  0.00000E+00 hr/day  5.00000E-08 kg/m^3
+   Inhalation - Seep water     0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Surface water  0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Shower water   2.40959E-09 mg/kg-day  8.03196E-06 none  9.00000E-02 ug/m^3   2.00000E+02 day/yr  2.50000E-01 hr/day  1.00000E-02 L/m^3
+   Inhalation - Sweat lodge    0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Air concent.   2.14186E-10 mg/kg-day  7.13952E-07 none  1.00000E-03 ug/m^3   2.00000E+02 day/yr  2.00000E+00 hr/day
+ 
+Dose and hazard quotient increments - (soil) dermal pathway for (hazardous) As
+   Pathway               Dose                   Hazard Quotient  Adherence Factor         Absorption         Concentration      Surface area      Exposure Freq.
+   -------------------   ---------------------  ---------------- ------------------------ ------------------ ------------------ ----------------- -----------------
+   Dermal - Soil         1.47491E-14 mg/kg-day  0.00000E+00 none  2.75000E-01 mg/cm^2-day  1.20000E-03 none   1.99976E-01 ug/kg  2.00000E+03 cm^2  2.00000E+02 day/yr
+   Dermal - Sediment     0.00000E+00 mg/kg-day  0.00000E+00 none  2.75000E-01 mg/cm^2-day  1.20000E-03 none   0.00000E+00 ug/kg  5.00000E+03 cm^2  0.00000E+00 day/yr
+ 
+Dose and hazard quotient increments - (water) dermal pathway for (hazardous) As
+   Pathway               Dose                   Hazard Quotient  Permeability       Concentration      Surface area      Exposure Duration   Exposure Frequency
+   -------------------   ---------------------  ---------------- ------------------ ------------------ ----------------- ------------------- -------------------
+   Dermal - seep water   0.00000E+00 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  0.00000E+00 ug/L   2.00000E+04 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+   Dermal - swimming     3.35247E-12 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  3.00000E-01 ug/L   5.00000E+03 cm^2  2.00000E+00 hr/day  2.00000E+00 day/yr
+   Dermal - sweat lodge  0.00000E+00 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  0.00000E+00 ug/L   0.00000E+00 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+ 
+Summary of dose and hazard quotient increments for (hazardous) As
+   Dose (mg/kg-day) Haz Quotient Percent (dose) Percent (HQ)   Pathway
+   ---------------- ------------ -------------- -------------- ----------------------
+    3.64695E-06      1.21565E-02  9.71063E+01    9.71063E+01   Food ingestion
+    4.46942E-10      1.48981E-06  1.19006E-02    1.19006E-02   Soil/sediment ingestion
+    1.00574E-07      3.35247E-04  2.67796E+00    2.67796E+00   Water ingestion
+    3.74797E-06      1.24932E-02  9.97962E+01    9.97962E+01   All ingestion
+    2.62377E-09      8.74591E-06  6.98625E-02    6.98625E-02   Inhalation
+    5.03207E-09      1.67736E-05  1.33988E-01    1.33988E-01   Dermal
+    3.75563E-06      1.25188E-02                               Total
+ 
+Reference dose factors for (hazardous) As
+    3.00000E-04 : Ingestion  (mg(intake)/(kg(bodyweight) day))
+    3.00000E-04 : Inhalation (mg(intake)/(kg(bodyweight) day))
+
+Processing Location    : UP1    : "Upland New Location"
+Processing Analyte     : Hg     : "Mercury (CASID 7439-97-6)"
+Processing realization : 1
+ 
+Dose and hazard quotient increments - ingestion pathway for (hazardous) Hg
+   Pathway           Dose                  Hazard Quotient   Ingestion            Concentration        Exposure Freq.       Food Definition
+   ----------------- --------------------- ----------------- -------------------- -------------------- -------------------  -------------------------------------------
+   Surface water     0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    2.40000E-02 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Ground water      3.35247E-09 mg/kg-day  1.11749E-05 none  2.00000E+00 L/day    3.00000E-01 ug/L     1.00000E+01 day/yr  ID: GWAT    Name: Groundwater concentrations                                    
+   Seep water        0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Soil (child)      0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   8.27842E-03 ug/kg    2.00000E+02 day/yr  Not consumed                                                                    
+   Soil (adult)      1.85021E-11 mg/kg-day  6.16737E-08 none  2.00000E-02 kg/day   8.27842E-03 ug/kg    2.00000E+02 day/yr  ID: SOGW    Name: Groundwater irrigated upland soil concentrations              
+   Sediment (child)  0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Sediment (adult)  0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Leafy Vegetables  6.65378E-09 mg/kg-day  2.21793E-05 none  1.00000E-01 kg/day   5.95422E-01 ug/kg    2.00000E+02 day/yr  ID: UFUNGI  Name: fungi                                                         
+   Root Vegetables   0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Meat              0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Milk              0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Bird              2.76824E-07 mg/kg-day  9.22748E-04 none  1.20000E-01 kg/day   2.06433E+01 ug/kg    2.00000E+02 day/yr  ID: UBIRD   Name: Bird/poultry                                                  
+   Fruit             0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Grain             0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Eggs              2.30687E-06 mg/kg-day  7.68956E-03 none  1.00000E-01 kg/day   2.06433E+02 ug/kg    2.00000E+02 day/yr  ID: UEGG    Name: Egg                                                           
+   Fish              1.10551E-05 mg/kg-day  3.68503E-02 none  3.00000E-01 kg/day   3.29760E+02 ug/kg    2.00000E+02 day/yr  ID: BSHRMP  Name: brown shrimp                                                  
+   Fish_2            2.16274E-06 mg/kg-day  7.20914E-03 none  3.00000E-01 kg/day   6.45119E+01 ug/kg    2.00000E+02 day/yr  ID: OCTOPI  Name: octopus                                                       
+   Fish_3            0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+ 
+Dose and hazard quotient increments - inhalation pathway for (hazardous) Hg   [Inhalation rate (m^3/day) is  2.30000E+01]
+   Pathway                    Dose                   Hazard Quotient   Concentration        Exposure Time       Exposure Frequency   Loading or Volatile
+   -------------------------- ---------------------- ----------------- -------------------  ------------------- -------------------- ------------------- 
+   Inhalation - Soil           0.00000E+00 mg/kg-day  0.00000E+00 none  4.13921E-10 ug/m^3   2.00000E+02 day/yr  0.00000E+00 hr/day  5.00000E-08 kg/m^3
+   Inhalation - Seep water     0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  1.00000E-01 L/m^3
+   Inhalation - Surface water  0.00000E+00 mg/kg-day  0.00000E+00 none  2.40000E-03 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  1.00000E-01 L/m^3
+   Inhalation - Shower water   8.03196E-11 mg/kg-day  9.33949E-07 none  3.00000E-03 ug/m^3   2.00000E+02 day/yr  2.50000E-01 hr/day  1.00000E-02 L/m^3
+   Inhalation - Sweat lodge    0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Air concent.   6.42557E-07 mg/kg-day  7.47159E-03 none  3.00000E+00 ug/m^3   2.00000E+02 day/yr  2.00000E+00 hr/day
+ 
+Dose and hazard quotient increments - (soil) dermal pathway for (hazardous) Hg
+   Pathway               Dose                   Hazard Quotient  Adherence Factor         Absorption         Concentration      Surface area      Exposure Freq.
+   -------------------   ---------------------  ---------------- ------------------------ ------------------ ------------------ ----------------- -----------------
+   Dermal - Soil         5.59689E-16 mg/kg-day  0.00000E+00 none  2.75000E-01 mg/cm^2-day  1.10000E-03 none   8.27842E-03 ug/kg  2.00000E+03 cm^2  2.00000E+02 day/yr
+   Dermal - Sediment     0.00000E+00 mg/kg-day  0.00000E+00 none  2.75000E-01 mg/cm^2-day  1.10000E-03 none   0.00000E+00 ug/kg  5.00000E+03 cm^2  0.00000E+00 day/yr
+ 
+Dose and hazard quotient increments - (water) dermal pathway for (hazardous) Hg
+   Pathway               Dose                   Hazard Quotient  Permeability       Concentration      Surface area      Exposure Duration   Exposure Frequency
+   -------------------   ---------------------  ---------------- ------------------ ------------------ ----------------- ------------------- -------------------
+   Dermal - seep water   0.00000E+00 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  0.00000E+00 ug/L   2.00000E+04 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+   Dermal - swimming     2.68198E-13 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  2.40000E-02 ug/L   5.00000E+03 cm^2  2.00000E+00 hr/day  2.00000E+00 day/yr
+   Dermal - sweat lodge  0.00000E+00 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  0.00000E+00 ug/L   0.00000E+00 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+ 
+Summary of dose and hazard quotient increments for (hazardous) Hg
+   Dose (mg/kg-day) Haz Quotient Percent (dose) Percent (HQ)   Pathway
+   ---------------- ------------ -------------- -------------- ----------------------
+    1.58082E-05      5.26939E-02  9.60729E+01    8.75631E+01   Food ingestion
+    1.85021E-11      6.16737E-08  1.12445E-04    1.02485E-04   Soil/sediment ingestion
+    3.35247E-09      1.11749E-05  2.03744E-02    1.85697E-02   Water ingestion
+    1.58116E-05      5.27052E-02  9.60934E+01    8.75818E+01   All ingestion
+    6.42637E-07      7.47252E-03  3.90557E+00    1.24173E+01   Inhalation
+    1.67892E-10      5.59641E-07  1.02035E-03    9.29972E-04   Dermal
+    1.64544E-05      6.01783E-02                               Total
+ 
+Reference dose factors for (hazardous) Hg
+    3.00000E-04 : Ingestion  (mg(intake)/(kg(bodyweight) day))
+    8.60000E-05 : Inhalation (mg(intake)/(kg(bodyweight) day))
+
+Processing Location    : UP1    : "Upland New Location"
+Processing Analyte     : Zn     : "Zinc (CASID 7440-66-6)"
+Processing realization : 1
+ 
+Dose and hazard quotient increments - ingestion pathway for (hazardous) Zn
+   Pathway           Dose                  Hazard Quotient   Ingestion            Concentration        Exposure Freq.       Food Definition
+   ----------------- --------------------- ----------------- -------------------- -------------------- -------------------  -------------------------------------------
+   Surface water     0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    5.04000E-02 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Ground water      7.04019E-09 mg/kg-day  0.00000E+00 none  2.00000E+00 L/day    6.30000E-01 ug/L     1.00000E+01 day/yr  ID: GWAT    Name: Groundwater concentrations                                    
+   Seep water        0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Soil (child)      0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   1.40022E-02 ug/kg    2.00000E+02 day/yr  Not consumed                                                                    
+   Soil (adult)      3.12946E-11 mg/kg-day  0.00000E+00 none  2.00000E-02 kg/day   1.40022E-02 ug/kg    2.00000E+02 day/yr  ID: SOGW    Name: Groundwater irrigated upland soil concentrations              
+   Sediment (child)  0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Sediment (adult)  0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Leafy Vegetables  1.38648E-08 mg/kg-day  0.00000E+00 none  1.00000E-01 kg/day   1.24071E+00 ug/kg    2.00000E+02 day/yr  ID: UFUNGI  Name: fungi                                                         
+   Root Vegetables   0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Meat              0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Milk              0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 L/day    0.00000E+00 ug/L     0.00000E+00 day/yr  Not consumed                                                                    
+   Bird              3.70782E-07 mg/kg-day  0.00000E+00 none  1.20000E-01 kg/day   2.76499E+01 ug/kg    2.00000E+02 day/yr  ID: UBIRD   Name: Bird/poultry                                                  
+   Fruit             0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Grain             0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+   Eggs              1.23594E-05 mg/kg-day  0.00000E+00 none  1.00000E-01 kg/day   1.10600E+03 ug/kg    2.00000E+02 day/yr  ID: UEGG    Name: Egg                                                           
+   Fish              4.45821E-06 mg/kg-day  0.00000E+00 none  3.00000E-01 kg/day   1.32983E+02 ug/kg    2.00000E+02 day/yr  ID: BSHRMP  Name: brown shrimp                                                  
+   Fish_2            7.14516E-06 mg/kg-day  0.00000E+00 none  3.00000E-01 kg/day   2.13131E+02 ug/kg    2.00000E+02 day/yr  ID: OCTOPI  Name: octopus                                                       
+   Fish_3            0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 kg/day   0.00000E+00 ug/kg    0.00000E+00 day/yr  Not consumed                                                                    
+ 
+Dose and hazard quotient increments - inhalation pathway for (hazardous) Zn   [Inhalation rate (m^3/day) is  2.30000E+01]
+   Pathway                    Dose                   Hazard Quotient   Concentration        Exposure Time       Exposure Frequency   Loading or Volatile
+   -------------------------- ---------------------- ----------------- -------------------  ------------------- -------------------- ------------------- 
+   Inhalation - Soil           0.00000E+00 mg/kg-day  0.00000E+00 none  7.00109E-10 ug/m^3   2.00000E+02 day/yr  0.00000E+00 hr/day  5.00000E-08 kg/m^3
+   Inhalation - Seep water     0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Surface water  0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Shower water   1.68671E-10 mg/kg-day  1.68671E-03 none  6.30000E-03 ug/m^3   2.00000E+02 day/yr  2.50000E-01 hr/day  1.00000E-02 L/m^3
+   Inhalation - Sweat lodge    0.00000E+00 mg/kg-day  0.00000E+00 none  0.00000E+00 ug/m^3   0.00000E+00 day/yr  0.00000E+00 hr/day  0.00000E+00 L/m^3
+   Inhalation - Air concent.   1.34937E-06 mg/kg-day  1.34937E+01 none  6.30000E+00 ug/m^3   2.00000E+02 day/yr  2.00000E+00 hr/day
+ 
+Dose and hazard quotient increments - (soil) dermal pathway for (hazardous) Zn
+   Pathway               Dose                   Hazard Quotient  Adherence Factor         Absorption         Concentration      Surface area      Exposure Freq.
+   -------------------   ---------------------  ---------------- ------------------------ ------------------ ------------------ ----------------- -----------------
+   Dermal - Soil         4.30301E-16 mg/kg-day  0.00000E+00 none  2.75000E-01 mg/cm^2-day  5.00000E-04 none   1.40022E-02 ug/kg  2.00000E+03 cm^2  2.00000E+02 day/yr
+   Dermal - Sediment     0.00000E+00 mg/kg-day  0.00000E+00 none  2.75000E-01 mg/cm^2-day  5.00000E-04 none   0.00000E+00 ug/kg  5.00000E+03 cm^2  0.00000E+00 day/yr
+ 
+Dose and hazard quotient increments - (water) dermal pathway for (hazardous) Zn
+   Pathway               Dose                   Hazard Quotient  Permeability       Concentration      Surface area      Exposure Duration   Exposure Frequency
+   -------------------   ---------------------  ---------------- ------------------ ------------------ ----------------- ------------------- -------------------
+   Dermal - seep water   0.00000E+00 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  0.00000E+00 ug/L   2.00000E+04 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+   Dermal - swimming     5.63215E-13 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  5.04000E-02 ug/L   5.00000E+03 cm^2  2.00000E+00 hr/day  2.00000E+00 day/yr
+   Dermal - sweat lodge  0.00000E+00 mg/kg-day  0.00000E+00 none  1.00000E-03 cm/hr  0.00000E+00 ug/L   0.00000E+00 cm^2  0.00000E+00 hr/day  0.00000E+00 day/yr
+ 
+Summary of dose and hazard quotient increments for (hazardous) Zn
+   Dose (mg/kg-day) Haz Quotient Percent (dose) Percent (HQ)   Pathway
+   ---------------- ------------ -------------- -------------- ----------------------
+    2.43475E-05      0.00000E+00  9.47209E+01    0.00000E+00   Food ingestion
+    3.12946E-11      0.00000E+00  1.21748E-04    0.00000E+00   Soil/sediment ingestion
+    7.04019E-09      0.00000E+00  2.73890E-02    0.00000E+00   Water ingestion
+    2.43545E-05      0.00000E+00  9.47484E+01    0.00000E+00   All ingestion
+    1.34954E-06      1.34954E+01  5.25022E+00    1.00000E+02   Inhalation
+    3.52573E-10      0.00000E+00  1.37164E-03    0.00000E+00   Dermal
+    2.57044E-05      1.34954E+01                               Total
+ 
+Reference dose factors for (hazardous) Zn
+No hazard quotient calculations for ingestion are requested
+    1.00000E-07 : Inhalation (mg(intake)/(kg(bodyweight) day))
+
+Ending Problem Execution
+    Date: 08/23/2012
+    Time: 13:58:30.289
+
+Message originating in routine HUMAN
+Message: Normal Termination

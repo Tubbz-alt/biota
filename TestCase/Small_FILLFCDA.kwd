@@ -1,0 +1,80 @@
+!==================================================================================================!
+!
+! Purpose:
+!   Insert concentrations in food product binary files
+!
+! History:
+!   Name Here : 16 Jul 2012 : Initial file prepared
+!
+!==================================================================================================!
+
+!--------------------------------------| Simulation Control |--------------------------------------!
+!
+! Simulation Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Report file name (first keyword)
+REPORT "Small_FILLFCDA.rpt"
+!
+!- Title for labeling purposes
+TITLE  "Demonstrate TIIA codes with a small data set - FILLFCDA Keywords"
+!
+!- User name for labeling purposes
+USER "Paul W. Eslinger"
+!
+!- Name of controlling ESD keyword file
+FILE ESD "Small_ESD.kwd"
+!
+!- Number of realizations to run
+REALIZAT 1
+!
+!- Random Seed for Stochastic routines
+SEED 4453190
+!
+!- Verbose outputs to the report file for stochastic data definitions
+!VERBOSE DEFINITI STATISTI
+!
+!- Debug outputs
+!DEBUG
+
+!-------------------------------| File Definitions |------------------------------!
+!
+! FOODS Keyword
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Specific path and files for food files
+FOODS MAP     = "Small_Foods_map.txt"
+      PATH    = ".\Foods\"
+
+!---------------------------| Concentration Definitions |---------------------------!
+!
+! DATA Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_EnviroDate.xlsx, sheet "FILLFCDA"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+! Example riparian locations below (aquatic locations use same structure)
+DATA LOCATION="RRD1-1" ANALYTE="As" YEAR=2012 SPECIES="TURTLE" VALUES=5.1444100E+00
+DATA LOCATION="RRD2-1" ANALYTE="As" YEAR=2012 SPECIES="TURTLE" VALUES=1.1141200E+01
+!
+! Example upland locations below
+DATA LOCATION="UP1" ANALYTE="Zn" YEAR=2012 SPECIES="UEGG" SOIL="SODR" VALUES=1.0645600E+03
+DATA LOCATION="UP1" ANALYTE="Zn" YEAR=2012 SPECIES="UEGG" SOIL="SOGW" VALUES=1.1060000E+03
+DATA LOCATION="UP1" ANALYTE="Zn" YEAR=2012 SPECIES="UEGG" SOIL="SOSW" VALUES=1.0645600E+03
+
+!-------------------------------------|  End of Keyword File  |--------------------------------------!
+!
+END

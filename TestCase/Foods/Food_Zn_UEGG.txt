@@ -1,0 +1,7 @@
+File: .\Foods\Food_Zn_UEGG.fod
+        1 Zn
+        2 UEGG
+        3 UPLAND
+        4    2012 UP1     1.06456E+03
+        5    2012 UP1     1.10600E+03
+        6    2012 UP1     1.06456E+03

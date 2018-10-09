@@ -1,0 +1,13 @@
+"DILUTE"
+"Demonstrate TIIA codes with a small data set"
+"ECDA"
+"4.00.001"
+"11 Jul 2012"
+"20120823135826"
+"Paul W. Eslinger"
+4
+1
+1,"DF5m","none", 5.05428E-01
+2,"DF20m","none", 7.11417E+00
+3,"DF5mD","none", 4.70000E-01
+4,"DF20mD","none", 6.30000E+00

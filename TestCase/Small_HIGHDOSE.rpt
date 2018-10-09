@@ -1,0 +1,98 @@
+
+
+        H     H IIIIIII  GGGGG  H     H DDDDDD   OOOOO   SSSSS  EEEEEEE
+        H     H    I    G     G H     H D     D O     O S     S E      
+        H     H    I    G       H     H D     D O     O  S      E      
+        HHHHHHH    I    G   GGG HHHHHHH D     D O     O   SSS   EEEEE  
+        H     H    I    G     G H     H D     D O     O      S  E      
+        H     H    I    G     G H     H D     D O     O S     S E      
+        H     H IIIIIII  GGGGG  H     H DDDDDD   OOOOO   SSSSS  EEEEEEE
+
+
+                           HighDose   Version 4.00.001
+                             Modified on  9 Jul 2012 
+
+          Current Run ID = 20120823135828   User Name = Paul W. Eslinger
+                 System Date = 08-23-2012   System Time = 13:58:28
+                 ------------------------------------------------
+                 Toolkit for Integrated Impact Assessments (TIIA)
+                 Copyright (c) Battelle Memorial Institute, 2012.
+                               All Rights Reserved.              
+                 ------------------------------------------------
+
+                The software used to generate this output has been
+               developed under Battelle software control procedures.
+
+Eslinger, P.W. and T.B. Miley.   PNWD-4357, Rev. 1.  July 2012.
+User Instructions for the Computer Codes of the Toolkit for Integrated Impact
+Assessments (TIIA), Version 1. Battelle Memorial Institute, Columbus, Ohio 43201
+
+
+                             Review Signatures
+
+Input Prepared By: ______________________________       Date: _______________
+
+Input Reviewed By: ______________________________       Date: _______________
+
+
+======================== Echo of the Problem Definition ========================
+
+Title: Demonstrate TIIA codes with a small data set - HIGHDOSE Keywords                                                                                                                                        
+User:  Paul W. Eslinger
+
+File Name for Input Keyword Data
+File: Small_HIGHDOSE.kwd
+
+File Name for the Report File
+File: Small_HIGHDOSE.rpt
+
+File Name for the Species Data
+File: Small_Species.txt
+
+File Name for the ECEM Data
+File: .\Ecem\Small_det.csv
+
+File Name for the Results Data
+File: .\Ecem\Small_HIGHDOSE.csv
+
+Species information listed in input order
+Index Type      ID      Long Name
+----- ----   --------   ------------------------------------------------
+   1  "QP" : "DETFAC" : "Detritus FAC Camarón"
+   2  "QP" : "MICFIT" : "Microfitas bentonicas"
+   3  "QA" : "BSHRMP" : "brown shrimp"
+   4  "QA" : "OCTOPI" : "octopus"
+   5  "TP" : "RFUNGI" : "fungi"
+   6  "TP" : "UFUNGI" : "fungi"
+   7  "TA" : "GULPEL" : "gull/pelican"
+   8  "TA" : "TURTLE" : "turtle"
+   9  "TA" : "RBIRD " : "Bird/Poultry"
+  10  "TA" : "RCOYOT" : "Coyote"
+  11  "TA" : "UBIRD " : "Bird/Poultry"
+  12  "TA" : "UCOYOT" : "Coyote"
+  13  "TA" : "UEGG  " : "Chicken Egg"
+A total of 13 species have been requested.
+
+The solution ID requested is "BURDEN"
+
+The analyte ID requested is "As"
+
+The soil type ID requested is "SORP"
+
+Location information
+Index    ID   
+----- --------
+   1  "RRD1-1"
+   2  "RRD2-1"
+A total of 2 locations have been requested.
+
+Time information
+Index  Year  
+----- -----
+   1    2012
+A total of 1 times have been requested.
+
+Realization 1 is requested.
+
+Message originating in routine HighDose
+Message: Normal Termination

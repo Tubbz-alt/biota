@@ -1,0 +1,484 @@
+
+
+
+                        SSS     OOOOO   IIIIIII  L      
+                      S    SS  O     O     I     L      
+                       S    S  O     O     I     L      
+                        SS     O     O     I     L      
+                      S   S    O     O     I     L      
+                      SS   S   O     O     I     L      
+                        SSS     OOOOO   IIIIIII  LLLLLLL
+
+
+                                Soil 4.00.001
+                        Last Modified on  9 Jul 2012
+
+          Current Run ID = 20120823135826   User Name = Paul W. Eslinger
+                 System Date = 08/23/2012   System Time = 13:58:26
+                 ------------------------------------------------
+                 Toolkit for Integrated Impact Assessments (TIIA)
+                 Copyright (c) Battelle Memorial Institute, 2012.
+                               All Rights Reserved.              
+                 ------------------------------------------------
+
+                The software used to generate this output has been
+               developed under Battelle software control procedures.
+
+Eslinger, P.W. and T.B. Miley.   PNWD-4357, Rev. 1.  July 2012.
+User Instructions for the Computer Codes of the Toolkit for Integrated Impact
+Assessments (TIIA), Version 1. Battelle Memorial Institute, Columbus, Ohio 43201
+
+
+                             Review Signatures
+
+Input Prepared By: ______________________________       Date: _______________
+
+Input Reviewed By: ______________________________       Date: _______________
+
+
+======================== Echo of the Problem Definition ========================
+
+Title: Demonstrate TIIA codes with a small data set - SOIL Keywords                                                                                                                                            
+User:  Paul W. Eslinger
+   1 Realizations identified in the ESD keyword file
+   1 Realizations utilized in this run
+
+A map of realization activations (true/false) is:
+   1-  1  T
+
+Year definitionsd
+     2012 : Start year for the simulation
+     2012 : Stop  year for the simulation
+     2012 : Site closure year for the simulation
+     2012 : Start year for irrigation
+
+File Name for SOIL Input Keyword Data
+File: Small_SOIL.kwd
+
+File Name for ESD Input Keyword Data
+File: Small_ESD.kwd
+
+File Name for Infiltration Data
+File: .\ecda\Small_Infilt.txt
+
+File Name for KDSOIL Data
+File: .\ecda\Small_KdSoil.dat
+
+File Name for Concentration Map File
+File: .\ecda\Small_I_ECDA.txt
+
+File Name for Media Concentrations: Analyte ID="ACNAPE"
+File: .\ecda\Small_ACNAPE.bin
+
+File Name for Media Concentrations: Analyte ID="As"
+File: .\ecda\Small_As.bin
+
+File Name for Media Concentrations: Analyte ID="Hg"
+File: .\ecda\Small_Hg.bin
+
+File Name for Media Concentrations: Analyte ID="Zn"
+File: .\ecda\Small_Zn.bin
+
+Analye Information for 4 analytes.
+     1 : ACNAPE : Acenaphthene (CASID 83-32-9)                                            
+     2 : As     : Arsenic (CASID 7440-38-2)                                               
+     3 : Hg     : Mercury (CASID 7439-97-6)                                               
+     4 : Zn     : Zinc (CASID 7440-66-6)                                                  
+A total of 4 analytes have been requested.
+  
+Number of times is 1
+  Index   Year
+      1   2012
+  
+Total number of locations defined in the ESD keyword file are 5
+Activated locations for upland soil conputations are shown below
+  Index      ID      SW Irrig   Name
+  -----   --------   --------   ------------------------------------------------
+      5 : "UP1   " : "QRD1-1" : "Upland New Location"
+
+Soil-Water KD and Dilution Factor Mapping
+  Location         Analyte       KDSOIL ID String        INFILT ID String
+  ---------------  ------------  ----------------------  ----------------------
+      5: "UP1   "   1: "ACNAPE"  "KdACNA              "  "Inf1D               "
+      5: "UP1   "   2: "As    "  "KdAs                "  "Inf1D               "
+      5: "UP1   "   3: "Hg    "  "KdHg                "  "Inf1D               "
+      5: "UP1   "   4: "Zn    "  "KdZn                "  "Inf1D               "
+
+======================== End of the Problem Definition =========================
+
+Header information from the map file
+   ECDA_PTITLE = Demonstrate TIIA codes with a small data set
+   ECDA_PRGNAM = ECDA
+   ECDA_PRGVER = 4.00.001
+   ECDA_PRGDAT = 11 Jul 2012
+   ECDA_USRNAM = Paul W. Eslinger
+   ECDA_CRUNID = 20120823135826
+   ECDA_BLOCK  = 22
+   ECDA_RECLEN = 18
+   ECDA_NREAL  = 1
+ Time: 13:58:27 Processing concentrations for ACNAPE
+
+Message originating in routine PROCESS_SOIL
+Message: Entering subroutine for analyte "ACNAPE"
+         On 08/23/2012 at 13:58:27.138
+
+Concentrations passed to the soil model
+    ILOC             = 5
+    ESD_LOC(ILOC)%ID = UP1   
+    IANA             = 1
+    ESD_ANA(IANA)&ID = ACNAPE
+
+ACNAPE - AIRD Deposition rate from air (Kg/m^2/day)
+ 2012  0.00000E+00
+
+ACNAPE - GWAT Groundwater concentration (Kg/m^3)
+ 2012  5.00000E-10
+
+ACNAPE - SWAT Surface water concentration (Kg/m^3)
+ 2012  1.10000E-10
+
+Entering COMPUTE_SOIL
+    Location index = 5 : "UP1   " : "Upland New Location"
+    Analyte index  = 1 : "ACNAPE" : "Acenaphthene (CASID 83-32-9)"
+    Decay Factor   =  0.00000E+00
+
+Calculating the divisor and other information
+    SEASON_START     = 121
+    SEASON_END       = 256
+    IRIG_RATE        =  5.00000E-01
+    SOIL_DEPTH       =  1.50000E+01
+    SOIL_DENSITY     =  1.50000E+00
+    THETA_IRG        =  5.00000E-01
+    THETA_DRY        =  2.00000E-01
+    FY_BEFORE        =  3.28767E-01
+    FY_DURING        =  3.72603E-01
+    FY_AFTER         =  2.98630E-01
+
+Time loop, index = 1 of 1 year = 2012
+Delta deposition and concentrations by realization
+   Index    Air Del      Air Ann       GW Del       GW Ann       SW Del       SW Ann       INFILT   IN_UNITS KD           KD_UNITS 
+   ----- ------------ ------------ ------------ ------------ ------------ ------------ ------------ -------- ------------ ---------
+       1  0.00000E+00  0.00000E+00  0.00000E+00  5.00000E-10  0.00000E+00  1.10000E-10  1.50000E-01 cm/yr     5.75000E+00 L/g
+
+Looping years calculation
+    ITIM               = 1
+    ESD_TIM(ITIM)%TIME = 2012
+    IYRS_1             = 2012
+    IYRS_2             = 2012
+Media, IYRS, IDAY, IREL, ANNUAL_AIR, ANNUAL_OTHER, LEACH RATE, MASS, AOVERL
+
+Realization      = 1
+Analyte Index    = 1
+Analyte ID       = ACNAPE
+Location ID      = UP1   
+KD               =  5.75000E+00
+Theta_Dry        =  2.00000E-01
+LAMBDA_LEACH_DRY =  1.15939E-06
+Theta_IRG        =  5.00000E-01
+LAMBDA_LEACH_WET =  3.75227E-06
+SODR,2012,365,1, 0.00000E+00, 0.00000E+00, 1.15939E-06, 0.00000E+00, 0.00000E+00,All year
+SOGW,2012,121,1, 0.00000E+00, 5.00000E-10, 1.15939E-06, 0.00000E+00, 0.00000E+00,Before Growing Season
+SOGW,2012,256,1, 0.00000E+00, 5.00000E-10, 3.75227E-06, 2.50111E-12, 1.78813E-06,End of Growing Season
+SOGW,2012,365,1, 0.00000E+00, 5.00000E-10, 1.15939E-06, 2.50111E-12, 0.00000E+00,End of year
+SOSW,2012,121,1, 0.00000E+00, 1.10000E-10, 1.15939E-06, 0.00000E+00, 0.00000E+00,Before Growing Season
+SOSW,2012,256,1, 0.00000E+00, 1.10000E-10, 3.75227E-06, 5.40012E-13, 3.93389E-07,End of Growing Season
+SOSW,2012,365,1, 0.00000E+00, 1.10000E-10, 1.15939E-06, 5.40012E-13, 0.00000E+00,End of year
+
+Location, Analyte, Year, Solution, Concentration by Realization
+UP1   ,ACNAPE,2012,SODR, 0.00000E+00
+UP1   ,ACNAPE,2012,SOSW, 2.40006E-15
+UP1   ,ACNAPE,2012,SOGW, 1.11160E-14
+
+Concentrations computed by the soil model
+    ILOC             = 5
+    ESD_LOC(ILOC)%ID = UP1   
+    IANA             = 1
+    ESD_ANA(IANA)&ID = ACNAPE
+
+ACNAPE - SODR Dry soil (no irrigation) concentration
+ Year Units  Value
+ 2012 Kg/Kg  0.00000E+00
+
+ACNAPE - SOGW Irrigated (groundwater) soil concentration
+ Year Units  Value
+ 2012 Kg/Kg  1.11160E-14
+
+ACNAPE - SOSW Irrigated (surface water) soil concentration
+ Year Units  Value
+ 2012 Kg/Kg  2.40006E-15
+ Time: 13:58:27 Processing concentrations for As
+
+Message originating in routine PROCESS_SOIL
+Message: Entering subroutine for analyte "As"
+         On 08/23/2012 at 13:58:27.138
+
+Concentrations passed to the soil model
+    ILOC             = 5
+    ESD_LOC(ILOC)%ID = UP1   
+    IANA             = 2
+    ESD_ANA(IANA)&ID = As    
+
+As - AIRD Deposition rate from air (Kg/m^2/day)
+ 2012  0.00000E+00
+
+As - GWAT Groundwater concentration (Kg/m^3)
+ 2012  9.00000E-06
+
+As - SWAT Surface water concentration (Kg/m^3)
+ 2012  3.00000E-07
+
+Entering COMPUTE_SOIL
+    Location index = 5 : "UP1   " : "Upland New Location"
+    Analyte index  = 2 : "As    " : "Arsenic (CASID 7440-38-2)"
+    Decay Factor   =  0.00000E+00
+
+Calculating the divisor and other information
+    SEASON_START     = 121
+    SEASON_END       = 256
+    IRIG_RATE        =  5.00000E-01
+    SOIL_DEPTH       =  1.50000E+01
+    SOIL_DENSITY     =  1.50000E+00
+    THETA_IRG        =  5.00000E-01
+    THETA_DRY        =  2.00000E-01
+    FY_BEFORE        =  3.28767E-01
+    FY_DURING        =  3.72603E-01
+    FY_AFTER         =  2.98630E-01
+
+Time loop, index = 1 of 1 year = 2012
+Delta deposition and concentrations by realization
+   Index    Air Del      Air Ann       GW Del       GW Ann       SW Del       SW Ann       INFILT   IN_UNITS KD           KD_UNITS 
+   ----- ------------ ------------ ------------ ------------ ------------ ------------ ------------ -------- ------------ ---------
+       1  0.00000E+00  0.00000E+00  0.00000E+00  9.00000E-06  0.00000E+00  3.00000E-07  1.50000E-01 cm/yr     2.90000E-02 L/g
+
+Looping years calculation
+    ITIM               = 1
+    ESD_TIM(ITIM)%TIME = 2012
+    IYRS_1             = 2012
+    IYRS_2             = 2012
+Media, IYRS, IDAY, IREL, ANNUAL_AIR, ANNUAL_OTHER, LEACH RATE, MASS, AOVERL
+
+Realization      = 1
+Analyte Index    = 2
+Analyte ID       = As    
+Location ID      = UP1   
+KD               =  2.90000E-02
+Theta_Dry        =  2.00000E-01
+LAMBDA_LEACH_DRY =  2.28833E-04
+Theta_IRG        =  5.00000E-01
+LAMBDA_LEACH_WET =  7.35573E-04
+SODR,2012,365,1, 0.00000E+00, 0.00000E+00, 2.28833E-04, 0.00000E+00, 0.00000E+00,All year
+SOGW,2012,121,1, 0.00000E+00, 9.00000E-06, 2.28833E-04, 0.00000E+00, 0.00000E+00,Before Growing Season
+SOGW,2012,256,1, 0.00000E+00, 9.00000E-06, 7.35573E-04, 4.49945E-08, 1.64188E-04,End of Growing Season
+SOGW,2012,365,1, 0.00000E+00, 9.00000E-06, 2.28833E-04, 4.49914E-08, 0.00000E+00,End of year
+SOSW,2012,121,1, 0.00000E+00, 3.00000E-07, 2.28833E-04, 0.00000E+00, 0.00000E+00,Before Growing Season
+SOSW,2012,256,1, 0.00000E+00, 3.00000E-07, 7.35573E-04, 1.49976E-09, 5.47293E-06,End of Growing Season
+SOSW,2012,365,1, 0.00000E+00, 3.00000E-07, 2.28833E-04, 1.49965E-09, 0.00000E+00,End of year
+
+Location, Analyte, Year, Solution, Concentration by Realization
+UP1   ,As    ,2012,SODR, 0.00000E+00
+UP1   ,As    ,2012,SOSW, 6.66559E-12
+UP1   ,As    ,2012,SOGW, 1.99976E-10
+
+Concentrations computed by the soil model
+    ILOC             = 5
+    ESD_LOC(ILOC)%ID = UP1   
+    IANA             = 2
+    ESD_ANA(IANA)&ID = As    
+
+As - SODR Dry soil (no irrigation) concentration
+ Year Units  Value
+ 2012 Kg/Kg  0.00000E+00
+
+As - SOGW Irrigated (groundwater) soil concentration
+ Year Units  Value
+ 2012 Kg/Kg  1.99976E-10
+
+As - SOSW Irrigated (surface water) soil concentration
+ Year Units  Value
+ 2012 Kg/Kg  6.66559E-12
+ Time: 13:58:27 Processing concentrations for Hg
+
+Message originating in routine PROCESS_SOIL
+Message: Entering subroutine for analyte "Hg"
+         On 08/23/2012 at 13:58:27.153
+
+Concentrations passed to the soil model
+    ILOC             = 5
+    ESD_LOC(ILOC)%ID = UP1   
+    IANA             = 3
+    ESD_ANA(IANA)&ID = Hg    
+
+Hg - AIRD Deposition rate from air (Kg/m^2/day)
+ 2012  0.00000E+00
+
+Hg - GWAT Groundwater concentration (Kg/m^3)
+ 2012  3.00000E-07
+
+Hg - SWAT Surface water concentration (Kg/m^3)
+ 2012  2.40000E-08
+
+Entering COMPUTE_SOIL
+    Location index = 5 : "UP1   " : "Upland New Location"
+    Analyte index  = 3 : "Hg    " : "Mercury (CASID 7439-97-6)"
+    Decay Factor   =  0.00000E+00
+
+Calculating the divisor and other information
+    SEASON_START     = 121
+    SEASON_END       = 256
+    IRIG_RATE        =  5.00000E-01
+    SOIL_DEPTH       =  1.50000E+01
+    SOIL_DENSITY     =  1.50000E+00
+    THETA_IRG        =  5.00000E-01
+    THETA_DRY        =  2.00000E-01
+    FY_BEFORE        =  3.28767E-01
+    FY_DURING        =  3.72603E-01
+    FY_AFTER         =  2.98630E-01
+
+Time loop, index = 1 of 1 year = 2012
+Delta deposition and concentrations by realization
+   Index    Air Del      Air Ann       GW Del       GW Ann       SW Del       SW Ann       INFILT   IN_UNITS KD           KD_UNITS 
+   ----- ------------ ------------ ------------ ------------ ------------ ------------ ------------ -------- ------------ ---------
+       1  0.00000E+00  0.00000E+00  0.00000E+00  3.00000E-07  0.00000E+00  2.40000E-08  1.50000E-01 cm/yr     7.94328E+01 L/g
+
+Looping years calculation
+    ITIM               = 1
+    ESD_TIM(ITIM)%TIME = 2012
+    IYRS_1             = 2012
+    IYRS_2             = 2012
+Media, IYRS, IDAY, IREL, ANNUAL_AIR, ANNUAL_OTHER, LEACH RATE, MASS, AOVERL
+
+Realization      = 1
+Analyte Index    = 3
+Analyte ID       = Hg    
+Location ID      = UP1   
+KD               =  7.94328E+01
+Theta_Dry        =  2.00000E-01
+LAMBDA_LEACH_DRY =  8.39282E-08
+Theta_IRG        =  5.00000E-01
+LAMBDA_LEACH_WET =  2.71635E-07
+SODR,2012,365,1, 0.00000E+00, 0.00000E+00, 8.39282E-08, 0.00000E+00, 0.00000E+00,All year
+SOGW,2012,121,1, 0.00000E+00, 3.00000E-07, 8.39282E-08, 0.00000E+00, 0.00000E+00,Before Growing Season
+SOGW,2012,256,1, 0.00000E+00, 3.00000E-07, 2.71635E-07, 1.86265E-09, 1.48204E-02,End of Growing Season
+SOGW,2012,365,1, 0.00000E+00, 3.00000E-07, 8.39282E-08, 1.86265E-09, 0.00000E+00,End of year
+SOSW,2012,121,1, 0.00000E+00, 2.40000E-08, 8.39282E-08, 0.00000E+00, 0.00000E+00,Before Growing Season
+SOSW,2012,256,1, 0.00000E+00, 2.40000E-08, 2.71635E-07, 1.16415E-10, 1.18563E-03,End of Growing Season
+SOSW,2012,365,1, 0.00000E+00, 2.40000E-08, 8.39282E-08, 1.16415E-10, 0.00000E+00,End of year
+
+Location, Analyte, Year, Solution, Concentration by Realization
+UP1   ,Hg    ,2012,SODR, 0.00000E+00
+UP1   ,Hg    ,2012,SOSW, 5.17401E-13
+UP1   ,Hg    ,2012,SOGW, 8.27842E-12
+
+Concentrations computed by the soil model
+    ILOC             = 5
+    ESD_LOC(ILOC)%ID = UP1   
+    IANA             = 3
+    ESD_ANA(IANA)&ID = Hg    
+
+Hg - SODR Dry soil (no irrigation) concentration
+ Year Units  Value
+ 2012 Kg/Kg  0.00000E+00
+
+Hg - SOGW Irrigated (groundwater) soil concentration
+ Year Units  Value
+ 2012 Kg/Kg  8.27842E-12
+
+Hg - SOSW Irrigated (surface water) soil concentration
+ Year Units  Value
+ 2012 Kg/Kg  5.17401E-13
+ Time: 13:58:27 Processing concentrations for Zn
+
+Message originating in routine PROCESS_SOIL
+Message: Entering subroutine for analyte "Zn"
+         On 08/23/2012 at 13:58:27.153
+
+Concentrations passed to the soil model
+    ILOC             = 5
+    ESD_LOC(ILOC)%ID = UP1   
+    IANA             = 4
+    ESD_ANA(IANA)&ID = Zn    
+
+Zn - AIRD Deposition rate from air (Kg/m^2/day)
+ 2012  0.00000E+00
+
+Zn - GWAT Groundwater concentration (Kg/m^3)
+ 2012  6.30000E-07
+
+Zn - SWAT Surface water concentration (Kg/m^3)
+ 2012  5.04000E-08
+
+Entering COMPUTE_SOIL
+    Location index = 5 : "UP1   " : "Upland New Location"
+    Analyte index  = 4 : "Zn    " : "Zinc (CASID 7440-66-6)"
+    Decay Factor   =  0.00000E+00
+
+Calculating the divisor and other information
+    SEASON_START     = 121
+    SEASON_END       = 256
+    IRIG_RATE        =  5.00000E-01
+    SOIL_DEPTH       =  1.50000E+01
+    SOIL_DENSITY     =  1.50000E+00
+    THETA_IRG        =  5.00000E-01
+    THETA_DRY        =  2.00000E-01
+    FY_BEFORE        =  3.28767E-01
+    FY_DURING        =  3.72603E-01
+    FY_AFTER         =  2.98630E-01
+
+Time loop, index = 1 of 1 year = 2012
+Delta deposition and concentrations by realization
+   Index    Air Del      Air Ann       GW Del       GW Ann       SW Del       SW Ann       INFILT   IN_UNITS KD           KD_UNITS 
+   ----- ------------ ------------ ------------ ------------ ------------ ------------ ------------ -------- ------------ ---------
+       1  0.00000E+00  0.00000E+00  0.00000E+00  6.30000E-07  0.00000E+00  5.04000E-08  1.50000E-01 cm/yr     6.20000E-02 L/g
+
+Looping years calculation
+    ITIM               = 1
+    ESD_TIM(ITIM)%TIME = 2012
+    IYRS_1             = 2012
+    IYRS_2             = 2012
+Media, IYRS, IDAY, IREL, ANNUAL_AIR, ANNUAL_OTHER, LEACH RATE, MASS, AOVERL
+
+Realization      = 1
+Analyte Index    = 4
+Analyte ID       = Zn    
+Location ID      = UP1   
+KD               =  6.20000E-02
+Theta_Dry        =  2.00000E-01
+LAMBDA_LEACH_DRY =  1.07296E-04
+Theta_IRG        =  5.00000E-01
+LAMBDA_LEACH_WET =  3.46152E-04
+SODR,2012,365,1, 0.00000E+00, 0.00000E+00, 1.07296E-04, 0.00000E+00, 0.00000E+00,All year
+SOGW,2012,121,1, 0.00000E+00, 6.30000E-07, 1.07296E-04, 0.00000E+00, 0.00000E+00,Before Growing Season
+SOGW,2012,256,1, 0.00000E+00, 6.30000E-07, 3.46152E-04, 3.15049E-09, 2.44229E-05,End of Growing Season
+SOGW,2012,365,1, 0.00000E+00, 6.30000E-07, 1.07296E-04, 3.15039E-09, 0.00000E+00,End of year
+SOSW,2012,121,1, 0.00000E+00, 5.04000E-08, 1.07296E-04, 0.00000E+00, 0.00000E+00,Before Growing Season
+SOSW,2012,256,1, 0.00000E+00, 5.04000E-08, 3.46152E-04, 2.51930E-10, 1.95383E-06,End of Growing Season
+SOSW,2012,365,1, 0.00000E+00, 5.04000E-08, 1.07296E-04, 2.51922E-10, 0.00000E+00,End of year
+
+Location, Analyte, Year, Solution, Concentration by Realization
+UP1   ,Zn    ,2012,SODR, 0.00000E+00
+UP1   ,Zn    ,2012,SOSW, 1.11969E-12
+UP1   ,Zn    ,2012,SOGW, 1.40022E-11
+
+Concentrations computed by the soil model
+    ILOC             = 5
+    ESD_LOC(ILOC)%ID = UP1   
+    IANA             = 4
+    ESD_ANA(IANA)&ID = Zn    
+
+Zn - SODR Dry soil (no irrigation) concentration
+ Year Units  Value
+ 2012 Kg/Kg  0.00000E+00
+
+Zn - SOGW Irrigated (groundwater) soil concentration
+ Year Units  Value
+ 2012 Kg/Kg  1.40022E-11
+
+Zn - SOSW Irrigated (surface water) soil concentration
+ Year Units  Value
+ 2012 Kg/Kg  1.11969E-12
+
+ FN_DONE = "Soil.Done"
+
+Message originating in routine Soil
+Message: Normal Termination
+    Run Completed on 08/23/2012 at 13:58:27.169

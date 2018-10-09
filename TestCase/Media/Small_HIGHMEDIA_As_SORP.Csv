@@ -1,0 +1,12 @@
+"Code Name:","HighMedia"
+"Code Version:","4.00.001"
+"Code Date:"," 5 Jun 2007"
+"Run ID:","20120823135827"
+"Run Title:","Demonstrate TIIA codes with a small data set - Extracting SORP Media for As"
+"User Name:","Paul W. Eslinger"
+"File Name:",".\ecda\Small_As.bin"
+"Solution type:","SINGLE",1
+"Analyte ID:","As"
+"Media ID:","SORP"
+"Year","Solution","Location ID","Easting","Northing"
+2012, 1.21742E+03,"RRD2-1", 4.57867E+05, 2.04064E+06

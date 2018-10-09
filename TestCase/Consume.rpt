@@ -1,0 +1,225 @@
+
+
+             CCCCC   OOOOO  N     N   SSS   U     U MM   MM EEEEEEE
+            C     C O     O NN    N S    SS U     U M M M M E      
+            C       O     O N N   N  S    S U     U M  M  M E      
+            C       O     O N  N  N   SS    U     U M  M  M EEEEE  
+            C       O     O N   N N S   S   U     U M     M E      
+            C     C O     O N    NN SS   S  U     U M     M E      
+             CCCCC   OOOOO  N     N   SSS    UUUUU  M     M EEEEEEE
+
+
+                           Consume    Version 4.0.001 
+                          Last Modified on  9 Jul 2012 
+               Build ECEM Consume Keywords from Predation Matrix
+               ------------------------------------------------
+                   Developed By Battelle Memorial Institute
+                             Richland, Washington
+               ------------------------------------------------
+
+        Current Run ID = 20120823135827   User Name = Anonymous User  
+               System Date = 08-23-2012   System Time = 13:58:27
+                 ------------------------------------------------
+                 Toolkit for Integrated Impact Assessments (TIIA)
+                 Copyright (c) Battelle Memorial Institute, 2012.
+                               All Rights Reserved.              
+                 ------------------------------------------------
+
+                The software used to generate this output has been
+               developed under Battelle software control procedures.
+
+Eslinger, P.W. and T.B. Miley.   PNWD-4357, Rev. 1.  July 2012.
+User Instructions for the Computer Codes of the Toolkit for Integrated Impact
+Assessments (TIIA), Version 1. Battelle Memorial Institute, Columbus, Ohio 43201
+
+
+                             Review Signatures
+
+Input Prepared By: ______________________________       Date: _______________
+
+Input Reviewed By: ______________________________       Date: _______________
+
+
+======================== Echo of the Problem Definition ========================
+
+File Name for Input Data
+File: Small_Consume.Dat
+
+File Name for the Report File
+File: Consume.rpt
+
+Species information listed in input order
+Index Type      ID      Long Name
+----- ----   --------   ------------------------------------------------
+   1  "QP" : "DETFAC" : "Detritus FAC Camarón"
+   2  "QP" : "MICFIT" : "Microfitas bentonicas"
+   3  "QA" : "BSHRMP" : "brown shrimp"
+   4  "QA" : "OCTOPI" : "octopus"
+   5  "TP" : "RFUNGI" : "fungi"
+   6  "TP" : "UFUNGI" : "fungi"
+   7  "TA" : "GULPEL" : "gull/pelican"
+   8  "TA" : "TURTLE" : "turtle"
+   9  "TA" : "RBIRD " : "Bird/Poultry"
+  10  "TA" : "RCOYOT" : "Coyote"
+  11  "TA" : "UBIRD " : "Bird/Poultry"
+  12  "TA" : "UCOYOT" : "Coyote"
+  13  "TA" : "UEGG  " : "Chicken Egg"
+A total of 13 species have been defined.
+  
+!
+! Consumption formatted as CONSUME keywords for ECEM 
+!   Program: Consume
+!   Version: 4.0.001
+!   Revised: 9 Jul 2012
+!   User:    Paul W. Eslinger
+!   Date:    08-23-2012
+!   Time:    13:58:27
+!   File:    Small_Consume.Dat
+!
+CONSUME ID="BSHRMP" PREY
+  "DETFAC"  1.00000
+  SEDING    0.10000
+!
+CONSUME ID="OCTOPI" PREY
+  "DETFAC"  0.05000
+  "MICFIT"  0.05000
+  "BSHRMP"  0.90000
+  SEDING    0.05000
+!
+CONSUME ID="GULPEL" PREY
+  "DETFAC"  0.02000
+  "MICFIT"  0.02000
+  "BSHRMP"  0.80000
+  "OCTOPI"  0.16000
+  SOILING   0.10000
+!
+CONSUME ID="TURTLE" PREY
+  "DETFAC"  0.75000
+  "MICFIT"  0.25000
+  SOILING   0.05000
+!
+CONSUME ID="RBIRD" PREY
+  "MICFIT"  0.05000
+  "BSHRMP"  0.10000
+  "OCTOPI"  0.05000
+  "RFUNGI"  0.80000
+  SOILING   0.20000
+!
+CONSUME ID="RCOYOT" PREY
+  "DETFAC"  0.02000
+  "BSHRMP"  0.05000
+  "OCTOPI"  0.04000
+  "RFUNGI"  0.19000
+  "RBIRD "  0.70000
+  SOILING   0.00000
+!
+CONSUME ID="UBIRD" PREY
+  "UFUNGI"  1.00000
+  SOILING   0.15000
+!
+CONSUME ID="UCOYOT" PREY
+  "UFUNGI"  0.10000
+  "UBIRD "  0.90000
+  SOILING   0.12000
+!
+CONSUME ID="UEGG" PREY
+  "UFUNGI"  1.00000
+  SOILING   0.15000
+
+Predation matrix 
+ ID      DETFAC  MICFIT  BSHRMP  OCTOPI  RFUNGI  UFUNGI  GULPEL  TURTLE  RBIRD   RCOYOT  UBIRD   UCOYOT  UEGG  
+ DETFAC  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+ MICFIT  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+ BSHRMP  1.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+ OCTOPI  0.0500  0.0500  0.9000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+ RFUNGI  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+ UFUNGI  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+ GULPEL  0.0200  0.0200  0.8000  0.1600  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+ TURTLE  0.7500  0.2500  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+ RBIRD   0.0000  0.0500  0.1000  0.0500  0.8000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+ RCOYOT  0.0200  0.0000  0.0500  0.0400  0.1900  0.0000  0.0000  0.0000  0.7000  0.0000  0.0000  0.0000  0.0000
+ UBIRD   0.0000  0.0000  0.0000  0.0000  0.0000  1.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+ UCOYOT  0.0000  0.0000  0.0000  0.0000  0.0000  0.1000  0.0000  0.0000  0.0000  0.0000  0.9000  0.0000  0.0000
+ UEGG    0.0000  0.0000  0.0000  0.0000  0.0000  1.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+
+Species information listed in order of computation
+Index Type      ID      Long Name
+----- ----   --------   ------------------------------------------------
+   1  "QP" : "DETFAC" : "Detritus FAC Camarón"
+   2  "QP" : "MICFIT" : "Microfitas bentonicas"
+   5  "TP" : "RFUNGI" : "fungi"
+   6  "TP" : "UFUNGI" : "fungi"
+   3  "QA" : "BSHRMP" : "brown shrimp"
+   4  "QA" : "OCTOPI" : "octopus"
+   7  "TA" : "GULPEL" : "gull/pelican"
+   8  "TA" : "TURTLE" : "turtle"
+   9  "TA" : "RBIRD " : "Bird/Poultry"
+  10  "TA" : "RCOYOT" : "Coyote"
+  11  "TA" : "UBIRD " : "Bird/Poultry"
+  12  "TA" : "UCOYOT" : "Coyote"
+  13  "TA" : "UEGG  " : "Chicken Egg"
+A total of 13 species have been requested.
+
+Consumption information for species 1 : "DETFAC" : "Detritus FAC Camarón"
+
+Consumption information for species 2 : "MICFIT" : "Microfitas bentonicas"
+
+Consumption information for species 3 : "BSHRMP" : "brown shrimp"
+    1.0000 of species   1 : "DETFAC" : "Detritus FAC Camarón"
+    0.1000 of "sediment"
+
+Consumption information for species 4 : "OCTOPI" : "octopus"
+    0.0500 of species   1 : "DETFAC" : "Detritus FAC Camarón"
+    0.0500 of species   2 : "MICFIT" : "Microfitas bentonicas"
+    0.9000 of species   3 : "BSHRMP" : "brown shrimp"
+    0.0500 of "sediment"
+
+Consumption information for species 5 : "RFUNGI" : "fungi"
+
+Consumption information for species 6 : "UFUNGI" : "fungi"
+
+Consumption information for species 7 : "GULPEL" : "gull/pelican"
+    0.0200 of species   1 : "DETFAC" : "Detritus FAC Camarón"
+    0.0200 of species   2 : "MICFIT" : "Microfitas bentonicas"
+    0.8000 of species   3 : "BSHRMP" : "brown shrimp"
+    0.1600 of species   4 : "OCTOPI" : "octopus"
+    0.1000 of "soil"
+
+Consumption information for species 8 : "TURTLE" : "turtle"
+    0.7500 of species   1 : "DETFAC" : "Detritus FAC Camarón"
+    0.2500 of species   2 : "MICFIT" : "Microfitas bentonicas"
+    0.0500 of "soil"
+
+Consumption information for species 9 : "RBIRD" : "Bird/Poultry"
+    0.0500 of species   2 : "MICFIT" : "Microfitas bentonicas"
+    0.1000 of species   3 : "BSHRMP" : "brown shrimp"
+    0.0500 of species   4 : "OCTOPI" : "octopus"
+    0.8000 of species   5 : "RFUNGI" : "fungi"
+    0.2000 of "soil"
+
+Consumption information for species 10 : "RCOYOT" : "Coyote"
+    0.0200 of species   1 : "DETFAC" : "Detritus FAC Camarón"
+    0.0500 of species   3 : "BSHRMP" : "brown shrimp"
+    0.0400 of species   4 : "OCTOPI" : "octopus"
+    0.1900 of species   5 : "RFUNGI" : "fungi"
+    0.7000 of species   9 : "RBIRD " : "Bird/Poultry"
+    0.1000 of "sediment"
+
+Consumption information for species 11 : "UBIRD" : "Bird/Poultry"
+    1.0000 of species   6 : "UFUNGI" : "fungi"
+    0.1000 of "sediment"
+    0.1500 of "soil"
+
+Consumption information for species 12 : "UCOYOT" : "Coyote"
+    0.1000 of species   6 : "UFUNGI" : "fungi"
+    0.9000 of species  11 : "UBIRD " : "Bird/Poultry"
+    0.1000 of "sediment"
+    0.1200 of "soil"
+
+Consumption information for species 13 : "UEGG" : "Chicken Egg"
+    1.0000 of species   6 : "UFUNGI" : "fungi"
+    0.1000 of "sediment"
+    0.1500 of "soil"
+
+Message originating in routine Consume
+Message: Normal Termination

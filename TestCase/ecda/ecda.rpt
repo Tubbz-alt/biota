@@ -1,0 +1,271 @@
+
+
+                        EEEEEEE  CCCCC  DDDDDD    AAA  
+                        E       C     C D     D  A   A 
+                        E       C       D     D A     A
+                        EEEEE   C       D     D AAAAAAA
+                        E       C       D     D A     A
+                        E       C     C D     D A     A
+                        EEEEEEE  CCCCC  DDDDDD  A     A
+
+
+                         ECDA         Version 4.00.001
+                         Last Modified on 11 Jul 2012 
+
+          Current Run ID = 20120823135826   User Name = Paul W. Eslinger
+                 System Date = 08-23-2012  System Time = 13:58:26
+                 ------------------------------------------------
+                 Toolkit for Integrated Impact Assessments (TIIA)
+                 Copyright (c) Battelle Memorial Institute, 2012.
+                               All Rights Reserved.              
+                 ------------------------------------------------
+
+                The software used to generate this output has been
+               developed under Battelle software control procedures.
+
+Eslinger, P.W. and T.B. Miley.   PNWD-4357, Rev. 1.  July 2012.
+User Instructions for the Computer Codes of the Toolkit for Integrated Impact
+Assessments (TIIA), Version 1. Battelle Memorial Institute, Columbus, Ohio 43201
+
+
+                             Review Signatures
+
+Input Prepared By: ______________________________       Date: _______________
+
+Input Reviewed By: ______________________________       Date: _______________
+
+
+======================== Echo of the Problem Definition ========================
+
+Title: Demonstrate TIIA codes with a small data set                                                                                                                                                            
+User:  Paul W. Eslinger
+
+Processing based on keyword data
+  File = Small_ESD.kwd
+
+1 Realizations used
+
+5 Locations used
+
+1 Times used
+
+Analye Information based on 4 analytes
+     1 : ACNAPE : OS : Acenaphthene (CASID 83-32-9)
+     2 : As     : NS : Arsenic (CASID 7440-38-2)
+     3 : Hg     : NS : Mercury (CASID 7439-97-6)
+     4 : Zn     : NS : Zinc (CASID 7440-66-6)
+
+Year definitions from the PERIOD keyword
+     2012 : Start year for the simulation
+     2012 : Stop  year for the simulation
+     2012 : Site closure year for the simulation
+
+File Name for ECDA Header File
+File: .\ecda\Small_Header.txt
+
+File Name for ECDA Index (Map) File
+File: .\ecda\Small_I_ECDA.txt
+
+File Name for KDSOIL File
+File: .\ecda\Small_KdSoil.dat
+
+File Name for DILUTE File
+File: .\ecda\Small_Dilute.txt
+
+File Name for Infiltration File
+File: .\ecda\Small_Infilt.txt
+
+File Name for Media Concentrations for analyte with ID="ACNAPE"
+File: .\ecda\Small_ACNAPE.bin
+
+File Name for Media Concentrations for analyte with ID="As"
+File: .\ecda\Small_As.bin
+
+File Name for Media Concentrations for analyte with ID="Hg"
+File: .\ecda\Small_Hg.bin
+
+File Name for Media Concentrations for analyte with ID="Zn"
+File: .\ecda\Small_Zn.bin
+
+"Location ID",TYPE,LOCUS,Easting,Northing,Mile,Area,GWAT,SEEP,SWAT,PWAT,SEDI,SORP,SODR,SOGW,SOSW,AIRC,AIRD,IRG_SWAT,Name
+"QRD1-1","AQUATIC","NEAR", 4.5737838E+05, 2.0404559E+06, 0.0000000E+00, 0.0000000E+00,F,F,T,T,T,F,F,F,F,F,F,"-Null-","Aquatic REFERENCIA DOS BOCAS"
+"QRD2-1","AQUATIC","NEAR", 4.5786672E+05, 2.0406356E+06, 0.0000000E+00, 0.0000000E+00,F,F,T,T,T,F,F,F,F,F,F,"-Null-","Aquatic REFERENCIA DOS BOCAS"
+"RRD1-1","RIPARIAN","NEAR", 4.5737838E+05, 2.0404559E+06, 0.0000000E+00, 0.0000000E+00,T,T,F,F,F,T,F,F,F,T,T,"-Null-","Riparian REFERENCIA DOS BOCAS"
+"RRD2-1","RIPARIAN","NEAR", 4.5786672E+05, 2.0406356E+06, 0.0000000E+00, 0.0000000E+00,T,T,F,F,F,T,F,F,F,T,T,"-Null-","Riparian REFERENCIA DOS BOCAS"
+"UP1","UPLAND","NEAR", 4.5689675E+05, 2.0403095E+06, 0.0000000E+00, 0.0000000E+00,T,F,F,F,F,F,T,T,T,T,T,"QRD1-1","Upland New Location"
+
+Record number map generated and written
+  File Name = .\ecda\Small_I_ECDA.txt
+
+Header information from the map file
+   ECDA_PTITLE = Demonstrate TIIA codes with a small data set
+   ECDA_PRGNAM = ECDA
+   ECDA_PRGVER = 4.00.001
+   ECDA_PRGDAT = 11 Jul 2012
+   ECDA_USRNAM = Paul W. Eslinger
+   ECDA_CRUNID = 20120823135826
+   ECDA_BLOCK  = 22
+   ECDA_RECLEN = 18
+   ECDA_NREAL  = 1
+
+Creation of media files is as follows:
+ Time: 13:58:26 Creating media file for analyte: ACNAPE
+ Time: 13:58:26 Initializing media file for analyte: ACNAPE
+ Time: 13:58:26 Creating media file for analyte: As
+ Time: 13:58:26 Initializing media file for analyte: As
+ Time: 13:58:26 Creating media file for analyte: Hg
+ Time: 13:58:26 Initializing media file for analyte: Hg
+ Time: 13:58:26 Creating media file for analyte: Zn
+ Time: 13:58:26 Initializing media file for analyte: Zn
+
+Processing KDSOIL keywords into a data file
+  File Name = .\ecda\Small_KdSoil.dat
+
+Definition for variable "KdHg"
+   Sediment/porewater Kd for mercury
+   The distribution type is Constant          
+   The constant value is  7.9433E+01
+
+Summary statistics for variable: KdHg                    
+   Sediment/porewater Kd for mercury
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  7.9433E+01  7.9433E+01  7.9433E+01  7.9433E+01  7.9433E+01  7.9433E+01  7.9433E+01  7.9433E+01  7.9433E+01  7.9433E+01  7.9433E+01  7.9433E+01  0.0000E+00
+
+Definition for variable "KdAs"
+   Sediment/porewater Kd for arsenic
+   The distribution type is Constant          
+   The constant value is  2.9000E-02
+
+Summary statistics for variable: KdAs                    
+   Sediment/porewater Kd for arsenic
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  2.9000E-02  2.9000E-02  2.9000E-02  2.9000E-02  2.9000E-02  2.9000E-02  2.9000E-02  2.9000E-02  2.9000E-02  2.9000E-02  2.9000E-02  2.9000E-02  0.0000E+00
+
+Definition for variable "KdZn"
+   Sediment/porewater Kd for zinc
+   The distribution type is Constant          
+   The constant value is  6.2000E-02
+
+Summary statistics for variable: KdZn                    
+   Sediment/porewater Kd for zinc
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  6.2000E-02  6.2000E-02  6.2000E-02  6.2000E-02  6.2000E-02  6.2000E-02  6.2000E-02  6.2000E-02  6.2000E-02  6.2000E-02  6.2000E-02  6.2000E-02  0.0000E+00
+
+Definition for variable "KdACNA"
+   Sediment/porewater Kd for Acenaphthene
+   The distribution type is Constant          
+   The constant value is  5.7500E+00
+
+Summary statistics for variable: KdACNA                  
+   Sediment/porewater Kd for Acenaphthene
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  5.7500E+00  5.7500E+00  5.7500E+00  5.7500E+00  5.7500E+00  5.7500E+00  5.7500E+00  5.7500E+00  5.7500E+00  5.7500E+00  5.7500E+00  5.7500E+00  0.0000E+00
+
+Processing DILUTE keywords into a data file
+  File Name = .\ecda\Small_Dilute.txt
+
+Definition for variable "DF5m"
+   Dilution at 5 meters
+   The distribution type is Triangular        
+   The minimum is  3.6000E-01
+   The mode is     4.7000E-01
+   The maximum is  6.3000E-01
+
+Summary statistics for variable: DF5m                    
+   Dilution at 5 meters
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  5.0543E-01  5.0543E-01  5.0543E-01  5.0543E-01  5.0543E-01  5.0543E-01  5.0543E-01  5.0543E-01  5.0543E-01  5.0543E-01  5.0543E-01  5.0543E-01  0.0000E+00
+
+Definition for variable "DF20m"
+   Dilution at 20 meters
+   The distribution type is Triangular        
+   The minimum is  4.1200E+00
+   The mode is     6.3000E+00
+   The maximum is  1.0100E+01
+
+Summary statistics for variable: DF20m                   
+   Dilution at 20 meters
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  7.1142E+00  7.1142E+00  7.1142E+00  7.1142E+00  7.1142E+00  7.1142E+00  7.1142E+00  7.1142E+00  7.1142E+00  7.1142E+00  7.1142E+00  7.1142E+00  0.0000E+00
+
+Definition for variable "DF5mD"
+   Dilution at 5 meters - deterministic
+   The distribution type is Constant          
+   The constant value is  4.7000E-01
+
+Summary statistics for variable: DF5mD                   
+   Dilution at 5 meters - deterministic
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  4.7000E-01  4.7000E-01  4.7000E-01  4.7000E-01  4.7000E-01  4.7000E-01  4.7000E-01  4.7000E-01  4.7000E-01  4.7000E-01  4.7000E-01  4.7000E-01  0.0000E+00
+
+Definition for variable "DF20mD"
+   Dilution at 20 meters - deterministic
+   The distribution type is Constant          
+   The constant value is  6.3000E+00
+
+Summary statistics for variable: DF20mD                  
+   Dilution at 20 meters - deterministic
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  6.3000E+00  6.3000E+00  6.3000E+00  6.3000E+00  6.3000E+00  6.3000E+00  6.3000E+00  6.3000E+00  6.3000E+00  6.3000E+00  6.3000E+00  6.3000E+00  0.0000E+00
+
+Processing INFILTRATION keywords into a data file
+  File Name = .\ecda\Small_Infilt.txt
+
+Definition for variable "Inf1"
+   Example infiltration class 1
+   The distribution type is Triangular        
+   The minimum is  7.5000E-01
+   The mode is     1.5000E+00
+   The maximum is  3.1200E+00
+
+Summary statistics for variable: Inf1                    
+   Example infiltration class 1
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  2.2759E+00  2.2759E+00  2.2759E+00  2.2759E+00  2.2759E+00  2.2759E+00  2.2759E+00  2.2759E+00  2.2759E+00  2.2759E+00  2.2759E+00  2.2759E+00  0.0000E+00
+
+Definition for variable "Inf2"
+   Example infiltration class 2
+   The distribution type is Triangular        
+   The minimum is  4.1200E+00
+   The mode is     6.3000E+00
+   The maximum is  1.0100E+01
+
+Summary statistics for variable: Inf2                    
+   Example infiltration class 2
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  6.2938E+00  6.2938E+00  6.2938E+00  6.2938E+00  6.2938E+00  6.2938E+00  6.2938E+00  6.2938E+00  6.2938E+00  6.2938E+00  6.2938E+00  6.2938E+00  0.0000E+00
+
+Definition for variable "Inf1D"
+   Example infiltration class 1 - deterministic
+   The distribution type is Constant          
+   The constant value is  1.5000E+00
+
+Summary statistics for variable: Inf1D                   
+   Example infiltration class 1 - deterministic
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  0.0000E+00
+
+Definition for variable "Inf2D"
+   Example infiltration class 2 - deterministic
+   The distribution type is Constant          
+   The constant value is  1.5000E+00
+
+Summary statistics for variable: Inf2D                   
+   Example infiltration class 2 - deterministic
+    Minimum    1% Level    5% Level   10% Level   25% Level     Median    75% Level   90% Level   95% Level   99% Level     Maximum      Mean      St. Dev.
+ ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- ----------- -----------
+  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  1.5000E+00  0.0000E+00
+
+Message originating in routine ECDA
+Message: Normal Termination

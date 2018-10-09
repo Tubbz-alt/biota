@@ -1,0 +1,488 @@
+
+
+                       EEEEEEE   CCCCC   EEEEEEE  MM   MM
+                       E        C     C  E        M M M M
+                       E        C        E        M  M  M
+                       EEEEE    C        EEEEE    M  M  M
+                       E        C        E        M     M
+                       E        C     C  E        M     M
+                       EEEEEEE   CCCCC   EEEEEEE  M     M
+
+
+                           ECEM       Version 4.00.001
+                          Last Modified on  9 Jul 2012 
+
+          Current Run ID = 20120823135828   User Name = Paul W. Eslinger
+                 System Date = 08/23/2012   System Time = 13:58:28
+                 ------------------------------------------------
+                 Toolkit for Integrated Impact Assessments (TIIA)
+                 Copyright (c) Battelle Memorial Institute, 2012.
+                               All Rights Reserved.              
+                 ------------------------------------------------
+
+                The software used to generate this output has been
+               developed under Battelle software control procedures.
+
+Eslinger, P.W. and T.B. Miley.   PNWD-4357, Rev. 1.  July 2012.
+User Instructions for the Computer Codes of the Toolkit for Integrated Impact
+Assessments (TIIA), Version 1. Battelle Memorial Institute, Columbus, Ohio 43201
+
+
+                             Review Signatures
+
+Input Prepared By: ______________________________       Date: _______________
+
+Input Reviewed By: ______________________________       Date: _______________
+
+
+======================== Echo of the Problem Definition ========================
+
+Title: Demonstrate TIIA codes with a small data set - ECEM Keywords
+User:  Paul W. Eslinger
+1 Realizations requested
+
+File Name for Input Keyword Data
+File: Small_ECEM.kwd
+
+File Name for the Report File
+File: Small_ECEM.rpt
+
+File Name for Media Concentrations for analyte with ID="File Name for Output Detailed Data"
+File: .\Ecem\Small_det.csv
+
+File Name for Media Concentrations for analyte with ID="File Name for Generated Stochastic Values"
+File: .\Foods\Small_Foods_val.txt
+
+File Name for Output Summary Statistics
+File: .\Ecem\Small_sta.csv
+
+File Name for Media Concentrations for analyte with ID="ACNAPE"
+File: .\ecda\Small_ACNAPE.bin
+
+File Name for Media Concentrations for analyte with ID="As"
+File: .\ecda\Small_As.bin
+
+File Name for Media Concentrations for analyte with ID="Hg"
+File: .\ecda\Small_Hg.bin
+
+File Name for Media Concentrations for analyte with ID="Zn"
+File: .\ecda\Small_Zn.bin
+
+Debug Flag Information
+   No  : Concentration Data
+   No  : Stochastic Calculations
+   No  : Air Concentration Calculations
+   No  : Air Deposition Calculations
+   No  : Constant Calculations
+   No  : Loop control
+   No  : Detailed radionuclide sums
+   Yes : Species information
+   No  : Analyte information
+   No  : Equations in subroutine OR_QP
+   No  : Equations in subroutine OR_TP
+   No  : Equations in subroutine OR_QA
+   No  : Equations in subroutine OR_TA
+   No  : Equations in subroutine NR_QP
+   No  : Equations in subroutine NR_TP
+   No  : Equations in subroutine NR_QA
+   No  : Equations in subroutine NR_TA
+   No  : Equations in subroutine OS_QP
+   No  : Equations in subroutine OS_TP
+   No  : Equations in subroutine OS_QA
+   No  : Equations in subroutine OS_TA
+   No  : Equations in subroutine NS_QP
+   No  : Equations in subroutine NS_TP
+   No  : Equations in subroutine NS_QA
+   No  : Equations in subroutine NS_TA
+
+Summary Statistics Output Flag Information
+   Yes : BURDEN : Body burden
+   No  : EHQ    : Environmental hazard quotient
+   No  : DOSHAZ : Hazardous dose by nuclide
+   No  : DOSRAD : Radionuclide dose by nuclide
+   No  : SUMRAD : Summed radionuclide dose
+   No  : TFOODS : Aquatic foods for terrestrial animals
+   No  : DOSDER : Dermal dose by analyte
+   No  : DOSING : Ingestion dose by analyte
+   No  : DOSINH : Inhalation dose by nuclide
+   No  : BMRDOS : Rad dose benchmark
+
+Detailed Data Output Flag Information
+   Yes : BURDEN : Body burden
+   No  : EHQ    : Environmental hazard quotient
+   No  : DOSHAZ : Hazardous dose by nuclide
+   No  : DOSRAD : Radionuclide dose by nuclide
+   No  : SUMRAD : Summed radionuclide dose
+   No  : TFOODS : Aquatic foods for terrestrial animals
+   No  : DOSDER : Dermal dose by analyte
+   No  : DOSING : Ingestion dose by analyte
+   No  : DOSINH : Inhalation dose by nuclide
+   No  : BMRDOS : Rad dose benchmark
+
+Growing season information for terrestrial plant calulations
+       121 : Day of year (Julian calendar) the growing season starts
+       256 : Day of year (Julian calendar) the growing season ends
+    0.3726 : Fraction of year assigned to the growing season
+    0.5000 : Amount of irrigation water applied in a year (cm)
+      2012 : First year for irrigation
+
+Starting Problem Execution
+    Date: 08/23/2012
+    Time: 13:58:28.744
+
+Time Slices Requested: (Index, Calendar Year)
+      1 : 2012
+A total of 1 times have been requested.
+
+Locations Requested: (Index, ID, Type, Name)
+      1 : QRD1-1 : AQUATIC  : "Aquatic REFERENCIA DOS BOCAS"
+      2 : QRD2-1 : AQUATIC  : "Aquatic REFERENCIA DOS BOCAS"
+      3 : RRD1-1 : RIPARIAN : "Riparian REFERENCIA DOS BOCAS"
+          Matched with :    1 : QRD1-1 : AQUATIC  : "Aquatic REFERENCIA DOS BOCAS"
+      4 : RRD2-1 : RIPARIAN : "Riparian REFERENCIA DOS BOCAS"
+          Matched with :    2 : QRD2-1 : AQUATIC  : "Aquatic REFERENCIA DOS BOCAS"
+      5 : UP1    : UPLAND   : "Upland New Location"
+A total of 5 locations have been requested.
+
+Analytes Requested:
+Index   ID   Element Type Description
+----- ------ ------- ---- ------------------------------------------------
+    1 ACNAPE  ACNAPE  OS  Acenaphthene (CASID 83-32-9)
+    2 As      As      NS  Arsenic (CASID 7440-38-2)
+    3 Hg      Hg      NS  Mercury (CASID 7439-97-6)
+    4 Zn      Zn      NS  Zinc (CASID 7440-66-6)
+A total of 4 analytes have been requested.
+
+Soil-Water KD Mapping
+  Analyte       KDSOIL ID String
+  ------------  ----------------------
+    3: "Hg    "  "KdHg                "
+
+Species information listed in order of computation
+Order Out Type Habitat     ID    Long Name
+----- --- ---- --------  ------  ------------------------------------------------
+    1 No   QP  AQUATIC  "DETFAC" Detritus FAC Camarón
+    2 No   QP  AQUATIC  "MICFIT" Microfitas bentonicas
+    5 Yes  TP  RIPARIAN "RFUNGI" fungi
+    6 Yes  TP  UPLAND   "UFUNGI" fungi
+    3 Yes  QA  AQUATIC  "BSHRMP" brown shrimp
+    4 Yes  QA  AQUATIC  "OCTOPI" octopus
+    7 Yes  TA  AQUATIC  "GULPEL" gull/pelican
+    8 Yes  TA  AQUATIC  "TURTLE" turtle
+    9 Yes  TA  RIPARIAN "RBIRD " Bird/poultry
+   10 No   TA  RIPARIAN "RCOYOT" coyote
+   11 Yes  TA  UPLAND   "UBIRD " Bird/poultry
+   12 No   TA  UPLAND   "UCOYOT" coyote
+   13 Yes  TA  UPLAND   "UEGG  " Egg
+A total of 13 species have been requested.
+
+!----------------------------------------------------------------------------------------------------
+!               Detailed definition for each species in order of computation
+!----------------------------------------------------------------------------------------------------
+!
+!----------------------------------------------------------------------------------------------------
+Aquatic Plant species "DETFAC" : "Detritus FAC Camarón"
+Habitat : AQUATIC
+Deterministic parameter definitions
+     AWD :  1.00000E+01 : "wet-to-dry weight ratio   " : Units = "g wet/g dry"
+  FLIPID :  4.18000E-02 : "fraction lipid            " : Units = "g lipid/g wet wt"
+     FOC :  3.50000E-01 : "fraction organic carbon   " : Units = "g org carb/g dry wt"
+  WBMASS :  3.50000E-05 : "wet body mass             " : Units = "grams"
+      AE :  2.30000E-01 : "assimilation efficiency   " : Units = "unitless"
+      GE :  7.40000E+02 : "gross energy              " : Units = "kcal/kg wet weight"
+GROWRATE :  2.60024E-02 : "growth rate               " : Units = "1/day"
+RESPRATE :  2.49079E-01 : "Oxygen use rate           " : Units = "1/day"
+!
+!----------------------------------------------------------------------------------------------------
+Aquatic Plant species "MICFIT" : "Microfitas bentonicas"
+Habitat : AQUATIC
+Deterministic parameter definitions
+     AWD :  1.00000E+01 : "wet-to-dry weight ratio   " : Units = "g wet/g dry"
+  FLIPID :  4.18000E-02 : "fraction lipid            " : Units = "g lipid/g wet wt"
+     FOC :  3.50000E-01 : "fraction organic carbon   " : Units = "g org carb/g dry wt"
+  WBMASS :  3.50000E-05 : "wet body mass             " : Units = "grams"
+      AE :  2.30000E-01 : "assimilation efficiency   " : Units = "unitless"
+      GE :  7.40000E+02 : "gross energy              " : Units = "kcal/kg wet weight"
+GROWRATE :  2.60024E-02 : "growth rate               " : Units = "1/day"
+RESPRATE :  2.49079E-01 : "Oxygen use rate           " : Units = "1/day"
+!
+!----------------------------------------------------------------------------------------------------
+Terrestrial Plant species "RFUNGI" : "fungi"
+Habitat : RIPARIAN
+Deterministic parameter definitions
+      AE :  7.30000E-01 : "assimilation efficiency              " : Units = "unitless"
+      GE :  6.30000E+02 : "gross energy                         " : Units = "kcal/kg wet weight"
+  DIFFHT :  5.00000E-02 : "diffusion height                     " : Units = "m"
+     FPA :  5.00000E-01 : "volume fraction of plant tissue air  " : Units = "unitless"
+     FPL :  1.00000E-02 : "volume fraction of plant tissue lipid" : Units = "unitless"
+     FPW :  4.00000E-01 : "volume fraction of plant tissue water" : Units = "unitless"
+      FW :  9.10000E-01 : "water weight fraction of plant tissue" : Units = "unitless"
+  FWATER :  0.00000E+00 : "fraction exposure to water           " : Units = "unitless"
+    RHOP :  1.00000E+03 : "plant tissue density                 " : Units = "kg/m^3"
+ ETWATER :  0.00000E+00 : "exposure time to water               " : Units = "hr/day"
+!
+!----------------------------------------------------------------------------------------------------
+Terrestrial Plant species "UFUNGI" : "fungi"
+Habitat : UPLAND
+Deterministic parameter definitions
+      AE :  7.30000E-01 : "assimilation efficiency              " : Units = "unitless"
+      GE :  6.30000E+02 : "gross energy                         " : Units = "kcal/kg wet weight"
+  DIFFHT :  5.00000E-02 : "diffusion height                     " : Units = "m"
+     FPA :  5.00000E-01 : "volume fraction of plant tissue air  " : Units = "unitless"
+     FPL :  1.00000E-02 : "volume fraction of plant tissue lipid" : Units = "unitless"
+     FPW :  4.00000E-01 : "volume fraction of plant tissue water" : Units = "unitless"
+      FW :  9.10000E-01 : "water weight fraction of plant tissue" : Units = "unitless"
+  FWATER :  0.00000E+00 : "fraction exposure to water           " : Units = "unitless"
+    RHOP :  1.00000E+03 : "plant tissue density                 " : Units = "kg/m^3"
+ ETWATER :  0.00000E+00 : "exposure time to water               " : Units = "hr/day"
+!
+!----------------------------------------------------------------------------------------------------
+Aquatic Animal species "BSHRMP" : "brown shrimp"
+Habitat : AQUATIC
+Deterministic parameter definitions
+Consumption information
+   1.00000 of species   1 : "DETFAC" : intake (g wet)  8.7176E+00 : "Detritus FAC Camarón"
+   0.10000 of "sediment"             : intake (g wet)  8.7176E-01
+Deterministic parameter definitions
+     AWD :  6.00000E+00 : "wet-to-dry weight ratio   " : Units = "g wet/g dry"
+  FLIPID :  1.70000E-02 : "fraction lipid            " : Units = "g lipid/g wet wt"
+     FOC :  5.18000E-01 : "fraction organic carbon   " : Units = "g org carb/g dry wt"
+    OCAR :  5.00000E-01 : "organic carbon assim. rate" : Units = "g organic carbon assim/g ingested"
+  WBMASS :  1.50000E+01 : "wet body mass             " : Units = "grams"
+      AE :  5.00000E-01 : "assimilation efficiency   " : Units = "unitless"
+      GE :  1.10000E+03 : "gross energy              " : Units = "kcal/kg wet weight"
+GROWRATE :  1.01627E-03 : "growth rate               " : Units = "1/day"
+RESPRATE :  1.86179E-02 : "respiration rate          " : Units = "1/day"
+!
+!----------------------------------------------------------------------------------------------------
+Aquatic Animal species "OCTOPI" : "octopus"
+Habitat : AQUATIC
+Deterministic parameter definitions
+Consumption information
+   0.05000 of species   1 : "DETFAC" : intake (g wet)  3.1911E+01 : "Detritus FAC Camarón"
+   0.05000 of species   2 : "MICFIT" : intake (g wet)  3.1911E+01 : "Microfitas bentonicas"
+   0.90000 of species   3 : "BSHRMP" : intake (g wet)  2.3287E+02 : "brown shrimp"
+   0.05000 of "sediment"             : intake (g wet)  1.4834E+01
+Deterministic parameter definitions
+     AWD :  5.00000E+00 : "wet-to-dry weight ratio   " : Units = "g wet/g dry"
+  FLIPID :  1.00000E-02 : "fraction lipid            " : Units = "g lipid/g wet wt"
+     FOC :  5.18000E-01 : "fraction organic carbon   " : Units = "g org carb/g dry wt"
+    OCAR :  5.00000E-01 : "organic carbon assim. rate" : Units = "g organic carbon assim/g ingested"
+  WBMASS :  3.26200E+03 : "wet body mass             " : Units = "grams"
+      AE :  5.00000E-01 : "assimilation efficiency   " : Units = "unitless"
+      GE :  1.10000E+03 : "gross energy              " : Units = "kcal/kg wet weight"
+GROWRATE :  2.64642E-04 : "growth rate               " : Units = "1/day"
+RESPRATE :  6.34532E-03 : "respiration rate          " : Units = "1/day"
+!
+!----------------------------------------------------------------------------------------------------
+Terrestrial Animal species "GULPEL" : "gull/pelican"
+Habitat : AQUATIC
+Consumption information
+   0.02000 of species   1 : "DETFAC" : intake (kg wet)  2.4733E-02 : "Detritus FAC Camarón"
+   0.02000 of species   2 : "MICFIT" : intake (kg wet)  2.4733E-02 : "Microfitas bentonicas"
+   0.80000 of species   3 : "BSHRMP" : intake (kg wet)  9.8930E-01 : "brown shrimp"
+   0.16000 of species   4 : "OCTOPI" : intake (kg wet)  1.9786E-01 : "octopus"
+   0.10000 of "soil"                 : intake (kg wet)  1.2366E-01
+Deterministic parameter definitions
+      AE :  8.10000E-01 : "assimilation efficiency            " : Units = "unitless"
+  DIFFHT :  3.00000E-01 : "diffusion height                   " : Units = "m"
+ ETWATER :  1.80000E+01 : "exposure time to water             " : Units = "hr/day"
+     FMR :  6.61360E+02 : "metabolic rate of predator         " : Units = "kcal/day"
+  FWATER :  4.00000E+01 : "frac exposure to water             " : Units = "unitless"
+     FDW :  4.00000E-01 : "conversion dry to wet weight       " : Units = "kg dry/kg wet"
+      GE :  1.90000E+03 : "gross energy                       " : Units = "kcal/kg wet weight"
+ INHRATE :  3.65910E+00 : "resting inhalation rate            " : Units = "m^3/day"
+     PCS :  2.50000E-01 : "fraction of SA in contact w/soil   " : Units = "1/day"
+     PCW :  8.00000E-01 : "fraction of SA available to water  " : Units = "unitless"
+     PSI :  7.50000E-01 : "seasonality factor                 " : Units = "unitless"
+      SA :  9.10230E+02 : "surface area                       " : Units = "cm^2"
+  SADHER :  1.45000E+00 : "skin adherance factor              " : Units = "mg/cm^2"
+   THETA :  5.00000E-01 : "area use factor                    " : Units = "unitless"
+WATERING :  5.35570E-02 : "water ingestion rate               " : Units = "L/day"
+  WEIGHT :  2.10900E+00 : "body weight                        " : Units = "kg wet"
+!
+!----------------------------------------------------------------------------------------------------
+Terrestrial Animal species "TURTLE" : "turtle"
+Habitat : AQUATIC
+Consumption information
+   0.75000 of species   1 : "DETFAC" : intake (kg wet)  2.0491E+00 : "Detritus FAC Camarón"
+   0.25000 of species   2 : "MICFIT" : intake (kg wet)  6.8302E-01 : "Microfitas bentonicas"
+   0.05000 of "soil"                 : intake (kg wet)  1.3660E-01
+Deterministic parameter definitions
+      AE :  3.00000E-01 : "assimilation efficiency            " : Units = "unitless"
+  DIFFHT :  1.00000E-03 : "diffusion height                   " : Units = "m"
+ ETWATER :  2.40000E+01 : "exposure time to water             " : Units = "hr/day"
+     FMR :  4.65000E+02 : "metabolic rate of predator         " : Units = "kcal/day"
+  FWATER :  1.00000E+02 : "frac exposure to water             " : Units = "unitless"
+     FDW :  4.00000E-01 : "conversion dry to wet weight       " : Units = "kg dry/kg wet"
+      GE :  1.40000E+03 : "gross energy                       " : Units = "kcal/kg wet weight"
+ INHRATE :  4.53600E+00 : "resting inhalation rate            " : Units = "m^3/day"
+     PCS :  0.00000E+00 : "fraction of SA in contact w/soil   " : Units = "1/day"
+     PCW :  1.00000E+00 : "fraction of SA available to water  " : Units = "unitless"
+     PSI :  1.00000E+00 : "seasonality factor                 " : Units = "unitless"
+      SA :  2.00000E+04 : "surface area                       " : Units = "cm^2"
+  SADHER :  0.00000E+00 : "skin adherance factor              " : Units = "mg/cm^2"
+   THETA :  2.00000E-01 : "area use factor                    " : Units = "unitless"
+WATERING :  4.51500E-01 : "water ingestion rate               " : Units = "L/day"
+  WEIGHT :  1.50000E+02 : "body weight                        " : Units = "kg wet"
+!
+!----------------------------------------------------------------------------------------------------
+Terrestrial Animal species "RBIRD" : "Bird/poultry"
+Habitat : RIPARIAN
+Consumption information
+   0.05000 of species   2 : "MICFIT" : intake (kg wet)  3.4158E-02 : "Microfitas bentonicas"
+   0.10000 of species   3 : "BSHRMP" : intake (kg wet)  6.8315E-02 : "brown shrimp"
+   0.05000 of species   4 : "OCTOPI" : intake (kg wet)  3.4158E-02 : "octopus"
+   0.80000 of species   5 : "RFUNGI" : intake (kg wet)  5.4652E-01 : "fungi"
+   0.20000 of "soil"                 : intake (kg wet)  1.3663E-01
+Deterministic parameter definitions
+      AE :  8.10000E-01 : "assimilation efficiency            " : Units = "unitless"
+  DIFFHT :  1.00000E-01 : "diffusion height                   " : Units = "m"
+ ETWATER :  0.00000E+00 : "exposure time to water             " : Units = "hr/day"
+     FMR :  3.13520E+02 : "metabolic rate of predator         " : Units = "kcal/day"
+  FWATER :  0.00000E+00 : "frac exposure to water             " : Units = "unitless"
+     FDW :  4.00000E-01 : "conversion dry to wet weight       " : Units = "kg dry/kg wet"
+      GE :  1.90000E+03 : "gross energy                       " : Units = "kcal/kg wet weight"
+ INHRATE :  1.48700E+00 : "resting inhalation rate            " : Units = "m^3/day"
+     PCS :  2.50000E-01 : "fraction of SA in contact w/soil   " : Units = "1/day"
+     PCW :  0.00000E+00 : "fraction of SA available to water  " : Units = "unitless"
+     PSI :  1.00000E+00 : "seasonality factor                 " : Units = "unitless"
+      SA :  1.77960E+03 : "surface area                       " : Units = "cm^2"
+  SADHER :  1.45000E+00 : "skin adherance factor              " : Units = "mg/cm^2"
+   THETA :  1.00000E+00 : "area use factor                    " : Units = "unitless"
+WATERING :  1.03680E-01 : "water ingestion rate               " : Units = "L/day"
+  WEIGHT :  2.20000E+00 : "body weight                        " : Units = "kg wet"
+!
+!----------------------------------------------------------------------------------------------------
+Terrestrial Animal species "RCOYOT" : "coyote"
+Habitat : RIPARIAN
+Consumption information
+   0.02000 of species   1 : "DETFAC" : intake (kg wet)  2.7628E-02 : "Detritus FAC Camarón"
+   0.05000 of species   3 : "BSHRMP" : intake (kg wet)  6.9071E-02 : "brown shrimp"
+   0.04000 of species   4 : "OCTOPI" : intake (kg wet)  5.5257E-02 : "octopus"
+   0.19000 of species   5 : "RFUNGI" : intake (kg wet)  2.6247E-01 : "fungi"
+   0.70000 of species   9 : "RBIRD " : intake (kg wet)  9.6700E-01 : "Bird/poultry"
+Deterministic parameter definitions
+      AE :  8.10000E-01 : "assimilation efficiency            " : Units = "unitless"
+  DIFFHT :  2.50000E-01 : "diffusion height                   " : Units = "m"
+ ETWATER :  0.00000E+00 : "exposure time to water             " : Units = "hr/day"
+     FMR :  1.68200E+03 : "metabolic rate of predator         " : Units = "kcal/day"
+  FWATER :  0.00000E+00 : "frac exposure to water             " : Units = "unitless"
+     FDW :  4.00000E-01 : "conversion dry to wet weight       " : Units = "kg dry/kg wet"
+      GE :  1.70000E+03 : "gross energy                       " : Units = "kcal/kg wet weight"
+ INHRATE :  1.01820E+01 : "resting inhalation rate            " : Units = "m^3/day"
+     PCS :  2.20000E-01 : "fraction of SA in contact w/soil   " : Units = "1/day"
+     PCW :  0.00000E+00 : "fraction of SA available to water  " : Units = "unitless"
+     PSI :  1.00000E+00 : "seasonality factor                 " : Units = "unitless"
+      SA :  6.72710E+03 : "surface area                       " : Units = "cm^2"
+  SADHER :  1.45000E+00 : "skin adherance factor              " : Units = "mg/cm^2"
+   THETA :  1.00000E+00 : "area use factor                    " : Units = "unitless"
+WATERING :  1.22070E+00 : "water ingestion rate               " : Units = "L/day"
+  WEIGHT :  1.63000E+01 : "body weight                        " : Units = "kg wet"
+!
+!----------------------------------------------------------------------------------------------------
+Terrestrial Animal species "UBIRD" : "Bird/poultry"
+Habitat : UPLAND
+Consumption information
+   1.00000 of species   6 : "UFUNGI" : intake (kg wet)  6.8171E-01 : "fungi"
+   0.15000 of "soil"                 : intake (kg wet)  1.0226E-01
+Deterministic parameter definitions
+      AE :  8.10000E-01 : "assimilation efficiency            " : Units = "unitless"
+  DIFFHT :  1.00000E-01 : "diffusion height                   " : Units = "m"
+ ETWATER :  0.00000E+00 : "exposure time to water             " : Units = "hr/day"
+     FMR :  3.13520E+02 : "metabolic rate of predator         " : Units = "kcal/day"
+  FWATER :  0.00000E+00 : "frac exposure to water             " : Units = "unitless"
+     FDW :  4.00000E-01 : "conversion dry to wet weight       " : Units = "kg dry/kg wet"
+      GE :  1.90000E+03 : "gross energy                       " : Units = "kcal/kg wet weight"
+ INHRATE :  1.48700E+00 : "resting inhalation rate            " : Units = "m^3/day"
+     PCS :  2.50000E-01 : "fraction of SA in contact w/soil   " : Units = "1/day"
+     PCW :  0.00000E+00 : "fraction of SA available to water  " : Units = "unitless"
+     PSI :  1.00000E+00 : "seasonality factor                 " : Units = "unitless"
+      SA :  1.77960E+03 : "surface area                       " : Units = "cm^2"
+  SADHER :  1.45000E+00 : "skin adherance factor              " : Units = "mg/cm^2"
+   THETA :  1.00000E+00 : "area use factor                    " : Units = "unitless"
+WATERING :  1.03680E-01 : "water ingestion rate               " : Units = "L/day"
+  WEIGHT :  2.20000E+00 : "body weight                        " : Units = "kg wet"
+!
+!----------------------------------------------------------------------------------------------------
+Terrestrial Animal species "UCOYOT" : "coyote"
+Habitat : UPLAND
+Consumption information
+   0.10000 of species   6 : "UFUNGI" : intake (kg wet)  1.1753E-01 : "fungi"
+   0.90000 of species  11 : "UBIRD " : intake (kg wet)  1.0578E+00 : "Bird/poultry"
+   0.12000 of "soil"                 : intake (kg wet)  1.4104E-01
+Deterministic parameter definitions
+      AE :  8.10000E-01 : "assimilation efficiency            " : Units = "unitless"
+  DIFFHT :  2.50000E-01 : "diffusion height                   " : Units = "m"
+ ETWATER :  0.00000E+00 : "exposure time to water             " : Units = "hr/day"
+     FMR :  1.68200E+03 : "metabolic rate of predator         " : Units = "kcal/day"
+  FWATER :  0.00000E+00 : "frac exposure to water             " : Units = "unitless"
+     FDW :  4.00000E-01 : "conversion dry to wet weight       " : Units = "kg dry/kg wet"
+      GE :  1.70000E+03 : "gross energy                       " : Units = "kcal/kg wet weight"
+ INHRATE :  1.01820E+01 : "resting inhalation rate            " : Units = "m^3/day"
+     PCS :  2.20000E-01 : "fraction of SA in contact w/soil   " : Units = "1/day"
+     PCW :  0.00000E+00 : "fraction of SA available to water  " : Units = "unitless"
+     PSI :  1.00000E+00 : "seasonality factor                 " : Units = "unitless"
+      SA :  6.72710E+03 : "surface area                       " : Units = "cm^2"
+  SADHER :  1.45000E+00 : "skin adherance factor              " : Units = "mg/cm^2"
+   THETA :  1.00000E+00 : "area use factor                    " : Units = "unitless"
+WATERING :  1.22070E+00 : "water ingestion rate               " : Units = "L/day"
+  WEIGHT :  1.63000E+01 : "body weight                        " : Units = "kg wet"
+!
+!----------------------------------------------------------------------------------------------------
+Terrestrial Animal species "UEGG" : "Egg"
+Habitat : UPLAND
+Consumption information
+   1.00000 of species   6 : "UFUNGI" : intake (kg wet)  6.8171E-01 : "fungi"
+   0.15000 of "soil"                 : intake (kg wet)  1.0226E-01
+Deterministic parameter definitions
+      AE :  8.10000E-01 : "assimilation efficiency            " : Units = "unitless"
+  DIFFHT :  1.00000E-01 : "diffusion height                   " : Units = "m"
+ ETWATER :  0.00000E+00 : "exposure time to water             " : Units = "hr/day"
+     FMR :  3.13520E+02 : "metabolic rate of predator         " : Units = "kcal/day"
+  FWATER :  0.00000E+00 : "frac exposure to water             " : Units = "unitless"
+     FDW :  4.00000E-01 : "conversion dry to wet weight       " : Units = "kg dry/kg wet"
+      GE :  1.90000E+03 : "gross energy                       " : Units = "kcal/kg wet weight"
+ INHRATE :  1.48700E+00 : "resting inhalation rate            " : Units = "m^3/day"
+     PCS :  2.50000E-01 : "fraction of SA in contact w/soil   " : Units = "1/day"
+     PCW :  0.00000E+00 : "fraction of SA available to water  " : Units = "unitless"
+     PSI :  1.00000E+00 : "seasonality factor                 " : Units = "unitless"
+      SA :  1.77960E+03 : "surface area                       " : Units = "cm^2"
+  SADHER :  1.45000E+00 : "skin adherance factor              " : Units = "mg/cm^2"
+   THETA :  1.00000E+00 : "area use factor                    " : Units = "unitless"
+WATERING :  1.03680E-01 : "water ingestion rate               " : Units = "L/day"
+  WEIGHT :  2.20000E+00 : "body weight                        " : Units = "kg wet"
+
+No Thresholds Requested that Match with Requested Species and Analytes
+
+Header information from the map file
+   ECDA_PTITLE = Demonstrate TIIA codes with a small data set
+   ECDA_PRGNAM = ECDA
+   ECDA_PRGVER = 4.00.001
+   ECDA_PRGDAT = 11 Jul 2012
+   ECDA_USRNAM = Paul W. Eslinger
+   ECDA_CRUNID = 20120823135826
+   ECDA_BLOCK  = 22
+   ECDA_RECLEN = 18
+   ECDA_NREAL  = 1
+
+Header information from the map file
+   FCDA_PTITLE   = "Demonstrate TIIA codes with a small data set - ECEM Keywords"
+   FCDA_PRGNAM   = "ECEM"
+   FCDA_PRGVER   = "4.00.001"
+   FCDA_PRGDAT   = " 9 Jul 2012"
+   FCDA_USRNAM   = "Paul W. Eslinger"
+   FCDA_CRUNID   = "20120823135828"
+   FCDA_BLOCK_AQ = 2
+   FCDA_BLOCK_RP = 2
+   FCDA_BLOCK_UP = 3
+   FCDA_NHEAD    = 3
+   FCDA_RECLEN   = 14
+   FCDA_NREAL    = 1
+
+Ending Problem Execution
+    Date: 08/23/2012
+    Time: 13:58:28.776
+
+Message originating in routine ECEM
+Message: Normal Termination

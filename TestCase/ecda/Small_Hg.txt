@@ -1,0 +1,35 @@
+ File: .\ecda\Small_Hg.bin
+        1 Hg
+        2 kg/m^3
+        3 kg/m^3
+        4 kg/m^3
+        5 kg/m^3
+        6 kg/kg
+        7 kg/kg
+        8 kg/kg
+        9 kg/kg
+       10 kg/kg
+       11 kg/m^3
+       12 kg/m^2/yr
+       13    2012 QRD1-1 SWAT  2.400000E-08
+       14    2012 QRD1-1 PWAT  6.000000E-07
+       15    2012 QRD1-1 SEDI  8.500000E-06
+       16    2012 QRD2-1 SWAT  4.200000E-08
+       17    2012 QRD2-1 PWAT  7.000000E-07
+       18    2012 QRD2-1 SEDI  9.000000E-06
+       19    2012 RRD1-1 GWAT  1.000000E-07
+       20    2012 RRD1-1 SEEP  5.972000E-08
+       21    2012 RRD1-1 SORP  4.743727E-06
+       22    2012 RRD1-1 AIRC  1.000000E-09
+       23    2012 RRD1-1 AIRD  0.000000E+00
+       24    2012 RRD2-1 GWAT  2.000000E-07
+       25    2012 RRD2-1 SEEP  1.037400E-06
+       26    2012 RRD2-1 SORP  8.240360E-05
+       27    2012 RRD2-1 AIRC  1.500000E-09
+       28    2012 RRD2-1 AIRD  0.000000E+00
+       29    2012 UP1    GWAT  3.000000E-07
+       30    2012 UP1    SODR  0.000000E+00
+       31    2012 UP1    SOGW  8.278423E-12
+       32    2012 UP1    SOSW  5.174014E-13
+       33    2012 UP1    AIRC  3.000000E-09
+       34    2012 UP1    AIRD  0.000000E+00

@@ -1,0 +1,6 @@
+File: .\Foods\Food_As_TURTLE.fod
+        1 As
+        2 TURTLE
+        3 AQUATIC
+        4    2012 RRD1-1  5.14441E+00
+        5    2012 RRD2-1  1.11412E+01

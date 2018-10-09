@@ -1,0 +1,13 @@
+"INFILT"
+"Demonstrate TIIA codes with a small data set"
+"ECDA"
+"4.00.001"
+"11 Jul 2012"
+"20120823135826"
+"Paul W. Eslinger"
+4
+1
+1,"Inf1","mm/yr", 2.27587E+00
+2,"Inf2","mm/yr", 6.29384E+00
+3,"Inf1D","mm/yr", 1.50000E+00
+4,"Inf2D","mm/yr", 1.50000E+00

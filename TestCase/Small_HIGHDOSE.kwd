@@ -1,0 +1,83 @@
+!==================================================================================================!
+!
+! Purpose:
+!   This keyword file is designed for use by the HighDose Code.
+!   It is used to postprocess detailed data files from ECEM to identify the most impacted species
+!   at selected locations and times.
+!
+! History:
+!   Paul W. Eslinger : 16 Jul 2012 : Initial file prepared
+!
+!==================================================================================================!
+
+!--------------------------------------| Simulation Control |--------------------------------------!
+!
+! Simulation Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Report file name
+REPORT "Small_HIGHDOSE.rpt"
+!
+!- Title for labeling purposes
+TITLE  "Demonstrate TIIA codes with a small data set - HIGHDOSE Keywords"
+!
+!- User name for labeling purposes
+USER "Paul W. Eslinger"
+!
+!- Number of realizations to run
+REALIZAT 1
+!
+!- More run progress informaiton written to the screen
+VERBOSE
+!
+!- File from ECEM to process
+FILE ECEM ".\Ecem\Small_det.csv"
+!
+!- Output results file (ASCII text file)
+FILE RESULTS ".\Ecem\Small_HIGHDOSE.csv"
+!
+!- Maximum size of tables to save
+MEMORY TABLEROW=3 REALIZATION=1 RECORDS=1000
+
+!--------------------------------------| Species Definition |--------------------------------------!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters.xlsx, sheet 'Master Species List'
+!   Verified by  :
+!   Date verified:
+!   Comments     : Copy the data into a text file
+!
+FILE SPECIES "Small_Species.txt"
+
+!--------------------------------------| Single Definition |--------------------------------------!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     : The following keywords only have a single choice
+!
+SOLUTION "BURDEN"
+ANALYTE "As"
+SOIL "SORP"
+
+!--------------------------------------| Multiple Definitions |--------------------------------------!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     : The following keywords multiple choices
+!
+LOCATION "RRD1-1" "RRD2-1"
+TIME 2012
+
+!-------------------------------------|  End of Keyword File  |--------------------------------------!
+!
+END
+

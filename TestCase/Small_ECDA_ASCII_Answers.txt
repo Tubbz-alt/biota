@@ -1,0 +1,6 @@
+".\ecda\Small_Hg.bin"
+".\ecda\Small_Hg.txt"
+1
+ALL
+ALL
+999999

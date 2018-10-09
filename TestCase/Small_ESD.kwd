@@ -1,0 +1,296 @@
+!==================================================================================================!
+!
+! Purpose:
+!   Environmental Settings Definition File - Small case
+!
+! History:
+!   Paul W. Eslinger : 12 Jul 2012 : Initial file prepared
+!
+!==================================================================================================!
+
+!--------------------------------------| Simulation Control |--------------------------------------!
+!
+! Simulation Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Name of the report file
+REPORT "Small_ESD.rpt"
+!
+!- Descriptive title for labeling purposes
+TITLE  "Demonstrate TIIA codes with a small data set"
+!
+! - User name for labeling purposes
+USER   "Paul W. Eslinger"
+!
+!- Number of realizations to run
+REALIZAT 1
+!
+!- Time period for the simulation
+PERIOD START=2012 STOP=2012 CLOSURE=2012
+
+!-------------------------------------------| Analytes |-------------------------------------------!
+!
+! ANALYTE Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  : Small_analyte.xlsx, Sheet "ESD Analyte Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+ANALYTE ID="ACNAPE" NAME="Acenaphthene (CASID 83-32-9)" TYPE="OS" MOLDIFF=5.000000E-08 HENRY=1.570538E+01 COMPUTE
+ANALYTE ID="As"     NAME="Arsenic (CASID 7440-38-2)"    TYPE="NS" MOLDIFF=5.000000E-10 HENRY=0.000000E+00 COMPUTE
+ANALYTE ID="Hg"     NAME="Mercury (CASID 7439-97-6)"    TYPE="NS" MOLDIFF=1.000000E-10 HENRY=1.155105E+03 COMPUTE
+ANALYTE ID="Zn"     NAME="Zinc (CASID 7440-66-6)"       TYPE="NS" MOLDIFF=0.000000E+00 HENRY=0.000000E+00 COMPUTE
+
+!--------------------------------| ECDA Solution Times |-------------------------------------------!
+!
+! TIMES Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+TIMES 2012
+
+!-------------------------------| ECDA Concentration Related Files |-------------------------------!
+!
+! ECDA-Related File Management Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  : Small_analyte.xlsx, Sheet "ESD File Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+! FILLECDA keywords initialize the ECDA files
+FILLECDA GWAT FIXED=0.0
+FILLECDA PWAT FIXED=0.0
+FILLECDA SWAT FIXED=0.0
+FILLECDA SEEP FIXED=0.0
+FILLECDA SEDI FIXED=0.0
+FILLECDA SORP FIXED=0.0
+FILLECDA SODR FIXED=0.0
+FILLECDA SOGW FIXED=0.0
+FILLECDA SOSW FIXED=0.0
+FILLECDA AIRC FIXED=0.0
+FILLECDA AIRD FIXED=0.0
+!
+! SACVIEW header file for ECDA concentration files
+FILE HEADER NAME=".\ecda\Small_Header.txt" CREATE
+!
+! ECDA record number index map file for concentration data
+FILE I_ECDA  NAME=".\ecda\Small_I_ECDA.txt"  CREATE
+!
+! ECDA Concentration data files for each analyte
+FILE C_ECDA ANALYTE="As"     NAME=".\ecda\Small_As.bin" CREATE
+FILE C_ECDA ANALYTE="ACNAPE" NAME=".\ecda\Small_ACNAPE.bin" CREATE
+FILE C_ECDA ANALYTE="Hg"     NAME=".\ecda\Small_Hg.bin" CREATE
+FILE C_ECDA ANALYTE="Zn"     NAME=".\ecda\Small_Zn.bin" CREATE
+
+!-------------------------------| Soil-Water Partition Coefficients (Kd's) |---------------------------!
+!
+! KDSOIL Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  : Small_analyte.xlsx, Sheet "ESD File Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+ECHO KDSOIL ! Echo KDSOIL data to the ECDA report file
+!
+! Library File
+FILE KDSOIL NAME=".\ecda\Small_KdSoil.dat" SEED=1234.0 CREATE
+!
+! Kd defining data
+KDSOIL ID="KdHg"   1  79.4328  UNITS="L/g"  LABEL="Sediment/porewater Kd for mercury"
+KDSOIL ID="KdAs"   1  0.029    UNITS="L/g"  LABEL="Sediment/porewater Kd for arsenic"
+KDSOIL ID="KdZn"   1  0.062    UNITS="L/g"  LABEL="Sediment/porewater Kd for zinc"
+KDSOIL ID="KdACNA" 1  5.75     UNITS="L/g"  LABEL="Sediment/porewater Kd for Acenaphthene"
+
+
+!-------------------------------| Upland Locations Infiltration Classes |------------------------------!
+!
+! INFILTRATION Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  : Small_Location.xlsx, Sheet "Infiltration Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comment      :
+!
+ECHO INFILT ! Echo infiltration data to the ECDA report file
+!
+! Define the library file
+FILE INFILT NAME=".\ecda\Small_Infilt.txt" SEED=2591.0 CREATE
+!
+! Declare all possible infiltration classes for upland locations
+INFILTRA DEFINE UNIT="mm/yr" CLASS="Inf1" 6 0.75 1.5 3.12  LABEL="Example infiltration class 1"
+INFILTRA DEFINE UNIT="mm/yr" CLASS="Inf2" 6 4.12 6.3 10.1  LABEL="Example infiltration class 2"
+INFILTRA DEFINE UNIT="mm/yr" CLASS="Inf1D" 1  1.5   LABEL="Example infiltration class 1 - deterministic"
+INFILTRA DEFINE UNIT="mm/yr" CLASS="Inf2D" 1  1.5   LABEL="Example infiltration class 2 - deterministic"
+
+!--------------------------------| Dilution Factor Data for RIPSAC |-------------------------------!
+!
+! DILUTE Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  : Small_Location.xlsx, Sheet "DILUTE Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comment      :
+!
+ECHO DILUTE ! Echo dilution data to the ECDA report file
+!
+! Define the library file
+FILE DILUTE NAME=".\ecda\Small_Dilute.txt" SEED=44532 CREATE
+!
+! Define all dilution factor classes
+DILUTE UNITS="none" ID="DF5m" 6 0.36 0.47 0.63  LABEL="Dilution at 5 meters"
+DILUTE UNITS="none" ID="DF20m" 6 4.12 6.3 10.1  LABEL="Dilution at 20 meters"
+DILUTE UNITS="none" ID="DF5mD" 1  0.47   LABEL="Dilution at 5 meters - deterministic"
+DILUTE UNITS="none" ID="DF20mD" 1  6.3   LABEL="Dilution at 20 meters - deterministic"
+
+
+!--------------------------------------| Irrigation Control |--------------------------------------!
+!
+! Irrigation control keyword for the SOIL model
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  :
+!   Verified by  :
+!   Date verified:
+!   Comments     : Irrigation data are needed in the SOIL model
+!                  Irrigation starts in 2012 for all locations
+!
+IRRIGATE SPRING=121 FALL=256 RATE=0.5 START=2012 THETAIRG=0.5 THETADRY=0.2 NET=0.25
+
+!---------------------------------------|  Aquatic Locations   |----------------------------------------!
+!
+! LOCATION keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  : Small_Location.xlsx, Sheet Aquatic_Loc_Key
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+LOCATION ID="QRD1-1" EASTING=457378.38  NORTHING=2040455.86  MILE=000.00  NAME="Aquatic REFERENCIA DOS BOCAS"
+  SWAT PWAT SEDI  TYPE="AQUATIC"  LOCUS="Near"  AREA=0 COXYGEN=0.011
+LOCATION ID="QRD2-1" EASTING=457866.71  NORTHING=2040635.66  MILE=000.00  NAME="Aquatic REFERENCIA DOS BOCAS"
+  SWAT PWAT SEDI  TYPE="AQUATIC"  LOCUS="Near"  AREA=0 COXYGEN=0.011
+
+!---------------------------------------|  Riparian Locations   |----------------------------------------!
+!
+! LOCATION keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  : Small_Locations.xlsx, Sheet Riparian_Loc_Key
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+LOCATION ID="RRD1-1" EASTING=457378.38  NORTHING=2040455.86  MILE=000.00  NAME="Riparian REFERENCIA DOS BOCAS"
+  GWAT SEEP SORP AIRC AIRD  TYPE="RIPARIAN"  LOCUS="Near"  AREA=0
+  APSD    = 0.040  POROSITY = 0.350  FOC = 0.200  VEGCOV = 0.500  MSWIND = 3.440
+  NECF    = 1.000  RHOS     = 1.500  SRH = 0.018  MZWIND = 3.440  TEMP = 12.0
+LOCATION ID="RRD2-1" EASTING=457866.71  NORTHING=2040635.66  MILE=000.00  NAME="Riparian REFERENCIA DOS BOCAS"
+  GWAT SEEP SORP AIRC AIRD  TYPE="RIPARIAN"  LOCUS="Near"  AREA=0
+  APSD    = 0.040  POROSITY = 0.350  FOC = 0.200  VEGCOV = 0.500  MSWIND = 3.440
+  NECF    = 1.000  RHOS     = 1.500  SRH = 0.018  MZWIND = 3.440  TEMP = 12.0
+
+!---------------------------------------|  Upland Locations   |----------------------------------------!
+!
+! LOCATION keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 11 Jul 2012
+!   Data source  : Small_Locations.xlsx, Sheet Riparian_Loc_Key
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+LOCATION ID="UP1" EASTING=456896.75  NORTHING=2040309.49  MILE=000.00  NAME="Upland New Location"
+  GWAT SODR SOGW SOSW AIRC AIRD  TYPE="UPLAND"  LOCUS="Near"  AREA=0 IRG_SWAT="QRD1-1"
+  APSD    = 0.040  POROSITY = 0.350  FOC = 0.200  VEGCOV = 0.500  MSWIND = 3.440
+  NECF    = 1.000  RHOS     = 1.500  SRH = 0.018  MZWIND = 3.440  TEMP = 12.0
+
+!----------------------------------| Biotic Species Information |----------------------------------!
+!
+! SPECIES Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters.xlsx
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+! Type QP: Aquatic plants
+SPECIES ID="DETFAC" TYPE="QP" NAME="Detritus FAC Camarón" HABITAT="AQUATIC"
+ AWD=10  FLIPID=0.0418   FOC=0.35   WBMASS=0.000035 AE=0.23 GE=740
+SPECIES ID="MICFIT" TYPE="QP" NAME="Microfitas bentonicas" HABITAT="AQUATIC"
+ AWD=10  FLIPID=0.0418   FOC=0.35   WBMASS=0.000035 AE=0.23 GE=740
+!
+! Type QA: Aquatic animals
+SPECIES ID="BSHRMP" TYPE="QA" NAME="brown shrimp" HABITAT="AQUATIC"
+ OCAR=5.0000E-01   AWD=6.0000E+00 FLIPID=1.7000E-02 FOC=5.1800E-01
+ WBMASS=1.5000E+01 AE=5.0000E-01 GE=1.1000E+03
+SPECIES ID="OCTOPI" TYPE="QA" NAME="octopus" HABITAT="AQUATIC"
+ OCAR=5.0000E-01   AWD=5.0000E+00 FLIPID=1.0000E-02 FOC=5.1800E-01
+ WBMASS=3.2620E+03 AE=5.0000E-01 GE=1.1000E+03
+!
+! Type TP: Terrestrial plants
+SPECIES ID="RFUNGI" TYPE="TP" NAME="fungi" HABITAT="RIPARIAN" AE=7.3000E-01
+ DIFFHT=5.0000E-02 FPA=5.0000E-01    FPL=1.0000E-02  FPW=4.0000E-01    FW=9.1000E-01 GE=6.3000E+02
+ FWATER=0.0000E+00 RHOP=1.0000E+03 ETWATER=0.0000E+00
+SPECIES ID="UFUNGI" TYPE="TP" NAME="fungi" HABITAT="UPLAND" AE=7.3000E-01
+ DIFFHT=5.0000E-02 FPA=5.0000E-01    FPL=1.0000E-02  FPW=4.0000E-01    FW=9.1000E-01 GE=6.3000E+02
+ FWATER=0.0000E+00 RHOP=1.0000E+03 ETWATER=0.0000E+00
+!
+! Type TA: Terrestrial animals
+SPECIES ID="GULPEL" TYPE="TA" NAME="gull/pelican" HABITAT="AQUATIC"
+  AE=8.1000E-01      DIFFHT=3.0000E-01  ETWATER=1.8000E+01  FMR=6.6136E+02
+  FWATER=4.0000E+01  FDW=0.4            GE=1.9000E+03  INHRATE=3.6591E+00
+  PCS=2.5000E-01  PCW=8.0000E-01  PSI=7.5000E-01  SADHER=1.4500E+00
+  THETA=5.0000E-01   SA=9.1023E+02       WATERING=5.3557E-02  WEIGHT=2.1090E+00
+SPECIES ID="TURTLE" TYPE="TA" NAME="turtle" HABITAT="AQUATIC"
+  AE=3.0000E-01      DIFFHT=1.0000E-03  ETWATER=2.4000E+01  FMR=4.6500E+02
+  FWATER=1.0000E+02  FDW=0.4            GE=1.4000E+03  INHRATE=4.5360E+00
+  PCS=0.0000E+00  PCW=1.0000E+00  PSI=1.0000E+00  SADHER=0.0000E+00
+  THETA=2.0000E-01   SA=2.0000E+04       WATERING=4.5150E-01  WEIGHT=1.5000E+02
+SPECIES ID="RBIRD" TYPE="TA" NAME="Bird/poultry" HABITAT="RIPARIAN"
+  AE=8.1000E-01      DIFFHT=1.0000E-01  ETWATER=0.0000E+00  FMR=3.1352E+02
+  FWATER=0.0000E+00  FDW=0.4            GE=1.9000E+03  INHRATE=1.4870E+00
+  PCS=2.5000E-01  PCW=0.0000E+00  PSI=1.0000E+00  SADHER=1.4500E+00
+  THETA=1.0000E+00   SA=1.7796E+03       WATERING=1.0368E-01  WEIGHT=2.2000E+00
+SPECIES ID="RCOYOT" TYPE="TA" NAME="coyote" HABITAT="RIPARIAN"
+  AE=8.1000E-01      DIFFHT=2.5000E-01  ETWATER=0.0000E+00  FMR=1.6820E+03
+  FWATER=0.0000E+00  FDW=0.4            GE=1.7000E+03  INHRATE=1.0182E+01
+  PCS=2.2000E-01  PCW=0.0000E+00  PSI=1.0000E+00  SADHER=1.4500E+00
+  THETA=1.0000E+00   SA=6.7271E+03       WATERING=1.2207E+00  WEIGHT=1.6300E+01
+SPECIES ID="UBIRD" TYPE="TA" NAME="Bird/poultry" HABITAT="UPLAND"
+  AE=8.1000E-01      DIFFHT=1.0000E-01  ETWATER=0.0000E+00  FMR=3.1352E+02
+  FWATER=0.0000E+00  FDW=0.4            GE=1.9000E+03  INHRATE=1.4870E+00
+  PCS=2.5000E-01  PCW=0.0000E+00  PSI=1.0000E+00  SADHER=1.4500E+00
+  THETA=1.0000E+00   SA=1.7796E+03       WATERING=1.0368E-01  WEIGHT=2.2000E+00
+SPECIES ID="UCOYOT" TYPE="TA" NAME="coyote" HABITAT="UPLAND"
+  AE=8.1000E-01      DIFFHT=2.5000E-01  ETWATER=0.0000E+00  FMR=1.6820E+03
+  FWATER=0.0000E+00  FDW=0.4            GE=1.7000E+03  INHRATE=1.0182E+01
+  PCS=2.2000E-01  PCW=0.0000E+00  PSI=1.0000E+00  SADHER=1.4500E+00
+  THETA=1.0000E+00   SA=6.7271E+03       WATERING=1.2207E+00  WEIGHT=1.6300E+01
+SPECIES ID="UEGG" TYPE="TA" NAME="Egg" HABITAT="UPLAND" TRANSFER
+  AE=8.1000E-01      DIFFHT=1.0000E-01  ETWATER=0.0000E+00  FMR=3.1352E+02
+  FWATER=0.0000E+00  FDW=0.4            GE=1.9000E+03  INHRATE=1.4870E+00
+  PCS=2.5000E-01  PCW=0.0000E+00  PSI=1.0000E+00  SADHER=1.4500E+00
+  THETA=1.0000E+00   SA=1.7796E+03       WATERING=1.0368E-01  WEIGHT=2.2000E+00
+
+!-------------------------------------|  End of Keyword File  |--------------------------------------!
+!
+END

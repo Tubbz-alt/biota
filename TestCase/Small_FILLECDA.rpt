@@ -1,0 +1,73 @@
+
+
+        FFFFFFF IIIIIII L       L       EEEEEEE  CCCCC  DDDD      AAAAA 
+        F          I    L       L       E       C     C D   DD   A     A
+        F          I    L       L       E       C       D     D  A     A
+        FFFFF      I    L       L       EEEEE   C       D     D  AAAAAAA
+        F          I    L       L       E       C       D     D  A     A
+        F          I    L       L       E       C     C D   DD   A     A
+        F       IIIIIII LLLLLLL LLLLLLL EEEEEEE  CCCCC  DDDD     A     A
+
+
+                           FillECDA   Version 4.00.002
+                          Last Modified on 23 Jul 2012 
+
+          Current Run ID = 20120823135826   User Name = Paul W. Eslinger
+                 System Date = 08-23-2012   System Time = 13:58:26
+                 ------------------------------------------------
+                 Toolkit for Integrated Impact Assessments (TIIA)
+                 Copyright (c) Battelle Memorial Institute, 2012.
+                               All Rights Reserved.              
+                 ------------------------------------------------
+
+                The software used to generate this output has been
+               developed under Battelle software control procedures.
+
+Eslinger, P.W. and T.B. Miley.   PNWD-4357, Rev. 1.  July 2012.
+User Instructions for the Computer Codes of the Toolkit for Integrated Impact
+Assessments (TIIA), Version 1. Battelle Memorial Institute, Columbus, Ohio 43201
+
+
+                             Review Signatures
+
+Input Prepared By: ______________________________       Date: _______________
+
+Input Reviewed By: ______________________________       Date: _______________
+
+Starting Problem Execution
+    Date: 08/23/2012
+    Time: 13:58:26.670
+
+
+======================== Echo of the Problem Definition ========================
+
+Title: Demonstrate TIIA codes with a small data set - FILLECDA Keywords                                                                                                                                        
+User:  Paul W. Eslinger
+      1 Realizations requested in this run
+      1 Realizations available in the concentration files
+     60 DATA sets defined for insertion into the ECDA files
+
+File Name for this file
+File: Small_FILLECDA.rpt
+
+File Name for Input Keyword Data
+File: Small_FILLECDA.kwd
+
+File Name for Media Concentrations for analyte with ID="ACNAPE"
+File: .\ecda\Small_ACNAPE.bin
+
+File Name for Media Concentrations for analyte with ID="As"
+File: .\ecda\Small_As.bin
+
+File Name for Media Concentrations for analyte with ID="Hg"
+File: .\ecda\Small_Hg.bin
+
+File Name for Media Concentrations for analyte with ID="Zn"
+File: .\ecda\Small_Zn.bin
+
+Ending Problem Execution
+    Date: 08/23/2012
+    Time: 13:58:26.904
+
+Message originating in routine FillECDA
+Message: Normal Termination

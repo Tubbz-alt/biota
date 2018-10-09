@@ -1,0 +1,863 @@
+!==================================================================================================!
+!
+! Purpose:
+!   Calculate concentrations in food products
+!
+! History:
+!   Name Here : 16 Jul 2012 : Initial file prepared
+!
+!==================================================================================================!
+
+!--------------------------------------| Simulation Control |--------------------------------------!
+!
+! Simulation Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Report file name (first keyword)
+REPORT "Small_ECEM.rpt"
+!
+!- Title for labeling purposes
+TITLE  "Demonstrate TIIA codes with a small data set - ECEM Keywords"
+!
+!- User name for labeling purposes
+USER "Paul W. Eslinger"
+!
+!- Name of controlling ESD keyword file
+FILE ESD "Small_ESD.kwd"
+!
+!- Number of realizations to run
+REALIZAT 1
+!
+!- Time (years) to calculate
+TIMES 2012
+!
+!- Random Seed for Stochastic routines
+SEED 4453190
+!
+!- Detailed values of calculated results
+FILE DETAILS ".\Ecem\Small_det.csv"
+!DETAILS DOSRAD
+!DETAILS DOSING
+!DETAILS DOSINH
+!DETAILS DOSDER
+!DETAILS BMTISS
+!DETAILS SUMRAD
+DETAILS BURDEN
+DETAILS CONCEN
+!
+!- Summary statistics on calculated results
+!  Generally useful only if using more than 1 realization)
+FILE STATISTICS ".\Ecem\Small_sta.csv"
+STATISTICS GENERATE
+STATISTICS DEFINE
+!STATISTICS DOSRAD
+!STATISTICS DOSING
+!STATISTICS DOSINH
+!STATISTICS DOSDER
+!STATISTICS BMTISS
+!STATISTICS SUMRAD
+STATISTICS BURDEN
+STATISTICS CONCEN
+!
+!- Optional file containing statistics on stochastic values
+FILE VALUES ".\Foods\Small_Foods_val.txt"
+!
+!- Required file definition for the header file
+FILE HEADER ".\Foods\Small_Foods.hdr"
+!
+!- Actually execute the case
+EXECUTE
+
+!-------------------------------| Debug Control |-----------------------------!
+!
+! DEBUG Keyword
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     : Debug outputs go to the report file
+!                  The file size can get very large using debug outputs
+!
+!- Detailed output on species definitions
+DEBUG SPECIES
+!
+!- Media concentrations
+!DEBUG CONCENTRATIONS
+!
+!- Vapor and particulate concentration calculations
+!DEBUG AIR
+!
+!- Library information for analytes and nodes (locations)
+!DEBUG CONSTANT
+!DEBUG ANALYTES
+!DEBUG NODES
+!
+!- Names of food files
+!DEBUG FCDA
+!
+!- Stochastic variable generation
+!DEBUG GENERATE
+!
+!- Looping control in main ECORISK routine
+!DEBUG LOOP
+!DEBUG VERBOSE
+!
+!- Individual exposure routines
+!DEBUG OR_QP
+!DEBUG OR_TP
+!DEBUG OR_QA
+!DEBUG OR_TA
+!DEBUG NR_QP
+!DEBUG NR_TP
+!DEBUG NR_QA
+!DEBUG NR_TA
+!DEBUG OS_QP
+!DEBUG OS_TP
+!DEBUG OS_QA
+!DEBUG OS_TA
+!DEBUG NS_QP
+!DEBUG NS_TP
+!DEBUG NS_QA
+!DEBUG NS_TA
+!
+!- Radionuclide sums
+!DEBUG RADSUM
+
+!-------------------------------| Threshold Definitions |-----------------------------!
+!
+! THRESHOLD Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!
+!- File definition for threshold results
+!FILE THRESHOLD "TBD"
+!
+! - Specific threshold values
+!THRESHOLD TYPE="TBD" SPECIES="TBD" ANALYTE="TBD" LIMIT1=TBD LIMIT2=TBD
+!THRESHOLD TYPE="TBD" SPECIES="TBD" ANALYTE="TBD" LIMIT1=TBD LIMIT2=TBD
+
+!-------------------------------| FOODS Definitions |-----------------------------!
+!
+! FOODS Keyword
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Specific path and files for food files
+FOODS MAP     = "Small_Foods_map.txt"
+      PATH    = ".\Foods\"
+      SACVIEW = "Small_Foods_hdr.txt"
+
+!-------------------------------| Analyte Definitions |-------------------------------!
+!
+! ANALYTE Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_analyte.xlsx, Sheet "ECEM Analyte Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     : Analyte definitions (must be included with OUTPUT to get results)
+!
+ANALYTE ID="ACNAPE" ELEMENT="ACNAPE" PARTICLE=0 OUTPUT
+ANALYTE ID="As" ELEMENT="As" PARTICLE=0 OUTPUT
+ANALYTE ID="Hg" ELEMENT="Hg" PARTICLE=0 OUTPUT
+ANALYTE ID="Zn" ELEMENT="Zn" PARTICLE=0 OUTPUT
+
+!--------------------------------------| Soil/Water Kd Data |--------------------------------------!
+!
+! KDSOIL Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_analyte.xlsx, Sheet "KDSOIL Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     : The KDSOIL ID's come from the list of ID's in the KDSOIL library
+!
+KDSOIL ANALYTE="ACNAPE" ID="KdACNA"
+KDSOIL ANALYTE="As" ID="KdAs"
+KDSOIL ANALYTE="Hg" ID="KdHg"
+KDSOIL ANALYTE="Zn" ID="KdZn"
+
+!--------------------------------| Other Variables |-------------------------------!
+!
+! Other Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "Other Variables"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+VARIABLE COWHDFX 0.0497   ! Units="unitless"  Default value (EPA,1991) RAGS, Part B.
+VARIABLE EXPOSI 790000000 ! Units="sec"  Default value (EPA,1991) RAGS, Part B.
+VARIABLE GASCON 8.314     ! Units="Pa-m^3/mol-K"
+VARIABLE RFRAC 0.036      ! Units="g/m^2-hr"  Default value (EPA,1991) RAGS, Part B.
+VARIABLE AREA 2025        ! Units="m^2"  Default value (EPA,1991) RAGS, Part B.
+VARIABLE LENGTH 45        ! Units="m"  Default value (EPA,1991) RAGS, Part B.
+!
+GROWTH DELTA 0.002  ! Reference = Thomann et al. 1992, Equation 4.50
+GROWTH BETA 0.25    ! Reference = Thomann et al. 1992, Equation 4.50
+RESPIRE PHI 0.032   ! Reference = Thomann 1989, Equation 4.52
+RESPIRE GAMMA 0.2   ! Reference = Thomann 1989, Equation 4.52
+
+!
+!-------------------------------| Location Definitions |-------------------------------!
+!
+! LOCATION Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data sources : Small_Location.xlsx, sheet "Ecem_Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Aquatic locations
+LOCATION PRIMARY="QRD1-1" OUTPUT
+LOCATION PRIMARY="QRD2-1" OUTPUT
+!
+!- Riparian and Aquatic Paired Locations
+LOCATION PRIMARY="RRD1-1" SECOND="QRD1-1" OUTPUT
+LOCATION PRIMARY="RRD2-1" SECOND="QRD2-1" OUTPUT
+!
+!- Upland locations
+LOCATION PRIMARY="UP1" OUTPUT
+
+!--------------------------------| Species Definitions |-------------------------------!
+! SPECIES Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "Master Species List"
+!   Verified by  :
+!   Date verified:
+!   Comments     : OUTPUT indicates the species is a Human food
+!
+SPECIES ID="DETFAC"  ! Detritus FAC Camarón
+SPECIES ID="MICFIT"  ! Microfitas bentonicas
+SPECIES ID="BSHRMP" OUTPUT ! brown shrimp
+SPECIES ID="OCTOPI" OUTPUT ! octopus
+SPECIES ID="RFUNGI" OUTPUT ! Riparian fungi
+SPECIES ID="UFUNGI" OUTPUT ! Upland fungi
+SPECIES ID="GULPEL" OUTPUT ! gull/pelican
+SPECIES ID="TURTLE" OUTPUT ! turtle
+SPECIES ID="RBIRD" OUTPUT ! Bird/Poultry
+SPECIES ID="RCOYOT"  ! Riparian Coyote
+SPECIES ID="UBIRD" OUTPUT ! Bird/Poultry
+SPECIES ID="UCOYOT"  ! Upland Coyote
+SPECIES ID="UEGG" OUTPUT ! Chicken Egg
+
+!-------------------------------| CONSUME keywords for ECEM |--------------------------!
+!
+! Consumption formatted as CONSUME keywords for ECEM
+!   Program: Consume
+!   Version: 4.0.001
+!   Revised: 9 Jul 2012
+!   User:    Paul W. Eslinger
+!   Date:    07-13-2012
+!   Time:    13:50:03
+!   File:    Small_Consume.Dat
+!
+CONSUME ID="BSHRMP" PREY
+  "DETFAC"  1.00000
+  SEDING    0.10000
+!
+CONSUME ID="OCTOPI" PREY
+  "DETFAC"  0.05000
+  "MICFIT"  0.05000
+  "BSHRMP"  0.90000
+  SEDING    0.05000
+!
+CONSUME ID="GULPEL" PREY
+  "DETFAC"  0.02000
+  "MICFIT"  0.02000
+  "BSHRMP"  0.80000
+  "OCTOPI"  0.16000
+  SOILING   0.10000
+!
+CONSUME ID="TURTLE" PREY
+  "DETFAC"  0.75000
+  "MICFIT"  0.25000
+  SOILING   0.05000
+!
+CONSUME ID="RBIRD" PREY
+  "MICFIT"  0.05000
+  "BSHRMP"  0.10000
+  "OCTOPI"  0.05000
+  "RFUNGI"  0.80000
+  SOILING   0.20000
+!
+CONSUME ID="RCOYOT" PREY
+  "DETFAC"  0.02000
+  "BSHRMP"  0.05000
+  "OCTOPI"  0.04000
+  "RFUNGI"  0.19000
+  "RBIRD "  0.70000
+  SOILING   0.00000
+!
+CONSUME ID="UBIRD" PREY
+  "UFUNGI"  1.00000
+  SOILING   0.15000
+!
+CONSUME ID="UCOYOT" PREY
+  "UFUNGI"  0.10000
+  "UBIRD "  0.90000
+  SOILING   0.12000
+!
+CONSUME ID="UEGG" PREY
+  "UFUNGI"  1.00000
+  SOILING   0.15000
+
+!---------------------------------------| Analyte KOW |--------------------------------------!
+!   Values used for KOW (Octonal/Water Partition)
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "Ana_KOW"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPEKOW" 1 3.92
+STOCHASTIC "As    KOW" 1 1
+STOCHASTIC "Hg    KOW" 1 1
+STOCHASTIC "Zn    KOW" 1 1
+
+!-----------------------------------| Aquatic animal BPORE |----------------------------------!
+!   Values used for aquatic animal BPORE
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "QA BPORE"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "BSHRMPBPORE" 1 0.2
+STOCHASTIC "OCTOPIBPORE" 1 0.1
+
+!-----------------------------------| Aquatic animal ALPHAIJ |----------------------------------!
+!   Values used for aquatic animal ALPHAIJ
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "QA Alphaij"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPEBSHRMPALPHAIJ" 1 2.3360E-01
+STOCHASTIC "ACNAPEOCTOPIALPHAIJ" 1 2.3360E-01
+STOCHASTIC "As    BSHRMPALPHAIJ" 1 1.0000E-01
+STOCHASTIC "As    OCTOPIALPHAIJ" 1 1.0000E-01
+STOCHASTIC "Zn    BSHRMPALPHAIJ" 1 5.5000E-01
+STOCHASTIC "Zn    OCTOPIALPHAIJ" 1 5.5000E-01
+STOCHASTIC "Hg    BSHRMPALPHAIJ" 1 5.0000E-01
+STOCHASTIC "Hg    OCTOPIALPHAIJ" 1 5.0000E-01
+
+!-----------------------------------| Aquatic animal BCF |----------------------------------!
+!   Values used for aquatic animal BCF
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "QA Bcf"
+!   Verified by  :
+!   Date verified:
+!   Comments     : Non-Organics only
+!
+STOCHASTIC "As    BSHRMPBCF" 1 6
+STOCHASTIC "Hg    BSHRMPBCF" 1 7200
+STOCHASTIC "Zn    BSHRMPBCF" 1 2400
+STOCHASTIC "As    BUMPERBCF" 1 5
+STOCHASTIC "Hg    BUMPERBCF" 1 750
+STOCHASTIC "Zn    BUMPERBCF" 1 1650
+STOCHASTIC "As    OCTOPIBCF" 1 5
+STOCHASTIC "Hg    OCTOPIBCF" 1 750
+STOCHASTIC "Zn    OCTOPIBCF" 1 1650
+
+!-----------------------------------| Aquatic animal METBLOSS |----------------------------------!
+!   Values used for aquatic animal METBLOSS
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "QA Metbloss"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPEBSHRMPMETBLOSS" 1 5.48
+STOCHASTIC "As    BSHRMPMETBLOSS" 1 0
+STOCHASTIC "Hg    BSHRMPMETBLOSS" 1 0
+STOCHASTIC "Zn    BSHRMPMETBLOSS" 1 0
+STOCHASTIC "ACNAPEOCTOPIMETBLOSS" 1 0.0913
+STOCHASTIC "As    OCTOPIMETBLOSS" 1 0
+STOCHASTIC "Hg    OCTOPIMETBLOSS" 1 0
+STOCHASTIC "Zn    OCTOPIMETBLOSS" 1 0
+
+!-----------------------------------| Aquatic animal DEPRATE |----------------------------------!
+!   Values used for aquatic animal DEPRATE
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "QA Deprate"
+!   Verified by  :
+!   Date verified:
+!   Comments     : Non-Organics only
+!
+STOCHASTIC "As    BSHRMPDEPRATE" 1 0.1
+STOCHASTIC "Hg    BSHRMPDEPRATE" 1 0.08
+STOCHASTIC "Zn    BSHRMPDEPRATE" 1 0.7
+STOCHASTIC "As    OCTOPIDEPRATE" 1 0.1
+STOCHASTIC "Hg    OCTOPIDEPRATE" 1 0.08
+STOCHASTIC "Zn    OCTOPIDEPRATE" 1 0.02
+
+!-----------------------------------| Aquatic plant BPORE |----------------------------------!
+!   Values used for aquatic plant BPORE
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "QP Bpore"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "DETFACBPORE" 1 0.5
+STOCHASTIC "MICFITBPORE" 1 0.5
+
+!-----------------------------------| Aquatic plant BCF |----------------------------------!
+!   Values used for aquatic plants BCF
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "QP Bcf"
+!   Verified by  :
+!   Date verified: Non-Organics only
+!   Comments     :
+!
+STOCHASTIC "As    DETFACBCF" 1 4000
+STOCHASTIC "As    MICFITBCF" 1 4000
+STOCHASTIC "Hg    DETFACBCF" 1 6000
+STOCHASTIC "Hg    MICFITBCF" 1 6000
+STOCHASTIC "Zn    DETFACBCF" 1 500
+STOCHASTIC "Zn    MICFITBCF" 1 500
+
+!-----------------------------| Terrestrial Animal Deprate |----------------------------!
+!   Values used for terrestrial animal DEPRATE
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet ""
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPEGULPELDEPRATE" 1 8.4
+STOCHASTIC "ACNAPERBIRD DEPRATE" 1 8.4
+STOCHASTIC "ACNAPERCOYOTDEPRATE" 1 9
+STOCHASTIC "ACNAPETURTLEDEPRATE" 1 8.4
+STOCHASTIC "ACNAPEUBIRD DEPRATE" 1 8.4
+STOCHASTIC "ACNAPEUCOYOTDEPRATE" 1 8
+STOCHASTIC "As    GULPELDEPRATE" 1 0.55
+STOCHASTIC "As    RBIRD DEPRATE" 1 0.55
+STOCHASTIC "As    RCOYOTDEPRATE" 1 0.5
+STOCHASTIC "As    TURTLEDEPRATE" 1 0.55
+STOCHASTIC "As    UBIRD DEPRATE" 1 0.55
+STOCHASTIC "As    UCOYOTDEPRATE" 1 0.6
+STOCHASTIC "Hg    GULPELDEPRATE" 1 0.008
+STOCHASTIC "Hg    RBIRD DEPRATE" 1 0.063
+STOCHASTIC "Hg    RCOYOTDEPRATE" 1 0.04
+STOCHASTIC "Hg    TURTLEDEPRATE" 1 0.023
+STOCHASTIC "Hg    UBIRD DEPRATE" 1 0.063
+STOCHASTIC "Hg    UCOYOTDEPRATE" 1 0.03
+STOCHASTIC "Zn    GULPELDEPRATE" 1 0.08
+STOCHASTIC "Zn    RBIRD DEPRATE" 1 0.08
+STOCHASTIC "Zn    RCOYOTDEPRATE" 1 0.1
+STOCHASTIC "Zn    TURTLEDEPRATE" 1 0.08
+STOCHASTIC "Zn    UBIRD DEPRATE" 1 0.08
+STOCHASTIC "Zn    UCOYOTDEPRATE" 1 0.09
+STOCHASTIC "ACNAPEUEGG  DEPRATE" 1 8.4
+STOCHASTIC "As    UEGG  DEPRATE" 1 0.55
+STOCHASTIC "Hg    UEGG  DEPRATE" 1 0.063
+STOCHASTIC "Zn    UEGG  DEPRATE" 1 0.08
+
+!-----------------------------| Terrestrial Animal Alphaing |----------------------------!
+!   Values used for terrestrial animal ALPHAING
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "TA Alphaing"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPEGULPELALPHAING" 1 8.0000E-01
+STOCHASTIC "As    GULPELALPHAING" 1 8.5000E-01
+STOCHASTIC "Hg    GULPELALPHAING" 1 3.2000E-01
+STOCHASTIC "Zn    GULPELALPHAING" 1 2.0000E-01
+STOCHASTIC "ACNAPETURTLEALPHAING" 1 8.0000E-01
+STOCHASTIC "As    TURTLEALPHAING" 1 8.5000E-01
+STOCHASTIC "Hg    TURTLEALPHAING" 1 3.2000E-01
+STOCHASTIC "Zn    TURTLEALPHAING" 1 2.0000E-01
+STOCHASTIC "ACNAPERBIRD ALPHAING" 1 8.0000E-01
+STOCHASTIC "As    RBIRD ALPHAING" 1 8.5000E-01
+STOCHASTIC "Hg    RBIRD ALPHAING" 1 3.2000E-01
+STOCHASTIC "Zn    RBIRD ALPHAING" 1 2.0000E-01
+STOCHASTIC "ACNAPERCOYOTALPHAING" 1 8.0000E-01
+STOCHASTIC "As    RCOYOTALPHAING" 1 8.5000E-01
+STOCHASTIC "Hg    RCOYOTALPHAING" 1 3.2000E-01
+STOCHASTIC "Zn    RCOYOTALPHAING" 1 2.0000E-01
+STOCHASTIC "ACNAPEUBIRD ALPHAING" 1 8.0000E-01
+STOCHASTIC "As    UBIRD ALPHAING" 1 8.5000E-01
+STOCHASTIC "Hg    UBIRD ALPHAING" 1 3.2000E-01
+STOCHASTIC "Zn    UBIRD ALPHAING" 1 2.0000E-01
+STOCHASTIC "ACNAPEUCOYOTALPHAING" 1 8.0000E-01
+STOCHASTIC "As    UCOYOTALPHAING" 1 8.5000E-01
+STOCHASTIC "Hg    UCOYOTALPHAING" 1 3.2000E-01
+STOCHASTIC "Zn    UCOYOTALPHAING" 1 2.0000E-01
+STOCHASTIC "ACNAPEUEGG  ALPHAING" 1 8.0000E-01
+STOCHASTIC "As    UEGG  ALPHAING" 1 8.5000E-01
+STOCHASTIC "Hg    UEGG  ALPHAING" 1 3.2000E-01
+STOCHASTIC "Zn    UEGG  ALPHAING" 1 2.0000E-01
+
+!-----------------------------| Terrestrial Animal Alphapar |----------------------------!
+!   Values used for terrestrial animal ALPHAPAR
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet ""
+!   Verified by  :
+!   Date verified:
+!   Comments     : Final data entered
+!
+STOCHASTIC "ACNAPEGULPELALPHAPAR" 1 0.8
+STOCHASTIC "As    GULPELALPHAPAR" 1 0.32
+STOCHASTIC "Hg    GULPELALPHAPAR" 1 0.61
+STOCHASTIC "Zn    GULPELALPHAPAR" 1 0.5
+STOCHASTIC "ACNAPETURTLEALPHAPAR" 1 0.8
+STOCHASTIC "As    TURTLEALPHAPAR" 1 0.32
+STOCHASTIC "Hg    TURTLEALPHAPAR" 1 0.61
+STOCHASTIC "Zn    TURTLEALPHAPAR" 1 0.5
+STOCHASTIC "ACNAPERBIRD ALPHAPAR" 1 0.8
+STOCHASTIC "As    RBIRD ALPHAPAR" 1 0.32
+STOCHASTIC "Hg    RBIRD ALPHAPAR" 1 0.61
+STOCHASTIC "Zn    RBIRD ALPHAPAR" 1 0.5
+STOCHASTIC "ACNAPERCOYOTALPHAPAR" 1 0.8
+STOCHASTIC "As    RCOYOTALPHAPAR" 1 0.32
+STOCHASTIC "Hg    RCOYOTALPHAPAR" 1 0.61
+STOCHASTIC "Zn    RCOYOTALPHAPAR" 1 0.5
+STOCHASTIC "ACNAPEUBIRD ALPHAPAR" 1 0.8
+STOCHASTIC "As    UBIRD ALPHAPAR" 1 0.32
+STOCHASTIC "Hg    UBIRD ALPHAPAR" 1 0.61
+STOCHASTIC "Zn    UBIRD ALPHAPAR" 1 0.5
+STOCHASTIC "ACNAPEUCOYOTALPHAPAR" 1 0.8
+STOCHASTIC "As    UCOYOTALPHAPAR" 1 0.32
+STOCHASTIC "Hg    UCOYOTALPHAPAR" 1 0.61
+STOCHASTIC "Zn    UCOYOTALPHAPAR" 1 0.5
+STOCHASTIC "ACNAPEUEGG  ALPHAPAR" 1 0.8
+STOCHASTIC "As    UEGG  ALPHAPAR" 1 0.32
+STOCHASTIC "Hg    UEGG  ALPHAPAR" 1 0.61
+STOCHASTIC "Zn    UEGG  ALPHAPAR" 1 0.5
+
+!-----------------------------| Terrestrial Animal Alphavap |----------------------------!
+!   Values used for terrestrial animal ALPHAVAP
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "TA Alphavap"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPEGULPELALPHAVAP" 1 0.8
+STOCHASTIC "As    GULPELALPHAVAP" 1 0.32
+STOCHASTIC "Hg    GULPELALPHAVAP" 1 0.61
+STOCHASTIC "Zn    GULPELALPHAVAP" 1 0.5
+STOCHASTIC "ACNAPETURTLEALPHAVAP" 1 0.8
+STOCHASTIC "As    TURTLEALPHAVAP" 1 0.32
+STOCHASTIC "Hg    TURTLEALPHAVAP" 1 0.61
+STOCHASTIC "Zn    TURTLEALPHAVAP" 1 0.5
+STOCHASTIC "ACNAPERBIRD ALPHAVAP" 1 0.8
+STOCHASTIC "As    RBIRD ALPHAVAP" 1 0.32
+STOCHASTIC "Hg    RBIRD ALPHAVAP" 1 0.61
+STOCHASTIC "Zn    RBIRD ALPHAVAP" 1 0.5
+STOCHASTIC "ACNAPERCOYOTALPHAVAP" 1 0.8
+STOCHASTIC "As    RCOYOTALPHAVAP" 1 0.32
+STOCHASTIC "Hg    RCOYOTALPHAVAP" 1 0.61
+STOCHASTIC "Zn    RCOYOTALPHAVAP" 1 0.5
+STOCHASTIC "ACNAPEUBIRD ALPHAVAP" 1 0.8
+STOCHASTIC "As    UBIRD ALPHAVAP" 1 0.32
+STOCHASTIC "Hg    UBIRD ALPHAVAP" 1 0.61
+STOCHASTIC "Zn    UBIRD ALPHAVAP" 1 0.5
+STOCHASTIC "ACNAPEUCOYOTALPHAVAP" 1 0.8
+STOCHASTIC "As    UCOYOTALPHAVAP" 1 0.32
+STOCHASTIC "Hg    UCOYOTALPHAVAP" 1 0.61
+STOCHASTIC "Zn    UCOYOTALPHAVAP" 1 0.5
+STOCHASTIC "ACNAPEUEGG  ALPHAVAP" 1 0.8
+STOCHASTIC "As    UEGG  ALPHAVAP" 1 0.32
+STOCHASTIC "Hg    UEGG  ALPHAVAP" 1 0.61
+STOCHASTIC "Zn    UEGG  ALPHAVAP" 1 0.5
+
+!-----------------------------| Terrestrial Animal Alphads |----------------------------!
+!   Values used for terrestrial animal ALPHADS
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "TA Alphads"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPEGULPELALPHADS" 1 0.1
+STOCHASTIC "As    GULPELALPHADS" 1 0.032
+STOCHASTIC "Hg    GULPELALPHADS" 1 0.1
+STOCHASTIC "Zn    GULPELALPHADS" 1 0.01
+STOCHASTIC "ACNAPETURTLEALPHADS" 1 0.1
+STOCHASTIC "As    TURTLEALPHADS" 1 0.032
+STOCHASTIC "Hg    TURTLEALPHADS" 1 0.1
+STOCHASTIC "Zn    TURTLEALPHADS" 1 0.01
+STOCHASTIC "ACNAPERBIRD ALPHADS" 1 0.1
+STOCHASTIC "As    RBIRD ALPHADS" 1 0.032
+STOCHASTIC "Hg    RBIRD ALPHADS" 1 0.1
+STOCHASTIC "Zn    RBIRD ALPHADS" 1 0.01
+STOCHASTIC "ACNAPERCOYOTALPHADS" 1 0.1
+STOCHASTIC "As    RCOYOTALPHADS" 1 0.032
+STOCHASTIC "Hg    RCOYOTALPHADS" 1 0.1
+STOCHASTIC "Zn    RCOYOTALPHADS" 1 0.01
+STOCHASTIC "ACNAPEUBIRD ALPHADS" 1 0.1
+STOCHASTIC "As    UBIRD ALPHADS" 1 0.032
+STOCHASTIC "Hg    UBIRD ALPHADS" 1 0.1
+STOCHASTIC "Zn    UBIRD ALPHADS" 1 0.01
+STOCHASTIC "ACNAPEUCOYOTALPHADS" 1 0.1
+STOCHASTIC "As    UCOYOTALPHADS" 1 0.032
+STOCHASTIC "Hg    UCOYOTALPHADS" 1 0.1
+STOCHASTIC "Zn    UCOYOTALPHADS" 1 0.01
+STOCHASTIC "ACNAPEUEGG  ALPHADS" 1 0.1
+STOCHASTIC "As    UEGG  ALPHADS" 1 0.032
+STOCHASTIC "Hg    UEGG  ALPHADS" 1 0.1
+STOCHASTIC "Zn    UEGG  ALPHADS" 1 0.01
+
+!-----------------------------| Terrestrial Animal Alphadw |----------------------------!
+!   Values used for terrestrial animal ALPHADW
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet "TA Alphadw"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPEGULPELALPHADW" 1 0.142231039
+STOCHASTIC "As    GULPELALPHADW" 1 0.1
+STOCHASTIC "Hg    GULPELALPHADW" 1 0.0017
+STOCHASTIC "Zn    GULPELALPHADW" 1 0.1
+STOCHASTIC "ACNAPETURTLEALPHADW" 1 0.142231039
+STOCHASTIC "As    TURTLEALPHADW" 1 0.1
+STOCHASTIC "Hg    TURTLEALPHADW" 1 0.0017
+STOCHASTIC "Zn    TURTLEALPHADW" 1 0.1
+STOCHASTIC "ACNAPERBIRD ALPHADW" 1 0.142231039
+STOCHASTIC "As    RBIRD ALPHADW" 1 0.1
+STOCHASTIC "Hg    RBIRD ALPHADW" 1 0.0017
+STOCHASTIC "Zn    RBIRD ALPHADW" 1 0.1
+STOCHASTIC "ACNAPERCOYOTALPHADW" 1 0.142231039
+STOCHASTIC "As    RCOYOTALPHADW" 1 0.1
+STOCHASTIC "Hg    RCOYOTALPHADW" 1 0.0017
+STOCHASTIC "Zn    RCOYOTALPHADW" 1 0.1
+STOCHASTIC "ACNAPEUBIRD ALPHADW" 1 0.142231039
+STOCHASTIC "As    UBIRD ALPHADW" 1 0.1
+STOCHASTIC "Hg    UBIRD ALPHADW" 1 0.0017
+STOCHASTIC "Zn    UBIRD ALPHADW" 1 0.1
+STOCHASTIC "ACNAPEUCOYOTALPHADW" 1 0.142231039
+STOCHASTIC "As    UCOYOTALPHADW" 1 0.1
+STOCHASTIC "Hg    UCOYOTALPHADW" 1 0.0017
+STOCHASTIC "Zn    UCOYOTALPHADW" 1 0.1
+STOCHASTIC "ACNAPEUEGG  ALPHADW" 1 0.142231039
+STOCHASTIC "As    UEGG  ALPHADW" 1 0.1
+STOCHASTIC "Hg    UEGG  ALPHADW" 1 0.0017
+STOCHASTIC "Zn    UEGG  ALPHADW" 1 0.1
+
+!-----------------------------| Terrestrial Animal Fabove |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TA Fabove'
+!   Verified by  :
+!   Date entered :
+!   Comments     :
+!
+STOCHASTIC "GULPELFABOVE" 1 1
+STOCHASTIC "TURTLEFABOVE" 1 1
+STOCHASTIC "RBIRD FABOVE" 1 1
+STOCHASTIC "RCOYOTFABOVE" 1 1
+STOCHASTIC "UBIRD FABOVE" 1 1
+STOCHASTIC "UCOYOTFABOVE" 1 1
+STOCHASTIC "UEGG  FABOVE" 1 1
+
+!-----------------------------| Terrestrial Animal Transfer |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TA Transfer'
+!   Verified by  :
+!   Date entered :
+!   Comments     : Chicken meat to egg transfer factors
+!
+STOCHASTIC "ACNAPEUEGG  TRANSFER" 1 300
+STOCHASTIC "As    UEGG  TRANSFER" 1 2
+STOCHASTIC "Hg    UEGG  TRANSFER" 1 10
+STOCHASTIC "Zn    UEGG  TRANSFER" 1 40
+
+!-----------------------------| Terrestrial Plant Bcfveg |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TP Bcfveg'
+!   Verified by  :
+!   Date entered :
+!   Comments     :
+!
+STOCHASTIC "ACNAPERFUNGIBCFVEG" 1 40
+STOCHASTIC "As    RFUNGIBCFVEG" 1 0.1
+STOCHASTIC "Hg    RFUNGIBCFVEG" 1 0.12
+STOCHASTIC "Zn    RFUNGIBCFVEG" 1 0.11
+STOCHASTIC "ACNAPEUFUNGIBCFVEG" 1 40
+STOCHASTIC "As    UFUNGIBCFVEG" 1 0.1
+STOCHASTIC "Hg    UFUNGIBCFVEG" 1 0.12
+STOCHASTIC "Zn    UFUNGIBCFVEG" 1 0.11
+
+!-----------------------------| Terrestrial Plant Biomass |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TP Biomass'
+!   Verified by  :
+!   Date entered :
+!   Comments     :
+!
+STOCHASTIC "RFUNGIBIOMASS" 1 0.1697 ! Data from NUREG/CR-5512 (Table 6.54, rye)
+STOCHASTIC "UFUNGIBIOMASS" 1 0.1697 ! Data from NUREG/CR-5512 (Table 6.54, rye)
+
+!-----------------------------| Terrestrial Plant Leaf Interception - Dry |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TP IFrac'
+!   Verified by  :
+!   Date entered :
+!   Comments     : Dry deposition
+!
+STOCHASTIC "ACNAPEUFUNGIIFRACDRY" 1 1.416386E-01
+STOCHASTIC "As    UFUNGIIFRACDRY" 1 1.416386E-01
+STOCHASTIC "Hg    UFUNGIIFRACDRY" 1 1.416386E-01
+STOCHASTIC "Zn    UFUNGIIFRACDRY" 1 1.416386E-01
+STOCHASTIC "ACNAPERFUNGIIFRACDRY" 1 1.416386E-01
+STOCHASTIC "As    RFUNGIIFRACDRY" 1 1.416386E-01
+STOCHASTIC "Hg    RFUNGIIFRACDRY" 1 1.416386E-01
+STOCHASTIC "Zn    RFUNGIIFRACDRY" 1 1.416386E-01
+
+!-----------------------------| Terrestrial Plant Leaf Interception - Wet |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TP IFrac'
+!   Verified by  :
+!   Date entered :
+!   Comments     : Wet deposition
+!
+STOCHASTIC "ACNAPEUFUNGIIFRACWET" 1 0.35
+STOCHASTIC "As    UFUNGIIFRACWET" 1 0.35
+STOCHASTIC "Hg    UFUNGIIFRACWET" 1 0.35
+STOCHASTIC "Zn    UFUNGIIFRACWET" 1 0.35
+STOCHASTIC "ACNAPERFUNGIIFRACWET" 1 0.35
+STOCHASTIC "As    RFUNGIIFRACWET" 1 0.35
+STOCHASTIC "Hg    RFUNGIIFRACWET" 1 0.35
+STOCHASTIC "Zn    RFUNGIIFRACWET" 1 0.35
+
+!-----------------------------| Terrestrial Plant Leaf Transfer - Dry |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TP Ltrans'
+!   Verified by  :
+!   Date entered :
+!   Comments     : Dry deposition
+!
+STOCHASTIC "ACNAPEUFUNGIKLIDRY" 1 0.1
+STOCHASTIC "As    UFUNGIKLIDRY" 1 0.1
+STOCHASTIC "Hg    UFUNGIKLIDRY" 1 0.1
+STOCHASTIC "Zn    UFUNGIKLIDRY" 1 0.1
+STOCHASTIC "ACNAPERFUNGIKLIDRY" 1 0.1
+STOCHASTIC "As    RFUNGIKLIDRY" 1 0.1
+STOCHASTIC "Hg    RFUNGIKLIDRY" 1 0.1
+STOCHASTIC "Zn    RFUNGIKLIDRY" 1 0.1
+
+!-----------------------------| Terrestrial Plant Leaf Transfer - Wet |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TP Ltrans'
+!   Verified by  :
+!   Date entered :
+!   Comments     : Dry deposition
+!
+STOCHASTIC "ACNAPEUFUNGIKLIWET" 1 0.1
+STOCHASTIC "As    UFUNGIKLIWET" 1 0.1
+STOCHASTIC "Hg    UFUNGIKLIWET" 1 0.1
+STOCHASTIC "Zn    UFUNGIKLIWET" 1 0.1
+STOCHASTIC "ACNAPERFUNGIKLIWET" 1 0.1
+STOCHASTIC "As    RFUNGIKLIWET" 1 0.1
+STOCHASTIC "Hg    RFUNGIKLIWET" 1 0.1
+STOCHASTIC "Zn    RFUNGIKLIWET" 1 0.1
+
+!-----------------------------| Terrestrial Plant Leaf Weathering - Dry |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TP Lweath'
+!   Verified by  :
+!   Date entered :
+!   Comments     : Dry deposition
+!
+STOCHASTIC "ACNAPEUFUNGILWEATHDRY" 1 14.055484
+STOCHASTIC "As    UFUNGILWEATHDRY" 1 14.055484
+STOCHASTIC "Hg    UFUNGILWEATHDRY" 1 14.055484
+STOCHASTIC "Zn    UFUNGILWEATHDRY" 1 14.055484
+STOCHASTIC "ACNAPERFUNGILWEATHDRY" 1 14.055484
+STOCHASTIC "As    RFUNGILWEATHDRY" 1 14.055484
+STOCHASTIC "Hg    RFUNGILWEATHDRY" 1 14.055484
+STOCHASTIC "Zn    RFUNGILWEATHDRY" 1 14.055484
+
+!-----------------------------| Terrestrial Plant Leaf Weathering - Wet |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TP Lweath'
+!   Verified by  :
+!   Date entered :
+!   Comments     : Wet deposition
+!
+STOCHASTIC "ACNAPEUFUNGILWEATHWET" 1 14.055484
+STOCHASTIC "As    UFUNGILWEATHWET" 1 14.055484
+STOCHASTIC "Hg    UFUNGILWEATHWET" 1 14.055484
+STOCHASTIC "Zn    UFUNGILWEATHWET" 1 14.055484
+STOCHASTIC "ACNAPERFUNGILWEATHWET" 1 14.055484
+STOCHASTIC "As    RFUNGILWEATHWET" 1 14.055484
+STOCHASTIC "Hg    RFUNGILWEATHWET" 1 14.055484
+STOCHASTIC "Zn    RFUNGILWEATHWET" 1 14.055484
+
+!-----------------------------| Terrestrial Plant Parms |----------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Ecem_Parameters, Sheet 'TP Parms'
+!   Verified by  :
+!   Date entered :
+!   Comments     :
+!
+STOCHASTIC "RFUNGIFABOVE" 1 0.5
+STOCHASTIC "UFUNGIFABOVE" 1 0.5
+STOCHASTIC "RFUNGIKPS1" 1 0.0034
+STOCHASTIC "UFUNGIKPS1" 1 0.0034
+STOCHASTIC "RFUNGIKPA2" 1 3300
+STOCHASTIC "UFUNGIKPA2" 1 3300
+
+!-------------------------------------|  End of Keyword File  |--------------------------------------!
+!
+END

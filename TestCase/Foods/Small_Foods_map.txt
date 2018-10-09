@@ -1,0 +1,62 @@
+"Demonstrate TIIA codes with a small data set - ECEM Keywords"
+"ECEM"
+"4.00.001"
+" 9 Jul 2012"
+"Paul W. Eslinger"
+"20120823135828"
+2,"Records in a time block - aquatic species"
+2,"Records in a time block - riparian species"
+3,"Records in a time block - upland species"
+14,"Record length in the FCDA file"
+1,"Number of realizations"
+3,"Number of header lines in binary files"
+1,"Number of times"
+2012,T
+5,"Number of locations"
+"QRD1-1",T,"Aquatic REFERENCIA DOS BOCAS"
+"QRD2-1",T,"Aquatic REFERENCIA DOS BOCAS"
+"RRD1-1",T,"Riparian REFERENCIA DOS BOCAS"
+"RRD2-1",T,"Riparian REFERENCIA DOS BOCAS"
+"UP1",T,"Upland New Location"
+13,"Number of foods"
+"DETFAC",F,"Detritus FAC Camarón"
+"MICFIT",F,"Microfitas bentonicas"
+"BSHRMP",T,"brown shrimp"
+"OCTOPI",T,"octopus"
+"RFUNGI",T,"fungi"
+"UFUNGI",T,"fungi"
+"GULPEL",T,"gull/pelican"
+"TURTLE",T,"turtle"
+"RBIRD",T,"Bird/poultry"
+"RCOYOT",F,"coyote"
+"UBIRD",T,"Bird/poultry"
+"UCOYOT",F,"coyote"
+"UEGG",T,"Egg"
+"Map: Aquatic Species"
+"QRD1-1",4
+"QRD2-1",5
+"RRD1-1",-1
+"RRD2-1",-1
+"UP1",-1
+"Map: Riparian Species"
+"QRD1-1",-1
+"QRD2-1",-1
+"RRD1-1",4
+"RRD2-1",5
+"UP1",-1
+"Map: Upland Species"
+"QRD1-1",-1
+"QRD1-1",-1
+"QRD1-1",-1
+"QRD2-1",-1
+"QRD2-1",-1
+"QRD2-1",-1
+"RRD1-1",-1
+"RRD1-1",-1
+"RRD1-1",-1
+"RRD2-1",-1
+"RRD2-1",-1
+"RRD2-1",-1
+"UP1",4
+"UP1",5
+"UP1",6

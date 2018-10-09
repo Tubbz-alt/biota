@@ -1,0 +1,92 @@
+!==================================================================================================!
+!
+! Purpose:
+!   Calculate soil concentrations at upland locations
+!
+! History:
+!   Paul W. Eslinger : 12 Jul 2012 : Initial file prepared
+!
+!==================================================================================================!
+
+!--------------------------------------| Simulation Control |--------------------------------------!
+!
+! Simulation Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  :
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Report file name
+REPORT "Small_SOIL.rpt"
+!
+!- Title for labeling purposes
+TITLE  "Demonstrate TIIA codes with a small data set - SOIL Keywords"
+!
+!- User name for labeling purposes
+USER "Paul W. Eslinger"
+!
+!- Name of controlling ESD keyword file
+FILE ESD "Small_ESD.kwd"
+!
+!- Number of realizations to run
+REALIZAT ALL
+!
+!- Debug options (More output)
+DEBUG CONCENTR COMPUTE !LOOP
+!
+!- Pick soil types to compute
+COMPUTE SODR SOGW SOSW
+!
+!- Actually execute the code
+EXECUTE
+
+!-------------------------------------------| Analytes |-------------------------------------------!
+!
+! ANALYTE Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_analyte.xlsx, Sheet "SOIL_Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+ANALYTE ID="ACNAPE"
+ANALYTE ID="As"
+ANALYTE ID="Hg"
+ANALYTE ID="Zn"
+
+!--------------------------------------| Soil/Water Kd Data |--------------------------------------!
+!
+! KDSOIL Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_analyte.xlsx, Sheet "KDSOIL Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     : The KDSOIL ID's come from the list of ID's in the KDSOIL library
+!                  The TERSE modifier indicates the same KD is applied at all sites
+!
+KDSOIL TERSE ANALYTE="ACNAPE" KDSOIL="KdACNA"
+KDSOIL TERSE ANALYTE="As" KDSOIL="KdAs"
+KDSOIL TERSE ANALYTE="Hg" KDSOIL="KdHg"
+KDSOIL TERSE ANALYTE="Zn" KDSOIL="KdZn"
+
+!--------------------------------------| Infiltration Control |--------------------------------------!
+!
+! Infiltration Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+LOCATION ID="UP1" INFILT="Inf1D"
+
+!-------------------------------------|  End of Keyword File  |--------------------------------------!
+!
+END
+
+

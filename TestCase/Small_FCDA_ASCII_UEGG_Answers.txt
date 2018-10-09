@@ -1,0 +1,5 @@
+".\Foods\Food_Zn_UEGG.fod"
+".\Foods\Food_Zn_UEGG.txt"
+1
+ALL
+999999

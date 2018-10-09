@@ -1,0 +1,66 @@
+
+
+        FFFFFFF IIIIIII L       L       EEEEEEE  CCCCC  DDDD      AAAAA 
+        F          I    L       L       E       C     C D   DD   A     A
+        F          I    L       L       E       C       D     D  A     A
+        FFFFF      I    L       L       EEEEE   C       D     D  AAAAAAA
+        F          I    L       L       E       C       D     D  A     A
+        F          I    L       L       E       C     C D   DD   A     A
+        F       IIIIIII LLLLLLL LLLLLLL E       CCCCC   DDDD     A     A
+
+
+                           FillFCDA   Version 4.00.001
+                          Last Modified on 13 Jul 2012 
+
+          Current Run ID = 20120823135829   User Name = Paul W. Eslinger
+                 System Date = 08-23-2012   System Time = 13:58:29
+                 ------------------------------------------------
+                 Toolkit for Integrated Impact Assessments (TIIA)
+                 Copyright (c) Battelle Memorial Institute, 2012.
+                               All Rights Reserved.              
+                 ------------------------------------------------
+
+                The software used to generate this output has been
+               developed under Battelle software control procedures.
+
+Eslinger, P.W. and T.B. Miley.   PNWD-4357, Rev. 1.  July 2012.
+User Instructions for the Computer Codes of the Toolkit for Integrated Impact
+Assessments (TIIA), Version 1. Battelle Memorial Institute, Columbus, Ohio 43201
+
+
+                             Review Signatures
+
+Input Prepared By: ______________________________       Date: _______________
+
+Input Reviewed By: ______________________________       Date: _______________
+
+Starting Problem Execution
+  Date: 08/23/2012
+  Time: 13:58:29.150
+
+
+======================== Echo of the Problem Definition ========================
+
+Title: Demonstrate TIIA codes with a small data set - FILLFCDA Keywords        
+User:  Paul W. Eslinger
+   1 Realizations requested in this run
+   1 Realizations available in the concentration files
+
+File Name for this file
+File: Small_FILLFCDA.rpt
+
+File Name for Input Keyword Data
+File: Small_FILLFCDA.kwd
+ 
+Listing of unit numbers and food concentration files
+Unit:   9  Analyte: "As    "  Species: "TURTLE"  File: ".\Foods\Food_As_TURTLE.fod"
+Unit:  10  Analyte: "As    "  Species: "UEGG  "  File: ".\Foods\Food_As_UEGG.fod"
+Unit:  11  Analyte: "Zn    "  Species: "TURTLE"  File: ".\Foods\Food_Zn_TURTLE.fod"
+Unit:  12  Analyte: "Zn    "  Species: "UEGG  "  File: ".\Foods\Food_Zn_UEGG.fod"
+
+Ending Problem Execution
+  Date: 08/23/2012
+  Time: 13:58:29.353
+
+Message originating in routine FillFCDA
+Message: Normal Termination

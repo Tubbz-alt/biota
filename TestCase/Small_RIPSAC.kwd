@@ -1,0 +1,89 @@
+!==================================================================================================!
+!
+! Purpose:
+!   Calculate soil concentrations at riparian locations
+!
+! History:
+!   Paul W. Eslinger : 12 Jul 2012 : Initial file prepared
+!
+!==================================================================================================!
+
+!--------------------------------------| Simulation Control |--------------------------------------!
+!
+! Simulation Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  :
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Report file name (first keyword)
+REPORT "Small_RIPSAC.rpt"
+!
+!- Title for labeling purposes
+TITLE  "Demonstrate TIIA codes with a small data set - RIPSAC Keywords"
+!
+!- User name for labeling purposes
+USER "Paul W. Eslinger"
+!
+!- Name of controlling ESD keyword file
+FILE ESD "Small_ESD.kwd"
+!
+!- Number of realizations to run
+REALIZAT ALL
+
+!- Debug outputs are requested
+!DEBUG
+!
+!- Actually execute the code
+EXECUTE
+
+!-------------------------------------------| Analytes |-------------------------------------------!
+!
+! ANALYTE Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_analyte.xlsx, Sheet "RIPSAC_Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+ANALYTE ID="ACNAPE"
+ANALYTE ID="As"
+ANALYTE ID="Hg"
+ANALYTE ID="Zn"
+
+!--------------------------------------| Soil/Water Kd Data |--------------------------------------!
+!
+! KDSOIL Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_location.xlsx, Sheet "KDSOIL Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     : The KDSOIL ID's come from the list of ID's in the KDSOIL library
+!                  The TERSE modifier indicates the same KD is applied at all sites
+!
+KDSOIL TERSE ANALYTE="ACNAPE" KDSOIL="KdACNA"
+KDSOIL TERSE ANALYTE="As" KDSOIL="KdAs"
+KDSOIL TERSE ANALYTE="Hg" KDSOIL="KdHg"
+KDSOIL TERSE ANALYTE="Zn" KDSOIL="KdZn"
+
+!-------------------------------| Locations and Dilution Factors |---------------------------------!
+!
+! Location and Dilution Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_location.xlsx, Sheet "RipSac_Keywords"
+!   Verified by  :
+!   Date verified:
+!   Comments     : PRIMARY location is for groundwater on the shore
+!                  SECOND location is for the associated surface water
+!
+LOCATION PRIMARY="RRD1-1" SECOND="QRD1-1" DF="DF5mD"
+LOCATION PRIMARY="RRD2-1" SECOND="QRD2-1" DF="DF20mD"
+
+!-------------------------------------|  End of Keyword File  |--------------------------------------!
+!
+END

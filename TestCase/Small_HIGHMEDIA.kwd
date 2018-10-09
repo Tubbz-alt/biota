@@ -1,0 +1,92 @@
+!==================================================================================================!
+!
+! Purpose:
+!   This keyword file is designed for use by the HighDose Code.
+!   It is used to postprocess concentration data in binary ECDA files
+!
+!    Multiple cases are allowed.
+!    The following information must be common across cases
+!      1) ESD Keyword file
+!      2) Report file
+!      3) User
+!
+!    The following information can vary by case
+!      1) Analyte
+!      2) Results file
+!      3) Title
+!      4) Times
+!      5) Locations
+!      6) Solution/Realization
+!      7) Media
+!
+! History:
+!   Paul W. Eslinger : 16 Jul 2012 : Initial file prepared
+!
+!==================================================================================================!
+
+!--------------------------------------| Simulation Control |--------------------------------------!
+!
+! Simulation Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Report file name
+REPORT "Small_HIGHMEDIA.rpt"
+!
+!- User name for labeling purposes
+USER "Paul W. Eslinger"
+!
+!- Name of controlling ESD keyword file
+FILE ESD "Small_ESD.kwd"
+!
+!- More run progress informaiton written to the screen
+VERBOSE
+!
+!- End of the initial information block
+ENDINIT
+
+!--------------------------------------| CASE 1 Control |--------------------------------------!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+CASE
+TITLE "Demonstrate TIIA codes with a small data set - Extracting SORP Media for As"
+FILE RESULTS ".\Media\Small_HIGHMEDIA_As_SORP.Csv"
+ANALYTE "As"
+REALIZAT SINGLE=1
+MEDIA "SORP"
+UNITS OUTPUT="ug/kg" FACTOR = 1.0E9  ! Units changes on for metals from kg/kg to ug/kg
+TIMES ALL
+LOCATION ALL
+ENDCASE
+
+!--------------------------------------| CASE 2 Control |--------------------------------------!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+CASE
+TITLE "Demonstrate TIIA codes with a small data set - Extracting SWAT Media for Hg"
+FILE RESULTS ".\Media\Small_HIGHMEDIA_Hg_SWAT.Csv"
+ANALYTE "Hg"
+REALIZAT SINGLE=1
+MEDIA "SWAT"
+UNITS OUTPUT="ug/L" FACTOR = 1.0E6  ! Units changes on for metals from kg/m^3 to ug/L
+TIMES LIST 2012
+LOCATION LIST "QRD1-1" "QRD2-1"
+ENDCASE
+
+!-------------------------------------|  End of Keyword File  |--------------------------------------!
+!
+END

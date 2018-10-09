@@ -1,0 +1,33 @@
+type: "FCDA"
+title: "Demonstrate TIIA codes with a small data set - ECEM Keywords"
+user: "Paul W. Eslinger"
+name: "ECEM"
+version: "4.00.001"
+date: " 9 Jul 2012"
+id: "20120823135828"
+ecemfile: "Small_ECEM.kwd"
+realizations: 1
+foods: 9
+"BSHRMP","QA","brown shrimp"
+"OCTOPI","QA","octopus"
+"RFUNGI","TP","fungi"
+"UFUNGI","TP","fungi"
+"GULPEL","TA","gull/pelican"
+"TURTLE","TA","turtle"
+"RBIRD","TA","Bird/poultry"
+"UBIRD","TA","Bird/poultry"
+"UEGG","TA","Egg"
+times: 1
+2012
+locations: 5
+"QRD1-1","Aquatic REFERENCIA DOS BOCAS"
+"QRD2-1","Aquatic REFERENCIA DOS BOCAS"
+"RRD1-1","Riparian REFERENCIA DOS BOCAS"
+"RRD2-1","Riparian REFERENCIA DOS BOCAS"
+"UP1","Upland New Location"
+analytes: 4
+"ACNAPE","OS","Acenaphthene (CASID 83-32-9)"
+"As","NS","Arsenic (CASID 7440-38-2)"
+"Hg","NS","Mercury (CASID 7439-97-6)"
+"Zn","NS","Zinc (CASID 7440-66-6)"
+recordmap: ".\Foods\Small_Foods_map.txt"

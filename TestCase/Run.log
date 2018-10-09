@@ -1,0 +1,374 @@
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>rem echo off 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM Run sequence for the Small case 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM   Paul W. Eslinger 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM   July 12, 2012 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Create the ECDA files 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>mkdir ecda 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\Ecda\x64\Release\ecda.exe Small_ESD.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  ECDA       4.00.001  Last Modified: 11 Jul 2012 
+ -------------------------------------------------
+ Time: 13:46:37 Reading ESD keywords - Pass #1
+ Time: 13:46:37 Allocating memory
+ Time: 13:46:37 Reading ESD keywords - Pass #2
+ Time: 13:46:37 Reading ESD keywords - Pass #3
+ Time: 13:46:37 Starting ECDA actions
+ Time: 13:46:37 Generating the ECDA map file
+ Time: 13:46:37 Creating media file for analyte: ACNAPE
+ Time: 13:46:37 Initializing media file for analyte: ACNAPE
+ Time: 13:46:37 Creating media file for analyte: As
+ Time: 13:46:37 Initializing media file for analyte: As
+ Time: 13:46:37 Creating media file for analyte: Hg
+ Time: 13:46:37 Initializing media file for analyte: Hg
+ Time: 13:46:37 Creating media file for analyte: Zn
+ Time: 13:46:37 Initializing media file for analyte: Zn
+ Time: 13:46:37 Processing the SACView header file
+ Time: 13:46:37 Processing KDSOIL actions
+ Time: 13:46:37 Processing DILUTE actions
+ Time: 13:46:37 Processing INFILTRATION actions
+ Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>copy ecda.rpt .\ecda\ecda.rpt 
+        1 file(s) copied.
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>del ecda.rpt 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Put concentrations in the ECDA files 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\FillEcda\x64\Release\fillecda.exe Small_FILLECDA.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  FillECDA   4.00.002  Last Modified: 23 Jul 2012 
+ -------------------------------------------------
+ Time: 13:46:37 Extracting report file name
+ Time: 13:46:37 Reading FillECDA keywords - Pass #1
+ Time: 13:46:37 Determining memory requirements
+ Time: 13:46:37 Reading ESD keywords - Pass #1
+ Time: 13:46:37 Allocating Memory for ESD Data
+ Time: 13:46:37 Reading ESD keywords - Pass #2
+ Time: 13:46:38 Opening ECDA Data Files
+ Time: 13:46:38 Processing Data
+ Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Compute soil concentrations at upland locations 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\Soil\x64\Release\\soil.exe Small_SOIL.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  Soil       4.00.001  Last Modified:  9 Jul 2012 
+ -------------------------------------------------
+ Time: 13:46:38 Extracting the report file name
+ Time: 13:46:38 Reading SOIL Keywords - First Pass
+ Time: 13:46:38 Reading ESD Keywords - First Pass
+ Time: 13:46:38 Reading ESD Keywords - Second Pass
+ Time: 13:46:38 Reading SOIL Keywords - Second Pass
+ Time: 13:46:38 Processing concentrations for ACNAPE
+ Time: 13:46:38 Processing concentrations for ACNAPE at UP1
+ Time: 13:46:38 Processing concentrations for As
+ Time: 13:46:38 Processing concentrations for As     at UP1
+ Time: 13:46:38 Processing concentrations for Hg
+ Time: 13:46:38 Processing concentrations for Hg     at UP1
+ Time: 13:46:38 Processing concentrations for Zn
+ Time: 13:46:38 Processing concentrations for Zn     at UP1
+ Normal Run Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>del soil.done 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Compute soil concentrations at riparian locations 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\RipSac\x64\Release\ripsac.exe Small_RIPSAC.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  RipSac     4.00.001  Last Modified:  9 Jul 2012 
+ -------------------------------------------------
+ Date: 08-23-2012  Time: 13:46:38 Extracting the report file name
+ Time: 13:46:38 Reading RIPSAC Keywords - First Pass
+ Time: 13:46:38 Reading ESD Keywords - First Pass
+ Time: 13:46:38 Allocating ESD Memory
+ Time: 13:46:38 Reading ESD Keywords - Second Pass
+ Time: 13:46:38 Reading RIPSAC Keywords - Second Pass
+ Time: 13:46:38 Processing impacts
+ Time: 13:46:38 Processing impacts for ACNAPE
+ Time: 13:46:38 Processing impacts for As
+ Time: 13:46:38 Processing impacts for Hg
+ Time: 13:46:38 Processing impacts for Zn
+ Date: 08-23-2012  Time: 13:46:38 Normal Termination
+ Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>del ripsac.done 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Option: Convert an example binary concentration file to ASCII text 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\Ecda_Ascii\x64\Release\ecda_ascii.exe  0<Small_ECDA_ASCII_Answers.txt 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  ECDA_ASCII 4.00.001   Last Modified: 07/09/2012
+ -------------------------------------------------
+  Enter the name of the input binary ECDA file > 
+  Enter the name of the output ASCII file > 
+  Enter the number of realizations in the file > 
+  Enter the ID for the media to translate (ALL for all media) > 
+  Enter the ID for the location to translate (ALL for all locations) > 
+  Enter the number of data records to translate > 
+  Number of data records read was           22
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Option: Demonstrate the HIGHMEDIA code 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>mkdir Media 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\HighMedia\x64\Release\highmedia.exe Small_HIGHMEDIA.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  HighMedia  4.00.001  Last Modified:  5 Jun 2007 
+ -------------------------------------------------
+ Time: 13:46:38 Keyword file: Small_HIGHMEDIA.kwd
+ Time: 13:46:38 Extracting report file name
+ Time: 13:46:38 Reading keywords - first pass
+ Time: 13:46:38 Opening ESD keyword File
+ Time: 13:46:38 Reading ESD Keywords - Pass #1
+ Time: 13:46:38 Reading ESD Keywords - Pass #2
+ Time: 13:46:38 Initializing case variables
+ Time: 13:46:38 Calling READ_CASE
+ Time: 13:46:38 Case: Demonstrate TIIA codes with a small data set - Extracting SORP Media for As
+ Time: 13:46:38 Calling CHECK_CASE
+ Time: 13:46:38 Calling ECHO_CASE
+ Time: 13:46:38 Calling COMP_CASE
+ Time: 13:46:38 Calling ECDA_MAPREAD
+ Time: 13:46:38 Calling ECDA_MAPECHO
+ Time: 13:46:38 Opening the ECDA file
+ Time: 13:46:38 Opening results file
+ Time: 13:46:38 Opening plot file
+ Time: 13:46:38 Starting to process data
+ Time: 13:46:38 Reading data for year : 2012
+ Time: 13:46:38 Initializing case variables
+ Time: 13:46:38 Calling READ_CASE
+ Time: 13:46:38 Case: Demonstrate TIIA codes with a small data set - Extracting SWAT Media for Hg
+ Time: 13:46:38 Calling CHECK_CASE
+ Time: 13:46:38 Calling ECHO_CASE
+ Time: 13:46:38 Calling COMP_CASE
+ Time: 13:46:38 Calling ECDA_MAPREAD
+ Time: 13:46:38 Calling ECDA_MAPECHO
+ Time: 13:46:38 Opening the ECDA file
+ Time: 13:46:38 Opening results file
+ Time: 13:46:38 Opening plot file
+ Time: 13:46:38 Starting to process data
+ Time: 13:46:38 Reading data for year : 2012
+ Time: 13:46:38 Initializing case variables
+ Time: 13:46:38 Calling READ_CASE
+ Time: 13:46:38 Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>copy Small_HIGHMEDIA.rpt .\Media\Small_HIGHMEDIA.rpt 
+        1 file(s) copied.
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Convert food web matrix to CONSUME keywords for Ecem 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\Consume\x64\Release\consume.exe Small_Consume.Dat 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  Consume    4.0.001   Last Modified:  9 Jul 2012 
+ -------------------------------------------------
+ Results written to the file:  Consume.rpt
+ Reading input data from file: Small_Consume.Dat
+ Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Compute concentrations in food products 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>mkdir Foods 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>mkdir Ecem 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\Ecem\x64\Release\ecem.exe Small_ECEM.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  ECEM       4.00.001  Last Modified:  9 Jul 2012 
+ -------------------------------------------------
+ Time: 13:46:38 Extracting the report file name
+ Time: 13:46:38 Reading ECEM keywords - Pass #1
+ Time: 13:46:39 Reading ESD keywords  - Pass #1
+ Time: 13:46:39 Reading ESD keywords  - Pass #2
+ Time: 13:46:39 Reading ECEM keywords - Pass #2
+ Time: 13:46:39 FCDA file handling
+ Time: 13:46:39 Computing year 2012
+ Time: 13:46:39 Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Option: Convert an example binary food concentration file to ASCII text 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\Fcda_Ascii\x64\Release\fcda_ascii.exe  0<Small_FCDA_ASCII_TURTLE_Answers.txt 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  FCDA_ASCII 4.00.001  Last Modified: 09/09/2012
+ -------------------------------------------------
+  Enter the name of the input binary FCDA file > 
+  Enter the name of the output ASCII file > 
+  Enter the number of realizations in the file > 
+  Enter the location ID desired (ALL for every location in the file)> 
+  Enter the number of data records to translate > 
+  Number of data records read was            2
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\Fcda_Ascii\x64\Release\fcda_ascii.exe  0<Small_FCDA_ASCII_UEGG_Answers.txt 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  FCDA_ASCII 4.00.001  Last Modified: 09/09/2012
+ -------------------------------------------------
+  Enter the name of the input binary FCDA file > 
+  Enter the name of the output ASCII file > 
+  Enter the number of realizations in the file > 
+  Enter the location ID desired (ALL for every location in the file)> 
+  Enter the number of data records to translate > 
+  Number of data records read was            3
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Option: Demonstrate the HIGHDOSE code 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\HighDose\x64\Release\highdose.exe Small_HIGHDOSE.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  HighDose   4.00.001  Last Modified:  9 Jul 2012 
+ -------------------------------------------------
+ Time: 13:46:39 Extracting the report file name
+ Time: 13:46:39 Reading keywords
+ Time: 13:46:39 Opening species file
+ Time: 13:46:39 Reading species information
+ Time: 13:46:39 Opening input ECEM file
+ Time: 13:46:39 Opening output results file
+ Time: 13:46:39 Allocating memory
+ Time: 13:46:39 Processing data by location
+ Time: 13:46:39 Processing location "RRD1-1" for year 2012
+ Time: 13:46:39 Processing location "RRD2-1" for year 2012
+ Time: 13:46:39 Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>copy Small_HIGHDOSE.rpt .\Ecem\Small_HIGHDOSE.rpt 
+        1 file(s) copied.
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Option: Put concentrations in the Food files 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\FillFcda\x64\Release\fillfcda.exe Small_FILLFCDA.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  FillFCDA   4.00.001  Last Modified: 13 Jul 2012 
+ -------------------------------------------------
+ Time: 13:46:39 Extracting report file name
+ Time: 13:46:39 Reading FillFCDA keywords - Pass #1
+ Time: 13:46:39 Allocating Stochastic Memory
+ Time: 13:46:39 Reading ESD keywords - Pass #1
+ Time: 13:46:39 Allocating Memory - ESD
+ Time: 13:46:39 Reading ESD keywords - Pass #2
+ Time: 13:46:39 Determine with Food Files are Needed
+ Time: 13:46:39 Opening Food Files
+ Time: 13:46:39 Processing Data
+ Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Calculate human impacts 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>mkdir Human_RF 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\Human\x64\Release\human.exe Small_HUMAN_RF.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  Human      4.00.001  Last Modified: 15 Jul 2012 
+ -------------------------------------------------
+ Time: 13:46:39 Extracting the report file name
+ Date: 08-23-2012  Time: 13:46:39 Reading HUMAN keywords - Pass #1
+ Time: 13:46:39 Reading ESD keywords   - Pass #1
+ Time: 13:46:40 Reading ESD keywords   - Pass #2
+ Time: 13:46:40 Reading HUMAN keywords - Pass #2
+ Time: 13:46:40 Generating Stochastic Variables
+ Time: 13:46:40 Computing year 2012
+ Date: 08-23-2012  Time: 13:46:40 Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>copy Small_Human_RF.rpt .\Human_RF\Small_Human_RF.rpt 
+        1 file(s) copied.
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>del Small_Human_RF.rpt 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Calculate human impacts 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>mkdir Human_UR 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\Human\x64\Release\human.exe Small_HUMAN_UR.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  Human      4.00.001  Last Modified: 15 Jul 2012 
+ -------------------------------------------------
+ Time: 13:46:40 Extracting the report file name
+ Date: 08-23-2012  Time: 13:46:40 Reading HUMAN keywords - Pass #1
+ Time: 13:46:40 Reading ESD keywords   - Pass #1
+ Time: 13:46:40 Reading ESD keywords   - Pass #2
+ Time: 13:46:40 Reading HUMAN keywords - Pass #2
+ Time: 13:46:40 Generating Stochastic Variables
+ Time: 13:46:40 Computing year 2012
+ Time: 13:46:40 Entering FOOD_READ
+ Date: 08-23-2012  Time: 13:46:40 Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>copy Small_Human_UR.rpt .\Human_UR\Small_Human_UR.rpt 
+        1 file(s) copied.
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>del Small_Human_UR.rpt 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>REM ---- Option: Demonstrate the HIGHIMPACT code 
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>D:\Fortran\TIIA\HighImpact\x64\Release\\highimpact.exe Small_HIGHIMPACT.kwd 
+ Toolkit for Integrated Impact Assessments (TIIA)
+ Copyright (c) Battelle Memorial Institute, 2012.
+ -------------------------------------------------
+  HighImpact 4.00.001  Last Modified:  9 Jul 2012 
+ -------------------------------------------------
+ Time: 13:46:40 Extracting the report file name
+ Time: 13:46:40 Reading keywords
+ Time: 13:46:40 Checking for input errors
+ Time: 13:46:40 Opening HUMAN details file
+ Time: 13:46:40 Opening output results file
+ Time: 13:46:40 Processing Data
+ Time: 13:46:40 Normal Termination
+
+D:\Fortran\TIIA\BaselineTests\SmallCase>copy Small_HIGHIMPACT.rpt .\Human_RF\Small_HIGHIMPACT.rpt 
+        1 file(s) copied.

@@ -1,0 +1,22 @@
+"Code Name:","HighDose"
+"Code Version:","4.00.001"
+"Code Date:"," 9 Jul 2012"
+"Run ID:","20120823135828"
+"Run Title:","Demonstrate TIIA codes with a small data set - HIGHDOSE Keywords"
+"User Name:","Paul W. Eslinger"
+  
+"Realization 1 is requested."
+
+"Results for location ID = RRD1-1 year = 2012 solution = BURDEN soil type = SORP and analyte type = As"
+"Terrestrial Plants"," ","Terrestrial Animals"," ","Aquatic Plants"," ","Aquatic Animals"
+"Specie","Dose","Specie","Dose","Specie","Dose","Specie","Dose"
+"RFUNGI", 6.796E-01,"RBIRD ", 2.827E+01,"      ", 0.000E+00,"      ", 0.000E+00
+"      ", 0.000E+00,"      ", 0.000E+00,"      ", 0.000E+00,"      ", 0.000E+00
+"      ", 0.000E+00,"      ", 0.000E+00,"      ", 0.000E+00,"      ", 0.000E+00
+
+"Results for location ID = RRD2-1 year = 2012 solution = BURDEN soil type = SORP and analyte type = As"
+"Terrestrial Plants"," ","Terrestrial Animals"," ","Aquatic Plants"," ","Aquatic Animals"
+"Specie","Dose","Specie","Dose","Specie","Dose","Specie","Dose"
+"RFUNGI", 1.137E+01,"RBIRD ", 8.688E+01,"      ", 0.000E+00,"      ", 0.000E+00
+"      ", 0.000E+00,"      ", 0.000E+00,"      ", 0.000E+00,"      ", 0.000E+00
+"      ", 0.000E+00,"      ", 0.000E+00,"      ", 0.000E+00,"      ", 0.000E+00

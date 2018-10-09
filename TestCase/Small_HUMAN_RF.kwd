@@ -1,0 +1,387 @@
+!==================================================================================================!
+!
+! Purpose:
+!   Calculate impacts to a recreational fisherman
+!
+! History:
+!   Paul W. Eslinger : 16 Jul 2012 : Initial file prepared
+!
+!==================================================================================================!
+
+!--------------------------------------| Simulation Control |--------------------------------------!
+!
+! Simulation Control Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Report File (Must be first Entry)
+REPORT "Small_Human_RF.rpt"
+!
+!- Title for labeling purposes
+TITLE  "Demonstrate TIIA codes with a small data set - HUMAN Fisherman Keywords"
+!
+!- User name for labeling purposes
+USER "Paul W. Eslinger"
+!
+!- Name of controlling ESD keyword file
+FILE ESD "Small_ESD.kwd"
+!
+!- Number of realizations to run
+REALIZAT 1
+!
+!- Random seed for stochastics
+SEED 421468
+!
+!- Execute the problem
+EXECUTE
+
+!---------------------------------------| Averaging Time |--------------------------------------!
+!
+! AVERAGE Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments      : Not used for radioactive analytes
+!                   Averaging time for exposure calculations (years)
+!
+AVERAGE HAZARDOU 70.0 CARCINOG 70.0
+
+!---------------------------------------| Input and Output Files |--------------------------------------!
+!
+! FILE Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Environmental keyword file
+FILE ESD "Small_ESD.kwd"
+!
+!FILE STATS    ".\Human_RF\Small_Human_RF_sta.csv"  ! Risk summary statistics
+FILE DETAIL   ".\Human_RF\Small_Human_RF_dtl.csv"  ! Risk detailed data
+FILE VALUES   ".\Human_RF\Small_Human_RF_val.csv"  ! Generated stochastic variables
+FILE HEADER   ".\Human_RF\Small_Human_RF_hdr.txt"  ! Header file for SACVIEW
+
+!-------------------------------| FOODS Definitions |-----------------------------!
+!
+! FOODS Keyword
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Specific path and files for food files
+FOODS MAP     = "Small_Foods_map.txt"
+      PATH    = ".\Foods\"
+      SACVIEW = "Small_Foods_hdr.txt"
+
+!-------------------------------| INGESTION Definition |-----------------------------!
+!
+! INGESTION, FOODSOIL and SWEAT Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_HUMAN.xlsx, sheet 'Food_Species'
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+INGESTION
+  FISH =    "BSHRMP"
+  FISH_2 =  "OCTOPI"
+  FISH_3 =  "None"
+  LEAFVEG = "RFUNGI"
+  ROOTVEG = "None"
+  GRAIN =   "None"
+  FRUIT =   "None"
+  MEAT =    "None"
+  MILK =    "None"
+  BIRD =    "RBIRD"
+  EGGS =    "None"
+!
+FOODSOIL SORP
+SWEAT None
+SHOWER None
+
+!-------------------------------------| Output Solution Selection |----------------------------------!
+! STATISTICS Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Output summary statistics
+!
+! DETAILS Keywords
+!   Prepared by  :
+!   Date entered :
+!   Data source  :
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+!- Output detailed data
+DETAILS CONCEN   ! Output media concentration details
+DETAILS FOODS    ! Output food concentration details
+DETAILS ANADOSE  ANARISK
+DETAILS PATHDOSE PATHRISK
+DETAILS SUMDOSE  SUMRISK
+
+!-------------------------------------------| Debug |----------------------------------------------!
+!
+! DEBUG Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Analyte.xlsx, sheet 'Food_Species'
+!   Verified by  :
+!   Date verified:
+!   Comments     :  Output detailed data
+!
+!DEBUG CARCINOG !BGCAR  = .TRUE.
+!DEBUG CONCENTR !BGCONC = .TRUE.
+!DEBUG FOOD     !BGFOOD = .TRUE.
+!DEBUG HAZARDOU !BGHAZ  = .TRUE.
+!DEBUG VERBOSE  !BGVERB = .TRUE.
+!DEBUG STOCHAST !BG_STOC_VALU = .TRUE.
+!DEBUG STATISTI !BG_STOC_STAT = .TRUE.
+!DEBUG DEFINITI !BG_STOC_DEFN = .TRUE.
+
+!-------------------------------------------| Analytes |----------------------------------------------!
+!
+! ANALYTE Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Analyte.xlsx, sheet 'HUMAN_Keywords'
+!   Verified by   :
+!   Date verified :
+!   Comments      :
+!
+ANALYTE OUTPUT ID="ACNAPE" HAZARDOUS RFDING RFDINH CARCINOGEN  SFINH
+ANALYTE OUTPUT ID="As" HAZARDOUS RFDING RFDINH CARCINOGEN SFING SFINH
+ANALYTE OUTPUT ID="Hg" HAZARDOUS RFDING RFDINH
+ANALYTE OUTPUT ID="Zn" HAZARDOUS  RFDINH
+
+!-------------------------------| ECDA Concentration Solution Times  |--------------------------------!
+!
+! TIMES Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : None
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+TIMES 2012
+
+!-------------------------------| Location Selection |------------------------------------------------!
+!
+! LOCATION Keywords
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_Location.xlsx, sheet 'HUMAN_Keywords'
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+LOCATION PRIMARY="RRD1-1" SECOND ="QRD1-1" POP=0 FISH="QRD1-1" FISH_2="QRD1-1" FISH_3="QRD1-1" OUTPUT
+LOCATION PRIMARY="RRD2-1" SECOND ="QRD2-1" POP=0 FISH="QRD2-1" FISH_2="QRD2-1" FISH_3="QRD2-1" OUTPUT
+!LOCATION PRIMARY="UP1" SECOND ="QRD1-1" POP=0 FISH="QRD1-1" FISH_2="QRD1-1" FISH_3="QRD1-1" OUTPUT
+
+!------------------------------| Start of scenario-specific values |----------------------------------!
+!
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_HUMAN.xlsx, sheet 'Coastal Fisherman Scenario'
+!   Verified by  :
+!   Date verified:
+!   Comments     : Enter the values in the following groups:
+!                    Exposure frequencies
+!                    Exposure time variables
+!                    Ingestion rate variables
+!                    Body variables
+!                    Air concentration factor for sweat lodgeExposure frequencies
+!                    Soil and water variables
+!                    Doing annual risk summed over analytes (output in rem)
+!                    Radionuclide stochastic dose factors
+!                    Volatilazion factors
+STOCHASTIC "EFBOAT" 1 200 "Exposure frequency for boating  (d/yr)"
+STOCHASTIC "EFSURFACE" 1 0 "Exposure frequency for surface water  (d/yr)"
+STOCHASTIC "EFSED" 1 0 "Exposure frequency for sediment  (d/yr)"
+STOCHASTIC "EFSOIL" 1 0 "Exposure frequency for soil  (d/yr)"
+STOCHASTIC "EFAIR" 1 200 "Exposure frequency to air (d/yr)"
+STOCHASTIC "EFSEEP" 1 0 "Exposure frequency volatilized seep water  (d/yr)"
+STOCHASTIC "EFSWIM" 1 200 "Exposure frequency for swimming  (d/yr)"
+STOCHASTIC "EFSWEAT" 1 0 "Exposure frequency for sweat lodge  (d/yr)"
+STOCHASTIC "EFSHOWER" 1 0 "Exposure frequency for showering (d/yr)"
+STOCHASTIC "EFGROUND" 1 0 "Exposure frequency for ground water  (d/yr)"
+STOCHASTIC "EFLEAFVEG" 1 0 "Exposure frequency for leafy vegetables  (d/yr)"
+STOCHASTIC "EFROOTVEG" 1 0 "Exposure frequency for root vegetables  (d/yr)"
+STOCHASTIC "EFMEAT" 1 0 "Exposure frequency for meat  (d/yr)"
+STOCHASTIC "EFMILK" 1 0 "Exposure frequency for milk  (d/yr)"
+STOCHASTIC "EFBIRD" 1 0 "Exposure frequency for bird (poultry)  (d/yr)"
+STOCHASTIC "EFEGGS" 1 0 "Exposure frequency for EGGS (d/yr)"
+STOCHASTIC "EFFRUIT" 1 0 "Exposure frequency for fruit (d/yr)"
+STOCHASTIC "EFGRAIN" 1 0 "Exposure frequency for grain (d/yr)"
+STOCHASTIC "EFFISH_3" 1 200 "Exposure frequency for crustaceans (d/yr)"
+STOCHASTIC "EFFISH_2" 1 200 "Exposure frequency for mollusks (d/yr)"
+STOCHASTIC "EFFISH" 1 200 "Exposure frequency for fish  (d/yr)"
+!
+STOCHASTIC "ETBOAT" 1 8 "Exposure time for boating  (hr/d)"
+STOCHASTIC "ETSURFACE" 1 0 "Exposure time to volatile surface water  (hr/d)"
+STOCHASTIC "ETSED" 1 0 "Exposure time for sediment  (hr/d)"
+STOCHASTIC "ETSEEP" 1 0 "Exposure time for volatile seep water  (hr/d)"
+STOCHASTIC "ETGROUND" 1 0 "Exposure time for volatile groundwater (hr/d)"
+STOCHASTIC "ETSOIL" 1 0 "Exposure time for soil  (hr/d)"
+STOCHASTIC "ETAIR" 1 8 "Exposure time to air (hr/d)"
+STOCHASTIC "ETSWIM" 1 1 "Exposure time for swimming  (hr/d)"
+STOCHASTIC "ETSWEAT" 1 0 "Exposure time for sweat lodge  (hr/d)"
+STOCHASTIC "ETSHOWER" 1 0 "Exposure time for showering (hr/d)"
+STOCHASTIC "EDCHILD" 1 0 "Exposure duration for a child (yr)"
+STOCHASTIC "EDADULT" 1 1 "Exposure duration for an adult (yr)"
+!
+STOCHASTIC "IRATE" 1 23 "Inhalation rate (m^3/d)"
+STOCHASTIC "IRSOILCHILD" 1 0 "Ingestion rate, soil child  (g/d)"
+STOCHASTIC "IRSOILADULT" 1 0 "Ingestion rate, soil adult  (g/d)"
+STOCHASTIC "IRSEDCHILD" 1 0 "Ingestion rate, sediment - child  (kg/d)"
+STOCHASTIC "IRSEDADULT" 1 0 "Ingestion rate, sediment - adult  (kg/d)"
+STOCHASTIC "IRSURFACE" 1 0 "Ingestion rate, river water  (L/d)"
+STOCHASTIC "IRGROUND" 1 0.0000E+00 "Ingestion rate, ground water  (L/d)"
+STOCHASTIC "IRSEEP" 1 0 "Ingestion rate, seep water  (L/d)"
+STOCHASTIC "IRFISH" 1 0.3 "Ingestion rate, fish  (kg/d)"
+STOCHASTIC "IRFISH_2" 1 0.3 "Ingestion rate, mollusks (kg/d)"
+STOCHASTIC "IRFISH_3" 1 0.3 "Ingestion rate, crustaceans (kg/d)"
+STOCHASTIC "IRLEAFVEG" 1 0.0000E+00 "Ingestion rate, leafy vegetables  (kg/d)"
+STOCHASTIC "IRROOTVEG" 1 0.0000E+00 "Ingestion rate, root vegetables  (kg/d)"
+STOCHASTIC "IRMEAT" 1 0.0000E+00 "Ingestion rate, meat  (kg/d)"
+STOCHASTIC "IRMILK" 1 0.0000E+00 "Ingestion rate, milk  (L/d)"
+STOCHASTIC "IRBIRD" 1 0.0000E+00 "Ingestion rate, birds  (kg/d)"
+STOCHASTIC "IREGGS" 1 0.0000E+00 "Ingestion rate, eggs (kg/d)"
+STOCHASTIC "IRFRUIT" 1 0.0000E+00 "Ingestion rate, fruit (kg/d)"
+STOCHASTIC "IRGRAIN" 1 0 "Ingestion rate, grain (kg/d)"
+!
+STOCHASTIC "ML" 1 0 "Mass loading of soil in air (g/m^3)"
+STOCHASTIC "AFSOIL" 1 0 "Adherance factor for soil (mg/cm^2/d)"
+STOCHASTIC "AFSED" 1 0 "Adherance factor for sediment (mg/cm^2/d)"
+!
+STOCHASTIC "BWCHILD" 1 16 "Body weight for a child (kg)"
+STOCHASTIC "BWADULT" 1 70 "Body weight for an adult (kg)"
+STOCHASTIC "SASOIL" 1 2000 "Body surface area - soils (cm^2)"
+STOCHASTIC "SASED" 1 5000 "Body surface area - sediments (cm^2)"
+STOCHASTIC "SASEEP" 1 20000 "Body surface area - seep water (cm^2)"
+STOCHASTIC "SASWIM" 1 5000 "Body surface area - surface water (cm^2)"
+STOCHASTIC "SASHOWER" 1 20000 "Body surface area - shower (cm^2)"
+STOCHASTIC "SASWEAT" 1 20000 "Body surface area - sweat lodge (cm^2)"
+STOCHASTIC "CFSHOWER" 1 0.01 "Air concentration factor for shower (L/m^3)"
+STOCHASTIC "CFSWEAT" 1 0 "Air concentration factor for sweat lodge (L/m^3)"
+STOCHASTIC "SHIELDSOIL" 1 0 "Soil shielding factor (unitless)"
+STOCHASTIC "SHIELDSED" 1 0 "Sediment shielding factor (unitless)"
+
+!------------------------------| SFING values |-----------------------------------------------------------!
+!   Values used for SFING (Slope Factor for Ingestion)
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_HUMAN.xlsx, sheet 'SFING'
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+! No SFING for ACNAPE
+STOCHASTIC "As    SFING" 1 1.50E+00 "Arsenic SFING (risk per mg(intake)/(kg(bodyweight)/day))"
+! No SFING for Hg
+! No SFING for Zn
+
+!------------------------------| SFINH values |-----------------------------------------------------------!
+!   Values used for SFINH (Slope Factor for Inhalation)
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_HUMAN.xlsx, sheet 'SFINH'
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPESFINH" 1 1.10E-06 "Acenaphthene SFING (risk per mg(intake)/(kg(bodyweight)/day))"
+STOCHASTIC "As    SFINH" 1 4.30E-03 "Arsenic SFING (risk per mg(intake)/(kg(bodyweight)/day))"
+! No SFINH for Hg
+! No SFINH for Zn
+
+!------------------------------| RFDING values |-----------------------------------------------------------!
+!   Values used for RFDING (Reference Dose for Ingestion)
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_HUMAN.xlsx, sheet 'RFDING'
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPERFDING" 1 2.10E-01 "Acenaphthene SFING (mg/kg/d)"
+STOCHASTIC "As    RFDING" 1 3.00E-04 "Arsenic SFING (mg/kg/d)"
+STOCHASTIC "Hg    RFDING" 1 3.00E-04 "Mercury SFING (mg/kg/d)"
+! No RFDING for Zn
+
+!------------------------------| RFDINH values |-----------------------------------------------------------!
+!   Values used for RFDINH (Reference Dose for Inhalation)
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_HUMAN.xlsx, sheet 'RFDINH'
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPERFDINH" 1 6.00E-02 "Acenaphthene SFING (mg/kg/d)"
+STOCHASTIC "As    RFDINH" 1 3.00E-04 "Arsenic SFING (mg/kg/d)"
+STOCHASTIC "Hg    RFDINH" 1 8.60E-05 "Mercury SFING (mg/kg/d)"
+STOCHASTIC "Zn    RFDINH" 1 1.00E-07 "Zinc SFING (mg/kg/d)"
+
+!------------------------------| Volatile values |-----------------------------------------------------------!
+!   Values used for VF (Volatilization Factor)
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_HUMAN.xlsx, sheet 'Volatile'
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+!
+STOCHASTIC "ACNAPEVF" 1 0.1 "Deterministic (reference) Acenaphthene Volatilization Factor [L/m3]"
+STOCHASTIC "As    VF" 1 0 "Deterministic (reference) Arsenic Volatilization Factor [L/m3]"
+STOCHASTIC "Hg    VF" 1 0.1 "Deterministic (reference) Mercury Volatilization Factor [L/m3]"
+STOCHASTIC "Zn    VF" 1 0 "Deterministic (reference) Zinc Volatilization Factor [L/m3]"
+
+!------------------------------| KP values |-----------------------------------------------------------!
+!   Values used for KP (Skin Permeability Factor)
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_HUMAN.xlsx, sheet 'KP'
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+STOCHASTIC "ACNAPEKP" 1 0.001 "Deterministic (reference) Skin permeability factor [cm/hr]"
+STOCHASTIC "As    KP" 1 0.001 "Deterministic (reference) Skin permeability factor [cm/hr]"
+STOCHASTIC "Hg    KP" 1 0.001 "Deterministic (reference) Skin permeability factor [cm/hr]"
+STOCHASTIC "Zn    KP" 1 0.001 "Deterministic (reference) Skin permeability factor [cm/hr]"
+
+!------------------------------| ABSORP values |-----------------------------------------------------------!
+!   Values used for ABSORP (Skin Absorption Factor)
+!   Prepared by  : Paul W. Eslinger
+!   Date entered : 12 Jul 2012
+!   Data source  : Small_HUMAN.xlsx, sheet 'ABSORP'
+!   Verified by  :
+!   Date verified:
+!   Comments     :
+STOCHASTIC "ACNAPEABSORP" 1 0.1301 "Deterministic (reference) Skin absorption factor [unitless]"
+STOCHASTIC "As    ABSORP" 1 0.0012 "Deterministic (reference) Skin absorption factor [unitless]"
+STOCHASTIC "Hg    ABSORP" 1 0.0011 "Deterministic (reference) Skin absorption factor [unitless]"
+STOCHASTIC "Zn    ABSORP" 1 0.0005 "Deterministic (reference) Skin absorption factor [unitless]"
+
+!-------------------------------------|  End of Keyword File  |--------------------------------------!
+!
+END
